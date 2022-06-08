@@ -10,24 +10,24 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
-use Twig\Error\Error;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
+use Raider\Error\Error;
+use Raider\Error\LoaderError;
+use Raider\Error\RuntimeError;
 
 /**
  * Default base class for compiled templates.
  *
  * This class is an implementation detail of how template compilation currently
  * works, which might change. It should never be used directly. Use $twig->load()
- * instead, which returns an instance of \Twig\TemplateWrapper.
+ * instead, which returns an instance of \Raider\TemplateWrapper.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *
  * @internal
  */
-abstract class Template implements \Twig_TemplateInterface
+abstract class Template implements \Raider_TemplateInterface
 {
     /**
      * @internal
@@ -111,7 +111,7 @@ abstract class Template implements \Twig_TemplateInterface
      * This method is for internal use only and should never be called
      * directly.
      *
-     * @return \Twig_TemplateInterface|TemplateWrapper|false The parent template or false if there is no parent
+     * @return \Raider_TemplateInterface|TemplateWrapper|false The parent template or false if there is no parent
      *
      * @internal
      */
@@ -206,7 +206,7 @@ abstract class Template implements \Twig_TemplateInterface
 
         // avoid RCEs when sandbox is enabled
         if (null !== $template && !$template instanceof self) {
-            throw new \LogicException('A block must be a method on a \Twig\Template instance.');
+            throw new \LogicException('A block must be a method on a \Raider\Template instance.');
         }
 
         if (null !== $template) {
@@ -217,8 +217,8 @@ abstract class Template implements \Twig_TemplateInterface
                     $e->setSourceContext($template->getSourceContext());
                 }
 
-                // this is mostly useful for \Twig\Error\LoaderError exceptions
-                // see \Twig\Error\LoaderError
+                // this is mostly useful for \Raider\Error\LoaderError exceptions
+                // see \Raider\Error\LoaderError
                 if (-1 === $e->getTemplateLine()) {
                     $e->guess();
                 }
@@ -456,8 +456,8 @@ abstract class Template implements \Twig_TemplateInterface
                 $e->setSourceContext($this->getSourceContext());
             }
 
-            // this is mostly useful for \Twig\Error\LoaderError exceptions
-            // see \Twig\Error\LoaderError
+            // this is mostly useful for \Raider\Error\LoaderError exceptions
+            // see \Raider\Error\LoaderError
             if (-1 === $e->getTemplateLine()) {
                 $e->guess();
             }
@@ -519,7 +519,7 @@ abstract class Template implements \Twig_TemplateInterface
      * @param mixed  $object            The object or array from where to get the item
      * @param mixed  $item              The item to get from the array or object
      * @param array  $arguments         An array of arguments to pass if the item is an object method
-     * @param string $type              The type of attribute (@see \Twig\Template constants)
+     * @param string $type              The type of attribute (@see \Raider\Template constants)
      * @param bool   $isDefinedTest     Whether this is only a defined check
      * @param bool   $ignoreStrictCheck Whether to ignore the strict attribute check or not
      *
@@ -601,14 +601,14 @@ abstract class Template implements \Twig_TemplateInterface
         }
 
         // object property
-        if (self::METHOD_CALL !== $type && !$object instanceof self) { // \Twig\Template does not have public properties, and we don't want to allow access to internal ones
+        if (self::METHOD_CALL !== $type && !$object instanceof self) { // \Raider\Template does not have public properties, and we don't want to allow access to internal ones
             if (isset($object->$item) || \array_key_exists((string) $item, (array) $object)) {
                 if ($isDefinedTest) {
                     return true;
                 }
 
-                if ($this->env->hasExtension('\Twig\Extension\SandboxExtension')) {
-                    $this->env->getExtension('\Twig\Extension\SandboxExtension')->checkPropertyAllowed($object, $item);
+                if ($this->env->hasExtension('\Raider\Extension\SandboxExtension')) {
+                    $this->env->getExtension('\Raider\Extension\SandboxExtension')->checkPropertyAllowed($object, $item);
                 }
 
                 return $object->$item;
@@ -689,8 +689,8 @@ abstract class Template implements \Twig_TemplateInterface
             return true;
         }
 
-        if ($this->env->hasExtension('\Twig\Extension\SandboxExtension')) {
-            $this->env->getExtension('\Twig\Extension\SandboxExtension')->checkMethodAllowed($object, $method);
+        if ($this->env->hasExtension('\Raider\Extension\SandboxExtension')) {
+            $this->env->getExtension('\Raider\Extension\SandboxExtension')->checkMethodAllowed($object, $method);
         }
 
         // Some objects throw exceptions when they have __call, and the method we try
@@ -709,7 +709,7 @@ abstract class Template implements \Twig_TemplateInterface
         }
 
         // @deprecated in 1.28
-        if ($object instanceof \Twig_TemplateInterface) {
+        if ($object instanceof \Raider_TemplateInterface) {
             $self = $object->getTemplateName() === $this->getTemplateName();
             $message = sprintf('Calling "%s" on template "%s" from template "%s" is deprecated since version 1.28 and won\'t be supported anymore in 2.0.', $item, $object->getTemplateName(), $this->getTemplateName());
             if ('renderBlock' === $method || 'displayBlock' === $method) {
@@ -728,4 +728,4 @@ abstract class Template implements \Twig_TemplateInterface
     }
 }
 
-class_alias('Twig\Template', 'Twig_Template');
+class_alias('Raider\Template', 'Raider_Template');

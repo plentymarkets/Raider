@@ -11,12 +11,12 @@ namespace Twig\Tests\Node\Expression;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\FilterExpression;
-use Twig\Node\Node;
-use Twig\Test\NodeTestCase;
-use Twig\TwigFilter;
+use Raider\Environment;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\FilterExpression;
+use Raider\Node\Node;
+use Raider\Test\NodeTestCase;
+use Raider\TwigFilter;
 
 class FilterTest extends NodeTestCase
 {
@@ -34,7 +34,7 @@ class FilterTest extends NodeTestCase
 
     public function getTests()
     {
-        $environment = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $environment = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
         $environment->addFilter(new TwigFilter('bar', 'bar', ['needs_environment' => true]));
         $environment->addFilter(new TwigFilter('barbar', 'Twig\Tests\Node\Expression\twig_tests_filter_barbar', ['needs_context' => true, 'is_variadic' => true]));
 
@@ -112,7 +112,7 @@ class FilterTest extends NodeTestCase
 
     public function testCompileWithWrongNamedArgumentName()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unknown argument "foobar" for filter "date(format, timezone)" at line 1.');
 
         $date = new ConstantExpression(0, 1);
@@ -126,7 +126,7 @@ class FilterTest extends NodeTestCase
 
     public function testCompileWithMissingNamedArgument()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Value for argument "from" is required for filter "replace" at line 1.');
 
         $value = new ConstantExpression(0, 1);

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension;
+namespace Raider\Extension;
 
-use Twig\Profiler\NodeVisitor\ProfilerNodeVisitor;
-use Twig\Profiler\Profile;
+use Raider\Profiler\NodeVisitor\ProfilerNodeVisitor;
+use Raider\Profiler\Profile;
 
 class ProfilerExtension extends AbstractExtension
 {
@@ -50,4 +50,4 @@ class ProfilerExtension extends AbstractExtension
     }
 }
 
-class_alias('Twig\Extension\ProfilerExtension', 'Twig_Extension_Profiler');
+class_alias('Raider\Extension\ProfilerExtension', 'Raider_Extension_Profiler');

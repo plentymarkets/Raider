@@ -1,5 +1,5 @@
 --TEST--
-"include" tag accepts \Twig\TemplateWrapper instance
+"include" tag accepts \Raider\TemplateWrapper instance
 --TEMPLATE--
 {% include foo %} FOO
 --TEMPLATE(foo.twig)--

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Node\Expression\AbstractExpression;
-use Twig\Node\Expression\ConstantExpression;
+use Raider\Compiler;
+use Raider\Node\Expression\AbstractExpression;
+use Raider\Node\Expression\ConstantExpression;
 
 /**
  * Represents an embed node.
@@ -49,4 +49,4 @@ class EmbedNode extends IncludeNode
     }
 }
 
-class_alias('Twig\Node\EmbedNode', 'Twig_Node_Embed');
+class_alias('Raider\Node\EmbedNode', 'Raider_Node_Embed');

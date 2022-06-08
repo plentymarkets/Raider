@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Binary;
+namespace Raider\Node\Expression\Binary;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class MatchesBinary extends AbstractBinary
 {
@@ -32,4 +32,4 @@ class MatchesBinary extends AbstractBinary
     }
 }
 
-class_alias('Twig\Node\Expression\Binary\MatchesBinary', 'Twig_Node_Expression_Binary_Matches');
+class_alias('Raider\Node\Expression\Binary\MatchesBinary', 'Raider_Node_Expression_Binary_Matches');

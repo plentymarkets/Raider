@@ -11,7 +11,7 @@ namespace Twig\Tests\Cache;
  * file that was distributed with this source code.
  */
 
-use Twig\Cache\FilesystemCache;
+use Raider\Cache\FilesystemCache;
 use Twig\Tests\FilesystemHelper;
 
 class FilesystemTest extends \PHPUnit\Framework\TestCase
@@ -23,7 +23,7 @@ class FilesystemTest extends \PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         $nonce = hash('sha256', uniqid(mt_rand(), true));
-        $this->classname = '__Twig_Tests_Cache_FilesystemTest_Template_'.$nonce;
+        $this->classname = '__Raider_Tests_Cache_FilesystemTest_Template_'.$nonce;
         $this->directory = sys_get_temp_dir().'/twig-test';
         $this->cache = new FilesystemCache($this->directory);
     }

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\BlockNode;
-use Twig\Node\Expression\BlockReferenceExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\PrintNode;
-use Twig\Token;
+use Raider\Node\BlockNode;
+use Raider\Node\Expression\BlockReferenceExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\PrintNode;
+use Raider\Token;
 
 /**
  * Filters a section of a template by applying filters.
@@ -56,4 +56,4 @@ class FilterTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\FilterTokenParser', 'Twig_TokenParser_Filter');
+class_alias('Raider\TokenParser\FilterTokenParser', 'Raider_TokenParser_Filter');

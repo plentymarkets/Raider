@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -87,4 +87,4 @@ class CheckSecurityNode extends Node
     }
 }
 
-class_alias('Twig\Node\CheckSecurityNode', 'Twig_Node_CheckSecurity');
+class_alias('Raider\Node\CheckSecurityNode', 'Raider_Node_CheckSecurity');

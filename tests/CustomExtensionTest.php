@@ -11,8 +11,8 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Extension\ExtensionInterface;
+use Raider\Environment;
+use Raider\Extension\ExtensionInterface;
 
 class CustomExtensionTest extends \PHPUnit\Framework\TestCase
 {
@@ -25,7 +25,7 @@ class CustomExtensionTest extends \PHPUnit\Framework\TestCase
         $this->expectException('InvalidArgumentException');
         $this->expectExceptionMessage($expectedExceptionMessage);
 
-        $env = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $env = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
         $env->addExtension($extension);
         $env->getUnaryOperators();
     }

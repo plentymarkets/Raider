@@ -10,11 +10,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Node\Expression\AbstractExpression;
-use Twig\Node\Expression\AssignNameExpression;
+use Raider\Compiler;
+use Raider\Node\Expression\AbstractExpression;
+use Raider\Node\Expression\AssignNameExpression;
 
 /**
  * Represents a for node.
@@ -25,7 +25,7 @@ class ForNode extends Node
 {
     protected $loop;
 
-    public function __construct(AssignNameExpression $keyTarget, AssignNameExpression $valueTarget, AbstractExpression $seq, ?AbstractExpression $ifexpr, \Twig_NodeInterface $body, ?\Twig_NodeInterface $else, $lineno, $tag = null)
+    public function __construct(AssignNameExpression $keyTarget, AssignNameExpression $valueTarget, AbstractExpression $seq, ?AbstractExpression $ifexpr, \Raider_NodeInterface $body, ?\Raider_NodeInterface $else, $lineno, $tag = null)
     {
         $body = new Node([$body, $this->loop = new ForLoopNode($lineno, $tag)]);
 
@@ -116,4 +116,4 @@ class ForNode extends Node
     }
 }
 
-class_alias('Twig\Node\ForNode', 'Twig_Node_For');
+class_alias('Raider\Node\ForNode', 'Raider_Node_For');

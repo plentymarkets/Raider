@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Sandbox;
+namespace Raider\Sandbox;
 
-use Twig\Error\Error;
+use Raider\Error\Error;
 
 /**
  * Exception thrown when a security error occurs at runtime.
@@ -22,4 +22,4 @@ class SecurityError extends Error
 {
 }
 
-class_alias('Twig\Sandbox\SecurityError', 'Twig_Sandbox_SecurityError');
+class_alias('Raider\Sandbox\SecurityError', 'Raider_Sandbox_SecurityError');

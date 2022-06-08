@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\FilterExpression;
+use Raider\Compiler;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\FilterExpression;
 
 /**
  * Adds a check for the __toString() method when the variable is an object and the sandbox is activated.
@@ -42,7 +42,7 @@ class SandboxedPrintNode extends PrintNode
             ;
         } else {
             $compiler
-                ->write('$this->env->getExtension(\'\Twig\Extension\SandboxExtension\')->ensureToStringAllowed(')
+                ->write('$this->env->getExtension(\'\Raider\Extension\SandboxExtension\')->ensureToStringAllowed(')
                 ->subcompile($expr)
                 ->raw(");\n")
             ;
@@ -66,4 +66,4 @@ class SandboxedPrintNode extends PrintNode
     }
 }
 
-class_alias('Twig\Node\SandboxedPrintNode', 'Twig_Node_SandboxedPrint');
+class_alias('Raider\Node\SandboxedPrintNode', 'Raider_Node_SandboxedPrint');

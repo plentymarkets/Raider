@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension;
+namespace Raider\Extension;
 
 /**
  * Enables usage of the deprecated Twig\Extension\AbstractExtension::getGlobals() method.
@@ -23,4 +23,4 @@ interface GlobalsInterface
 {
 }
 
-class_alias('Twig\Extension\GlobalsInterface', 'Twig_Extension_GlobalsInterface');
+class_alias('Raider\Extension\GlobalsInterface', 'Raider_Extension_GlobalsInterface');

@@ -11,7 +11,7 @@ namespace Twig\Tests\Loader;
  * file that was distributed with this source code.
  */
 
-use Twig\Loader\ArrayLoader;
+use Raider\Loader\ArrayLoader;
 
 class ArrayTest extends \PHPUnit\Framework\TestCase
 {
@@ -30,7 +30,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
      */
     public function testGetSourceWhenTemplateDoesNotExist()
     {
-        $this->expectException('\Twig\Error\LoaderError');
+        $this->expectException('\Raider\Error\LoaderError');
 
         $loader = new ArrayLoader([]);
 
@@ -39,7 +39,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
 
     public function testGetSourceContextWhenTemplateDoesNotExist()
     {
-        $this->expectException('\Twig\Error\LoaderError');
+        $this->expectException('\Raider\Error\LoaderError');
 
         $loader = new ArrayLoader([]);
 
@@ -77,7 +77,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
 
     public function testGetCacheKeyWhenTemplateDoesNotExist()
     {
-        $this->expectException('\Twig\Error\LoaderError');
+        $this->expectException('\Raider\Error\LoaderError');
 
         $loader = new ArrayLoader([]);
 
@@ -100,7 +100,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
 
     public function testIsFreshWhenTemplateDoesNotExist()
     {
-        $this->expectException('\Twig\Error\LoaderError');
+        $this->expectException('\Raider\Error\LoaderError');
 
         $loader = new ArrayLoader([]);
 
@@ -109,7 +109,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
 
     public function testTemplateReference()
     {
-        $name = new Twig_Test_Loader_TemplateReference('foo');
+        $name = new Raider_Test_Loader_TemplateReference('foo');
         $loader = new ArrayLoader(['foo' => 'bar']);
 
         $loader->getCacheKey($name);
@@ -123,7 +123,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
     }
 }
 
-class Twig_Test_Loader_TemplateReference
+class Raider_Test_Loader_TemplateReference
 {
     private $name;
 

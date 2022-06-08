@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class MethodCallExpression extends AbstractExpression
 {
@@ -45,4 +45,4 @@ class MethodCallExpression extends AbstractExpression
     }
 }
 
-class_alias('Twig\Node\Expression\MethodCallExpression', 'Twig_Node_Expression_MethodCall');
+class_alias('Raider\Node\Expression\MethodCallExpression', 'Raider_Node_Expression_MethodCall');

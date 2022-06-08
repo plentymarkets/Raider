@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Sandbox;
+namespace Raider\Sandbox;
 
 /**
  * Exception thrown when a not allowed filter is used in a template.
@@ -32,4 +32,4 @@ class SecurityNotAllowedFilterError extends SecurityError
     }
 }
 
-class_alias('Twig\Sandbox\SecurityNotAllowedFilterError', 'Twig_Sandbox_SecurityNotAllowedFilterError');
+class_alias('Raider\Sandbox\SecurityNotAllowedFilterError', 'Raider_Sandbox_SecurityNotAllowedFilterError');

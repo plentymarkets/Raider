@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension;
+namespace Raider\Extension;
 
-use Twig\NodeVisitor\NodeVisitorInterface;
-use Twig\TokenParser\TokenParserInterface;
+use Raider\NodeVisitor\NodeVisitorInterface;
+use Raider\TokenParser\TokenParserInterface;
 
 /**
  * Internal class.
  *
- * This class is used by \Twig\Environment as a staging area and must not be used directly.
+ * This class is used by \Raider\Environment as a staging area and must not be used directly.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *
@@ -114,4 +114,4 @@ class StagingExtension extends AbstractExtension
     }
 }
 
-class_alias('Twig\Extension\StagingExtension', 'Twig_Extension_Staging');
+class_alias('Raider\Extension\StagingExtension', 'Raider_Extension_Staging');

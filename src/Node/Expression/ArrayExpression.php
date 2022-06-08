@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class ArrayExpression extends AbstractExpression
 {
@@ -85,4 +85,4 @@ class ArrayExpression extends AbstractExpression
     }
 }
 
-class_alias('Twig\Node\Expression\ArrayExpression', 'Twig_Node_Expression_Array');
+class_alias('Raider\Node\Expression\ArrayExpression', 'Raider_Node_Expression_Array');

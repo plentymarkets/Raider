@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Node\Expression\AbstractExpression;
+use Raider\Compiler;
+use Raider\Node\Expression\AbstractExpression;
 
 /**
  * Represents a node that outputs an expression.
@@ -38,4 +38,4 @@ class PrintNode extends Node implements NodeOutputInterface
     }
 }
 
-class_alias('Twig\Node\PrintNode', 'Twig_Node_Print');
+class_alias('Raider\Node\PrintNode', 'Raider_Node_Print');

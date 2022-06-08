@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
-use Twig\Error\SyntaxError;
-use Twig\Extension\ExtensionInterface;
-use Twig\Node\Node;
+use Raider\Compiler;
+use Raider\Error\SyntaxError;
+use Raider\Extension\ExtensionInterface;
+use Raider\Node\Node;
 
 abstract class CallExpression extends AbstractExpression
 {
@@ -312,4 +312,4 @@ abstract class CallExpression extends AbstractExpression
     }
 }
 
-class_alias('Twig\Node\Expression\CallExpression', 'Twig_Node_Expression_Call');
+class_alias('Raider\Node\Expression\CallExpression', 'Raider_Node_Expression_Call');

@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * Represents a text node.
@@ -37,4 +37,4 @@ class TextNode extends Node implements NodeOutputInterface
     }
 }
 
-class_alias('Twig\Node\TextNode', 'Twig_Node_Text');
+class_alias('Raider\Node\TextNode', 'Raider_Node_Text');

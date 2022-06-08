@@ -9,22 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\NodeVisitor;
+namespace Raider\NodeVisitor;
 
-use Twig\Environment;
-use Twig\Node\CheckSecurityCallNode;
-use Twig\Node\CheckSecurityNode;
-use Twig\Node\CheckToStringNode;
-use Twig\Node\Expression\Binary\ConcatBinary;
-use Twig\Node\Expression\Binary\RangeBinary;
-use Twig\Node\Expression\FilterExpression;
-use Twig\Node\Expression\FunctionExpression;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\Node\Expression\NameExpression;
-use Twig\Node\ModuleNode;
-use Twig\Node\Node;
-use Twig\Node\PrintNode;
-use Twig\Node\SetNode;
+use Raider\Environment;
+use Raider\Node\CheckSecurityCallNode;
+use Raider\Node\CheckSecurityNode;
+use Raider\Node\CheckToStringNode;
+use Raider\Node\Expression\Binary\ConcatBinary;
+use Raider\Node\Expression\Binary\RangeBinary;
+use Raider\Node\Expression\FilterExpression;
+use Raider\Node\Expression\FunctionExpression;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\Node\Expression\NameExpression;
+use Raider\Node\ModuleNode;
+use Raider\Node\Node;
+use Raider\Node\PrintNode;
+use Raider\Node\SetNode;
 
 /**
  * @final
@@ -136,4 +136,4 @@ class SandboxNodeVisitor extends AbstractNodeVisitor
     }
 }
 
-class_alias('Twig\NodeVisitor\SandboxNodeVisitor', 'Twig_NodeVisitor_Sandbox');
+class_alias('Raider\NodeVisitor\SandboxNodeVisitor', 'Raider_NodeVisitor_Sandbox');

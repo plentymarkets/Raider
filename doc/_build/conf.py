@@ -55,7 +55,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Twig'
+project = 'Raider'
 copyright = ''
 
 # The version info for the project you're documenting, acts as replacement for
@@ -200,7 +200,7 @@ html_theme_options = {
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Twig'
+htmlhelp_basename = 'Raider'
 
 
 # -- Options for LaTeX output --------------------------------------------------

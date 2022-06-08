@@ -9,25 +9,25 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\NodeVisitor;
+namespace Raider\NodeVisitor;
 
-use Twig\Environment;
-use Twig\Node\BlockReferenceNode;
-use Twig\Node\BodyNode;
-use Twig\Node\Expression\AbstractExpression;
-use Twig\Node\Expression\BlockReferenceExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\FilterExpression;
-use Twig\Node\Expression\FunctionExpression;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\Node\Expression\NameExpression;
-use Twig\Node\Expression\ParentExpression;
-use Twig\Node\Expression\TempNameExpression;
-use Twig\Node\ForNode;
-use Twig\Node\IncludeNode;
-use Twig\Node\Node;
-use Twig\Node\PrintNode;
-use Twig\Node\SetTempNode;
+use Raider\Environment;
+use Raider\Node\BlockReferenceNode;
+use Raider\Node\BodyNode;
+use Raider\Node\Expression\AbstractExpression;
+use Raider\Node\Expression\BlockReferenceExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\FilterExpression;
+use Raider\Node\Expression\FunctionExpression;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\Node\Expression\NameExpression;
+use Raider\Node\Expression\ParentExpression;
+use Raider\Node\Expression\TempNameExpression;
+use Raider\Node\ForNode;
+use Raider\Node\IncludeNode;
+use Raider\Node\Node;
+use Raider\Node\PrintNode;
+use Raider\Node\SetTempNode;
 
 /**
  * Tries to optimize the AST.
@@ -73,10 +73,10 @@ class OptimizerNodeVisitor extends AbstractNodeVisitor
             $this->enterOptimizeFor($node, $env);
         }
 
-        if (\PHP_VERSION_ID < 50400 && self::OPTIMIZE_VAR_ACCESS === (self::OPTIMIZE_VAR_ACCESS & $this->optimizers) && !$env->isStrictVariables() && !$env->hasExtension('\Twig\Extension\SandboxExtension')) {
+        if (\PHP_VERSION_ID < 50400 && self::OPTIMIZE_VAR_ACCESS === (self::OPTIMIZE_VAR_ACCESS & $this->optimizers) && !$env->isStrictVariables() && !$env->hasExtension('\Raider\Extension\SandboxExtension')) {
             if ($this->inABody) {
                 if (!$node instanceof AbstractExpression) {
-                    if ('Twig_Node' !== \get_class($node)) {
+                    if ('Raider_Node' !== \get_class($node)) {
                         array_unshift($this->prependedNodes, []);
                     }
                 } else {
@@ -104,11 +104,11 @@ class OptimizerNodeVisitor extends AbstractNodeVisitor
 
         $node = $this->optimizePrintNode($node, $env);
 
-        if (self::OPTIMIZE_VAR_ACCESS === (self::OPTIMIZE_VAR_ACCESS & $this->optimizers) && !$env->isStrictVariables() && !$env->hasExtension('\Twig\Extension\SandboxExtension')) {
+        if (self::OPTIMIZE_VAR_ACCESS === (self::OPTIMIZE_VAR_ACCESS & $this->optimizers) && !$env->isStrictVariables() && !$env->hasExtension('\Raider\Extension\SandboxExtension')) {
             if ($node instanceof BodyNode) {
                 $this->inABody = false;
             } elseif ($this->inABody) {
-                if (!$expression && 'Twig_Node' !== \get_class($node) && $prependedNodes = array_shift($this->prependedNodes)) {
+                if (!$expression && 'Raider_Node' !== \get_class($node) && $prependedNodes = array_shift($this->prependedNodes)) {
                     $nodes = [];
                     foreach (array_unique($prependedNodes) as $name) {
                         $nodes[] = new SetTempNode($name, $node->getTemplateLine());
@@ -123,9 +123,9 @@ class OptimizerNodeVisitor extends AbstractNodeVisitor
         return $node;
     }
 
-    protected function optimizeVariables(\Twig_NodeInterface $node, Environment $env)
+    protected function optimizeVariables(\Raider_NodeInterface $node, Environment $env)
     {
-        if ('Twig_Node_Expression_Name' === \get_class($node) && $node->isSimple()) {
+        if ('Raider_Node_Expression_Name' === \get_class($node) && $node->isSimple()) {
             $this->prependedNodes[0][] = $node->getAttribute('name');
 
             return new TempNameExpression($node->getAttribute('name'), $node->getTemplateLine());
@@ -141,9 +141,9 @@ class OptimizerNodeVisitor extends AbstractNodeVisitor
      *
      *   * "echo $this->render(Parent)Block()" with "$this->display(Parent)Block()"
      *
-     * @return \Twig_NodeInterface
+     * @return \Raider_NodeInterface
      */
-    protected function optimizePrintNode(\Twig_NodeInterface $node, Environment $env)
+    protected function optimizePrintNode(\Raider_NodeInterface $node, Environment $env)
     {
         if (!$node instanceof PrintNode) {
             return $node;
@@ -165,9 +165,9 @@ class OptimizerNodeVisitor extends AbstractNodeVisitor
     /**
      * Removes "raw" filters.
      *
-     * @return \Twig_NodeInterface
+     * @return \Raider_NodeInterface
      */
-    protected function optimizeRawFilter(\Twig_NodeInterface $node, Environment $env)
+    protected function optimizeRawFilter(\Raider_NodeInterface $node, Environment $env)
     {
         if ($node instanceof FilterExpression && 'raw' == $node->getNode('filter')->getAttribute('value')) {
             return $node->getNode('node');
@@ -179,7 +179,7 @@ class OptimizerNodeVisitor extends AbstractNodeVisitor
     /**
      * Optimizes "for" tag by removing the "loop" variable creation whenever possible.
      */
-    protected function enterOptimizeFor(\Twig_NodeInterface $node, Environment $env)
+    protected function enterOptimizeFor(\Raider_NodeInterface $node, Environment $env)
     {
         if ($node instanceof ForNode) {
             // disable the loop variable by default
@@ -243,7 +243,7 @@ class OptimizerNodeVisitor extends AbstractNodeVisitor
     /**
      * Optimizes "for" tag by removing the "loop" variable creation whenever possible.
      */
-    protected function leaveOptimizeFor(\Twig_NodeInterface $node, Environment $env)
+    protected function leaveOptimizeFor(\Raider_NodeInterface $node, Environment $env)
     {
         if ($node instanceof ForNode) {
             array_shift($this->loops);
@@ -270,4 +270,4 @@ class OptimizerNodeVisitor extends AbstractNodeVisitor
     }
 }
 
-class_alias('Twig\NodeVisitor\OptimizerNodeVisitor', 'Twig_NodeVisitor_Optimizer');
+class_alias('Raider\NodeVisitor\OptimizerNodeVisitor', 'Raider_NodeVisitor_Optimizer');

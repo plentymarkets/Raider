@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Parser;
+use Raider\Parser;
 
 /**
  * Base class for all token parsers.
@@ -31,4 +31,4 @@ abstract class AbstractTokenParser implements TokenParserInterface
     }
 }
 
-class_alias('Twig\TokenParser\AbstractTokenParser', 'Twig_TokenParser');
+class_alias('Raider\TokenParser\AbstractTokenParser', 'Raider_TokenParser');

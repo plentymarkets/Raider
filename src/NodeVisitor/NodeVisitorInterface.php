@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\NodeVisitor;
+namespace Raider\NodeVisitor;
 
-use Twig\Environment;
+use Raider\Environment;
 
 /**
  * Interface for node visitor classes.
@@ -23,16 +23,16 @@ interface NodeVisitorInterface
     /**
      * Called before child nodes are visited.
      *
-     * @return \Twig_NodeInterface The modified node
+     * @return \Raider_NodeInterface The modified node
      */
-    public function enterNode(\Twig_NodeInterface $node, Environment $env);
+    public function enterNode(\Raider_NodeInterface $node, Environment $env);
 
     /**
      * Called after child nodes are visited.
      *
-     * @return \Twig_NodeInterface|false|null The modified node or null if the node must be removed
+     * @return \Raider_NodeInterface|false|null The modified node or null if the node must be removed
      */
-    public function leaveNode(\Twig_NodeInterface $node, Environment $env);
+    public function leaveNode(\Raider_NodeInterface $node, Environment $env);
 
     /**
      * Returns the priority for this visitor.
@@ -44,7 +44,7 @@ interface NodeVisitorInterface
     public function getPriority();
 }
 
-class_alias('Twig\NodeVisitor\NodeVisitorInterface', 'Twig_NodeVisitorInterface');
+class_alias('Raider\NodeVisitor\NodeVisitorInterface', 'Raider_NodeVisitorInterface');
 
 // Ensure that the aliased name is loaded to keep BC for classes implementing the typehint with the old aliased name.
-class_exists('Twig\Environment');
+class_exists('Raider\Environment');

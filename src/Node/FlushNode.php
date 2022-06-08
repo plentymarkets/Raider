@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * Represents a flush node.
@@ -34,4 +34,4 @@ class FlushNode extends Node
     }
 }
 
-class_alias('Twig\Node\FlushNode', 'Twig_Node_Flush');
+class_alias('Raider\Node\FlushNode', 'Raider_Node_Flush');

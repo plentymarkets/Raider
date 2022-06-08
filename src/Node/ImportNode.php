@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Node\Expression\AbstractExpression;
-use Twig\Node\Expression\NameExpression;
+use Raider\Compiler;
+use Raider\Node\Expression\AbstractExpression;
+use Raider\Node\Expression\NameExpression;
 
 /**
  * Represents an import node.
@@ -54,4 +54,4 @@ class ImportNode extends Node
     }
 }
 
-class_alias('Twig\Node\ImportNode', 'Twig_Node_Import');
+class_alias('Raider\Node\ImportNode', 'Raider_Node_Import');

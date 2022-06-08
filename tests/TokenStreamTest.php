@@ -11,8 +11,8 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Token;
-use Twig\TokenStream;
+use Raider\Token;
+use Raider\TokenStream;
 
 class TokenStreamTest extends \PHPUnit\Framework\TestCase
 {
@@ -58,7 +58,7 @@ class TokenStreamTest extends \PHPUnit\Framework\TestCase
 
     public function testEndOfTemplateNext()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unexpected end of template');
 
         $stream = new TokenStream([
@@ -71,7 +71,7 @@ class TokenStreamTest extends \PHPUnit\Framework\TestCase
 
     public function testEndOfTemplateLook()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unexpected end of template');
 
         $stream = new TokenStream([

@@ -11,22 +11,22 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Node\MacroNode;
-use Twig\Node\Node;
-use Twig\Node\SetNode;
-use Twig\Node\TextNode;
-use Twig\Parser;
-use Twig\Source;
-use Twig\Token;
-use Twig\TokenParser\AbstractTokenParser;
-use Twig\TokenStream;
+use Raider\Environment;
+use Raider\Node\MacroNode;
+use Raider\Node\Node;
+use Raider\Node\SetNode;
+use Raider\Node\TextNode;
+use Raider\Parser;
+use Raider\Source;
+use Raider\Token;
+use Raider\TokenParser\AbstractTokenParser;
+use Raider\TokenStream;
 
 class ParserTest extends \PHPUnit\Framework\TestCase
 {
     public function testSetMacroThrowsExceptionOnReservedMethods()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
 
         $parser = $this->getParser();
         $parser->setMacro('parent', new MacroNode('foo', new Node(), new Node(), 1));
@@ -34,7 +34,7 @@ class ParserTest extends \PHPUnit\Framework\TestCase
 
     public function testUnknownTag()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unknown "foo" tag. Did you mean "for" at line 1?');
 
         $stream = new TokenStream([
@@ -43,13 +43,13 @@ class ParserTest extends \PHPUnit\Framework\TestCase
             new Token(Token::BLOCK_END_TYPE, '', 1),
             new Token(Token::EOF_TYPE, '', 1),
         ]);
-        $parser = new Parser(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $parser = new Parser(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $parser->parse($stream);
     }
 
     public function testUnknownTagWithoutSuggestions()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unknown "foobar" tag at line 1.');
 
         $stream = new TokenStream([
@@ -58,7 +58,7 @@ class ParserTest extends \PHPUnit\Framework\TestCase
             new Token(Token::BLOCK_END_TYPE, '', 1),
             new Token(Token::EOF_TYPE, '', 1),
         ]);
-        $parser = new Parser(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $parser = new Parser(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $parser->parse($stream);
     }
 
@@ -95,7 +95,7 @@ class ParserTest extends \PHPUnit\Framework\TestCase
      */
     public function testFilterBodyNodesThrowsException($input)
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
 
         $parser = $this->getParser();
 
@@ -130,7 +130,7 @@ class ParserTest extends \PHPUnit\Framework\TestCase
 
     public function testParseIsReentrant()
     {
-        $twig = new Environment($this->createMock('\Twig\Loader\LoaderInterface'), [
+        $twig = new Environment($this->createMock('\Raider\Loader\LoaderInterface'), [
             'autoescape' => false,
             'optimizations' => 0,
         ]);
@@ -153,7 +153,7 @@ class ParserTest extends \PHPUnit\Framework\TestCase
 
     public function testGetVarName()
     {
-        $twig = new Environment($this->createMock('\Twig\Loader\LoaderInterface'), [
+        $twig = new Environment($this->createMock('\Raider\Loader\LoaderInterface'), [
             'autoescape' => false,
             'optimizations' => 0,
         ]);
@@ -175,7 +175,7 @@ EOF
 
     protected function getParser()
     {
-        $parser = new TestParser(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $parser = new TestParser(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $parser->setParent(new Node());
         $parser->stream = new TokenStream([]);
 
@@ -187,7 +187,7 @@ class TestParser extends Parser
 {
     public $stream;
 
-    public function filterBodyNodes(\Twig_NodeInterface $node)
+    public function filterBodyNodes(\Raider_NodeInterface $node)
     {
         return parent::filterBodyNodes($node);
     }

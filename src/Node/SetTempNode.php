@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * @internal
@@ -41,4 +41,4 @@ class SetTempNode extends Node
     }
 }
 
-class_alias('Twig\Node\SetTempNode', 'Twig_Node_SetTemp');
+class_alias('Raider\Node\SetTempNode', 'Raider_Node_SetTemp');

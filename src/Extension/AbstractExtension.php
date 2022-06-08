@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension;
+namespace Raider\Extension;
 
-use Twig\Environment;
+use Raider\Environment;
 
 abstract class AbstractExtension implements ExtensionInterface
 {
     /**
-     * @deprecated since 1.23 (to be removed in 2.0), implement \Twig_Extension_InitRuntimeInterface instead
+     * @deprecated since 1.23 (to be removed in 2.0), implement \Raider_Extension_InitRuntimeInterface instead
      */
     public function initRuntime(Environment $environment)
     {
@@ -53,7 +53,7 @@ abstract class AbstractExtension implements ExtensionInterface
     }
 
     /**
-     * @deprecated since 1.23 (to be removed in 2.0), implement \Twig_Extension_GlobalsInterface instead
+     * @deprecated since 1.23 (to be removed in 2.0), implement \Raider_Extension_GlobalsInterface instead
      */
     public function getGlobals()
     {
@@ -69,4 +69,4 @@ abstract class AbstractExtension implements ExtensionInterface
     }
 }
 
-class_alias('Twig\Extension\AbstractExtension', 'Twig_Extension');
+class_alias('Raider\Extension\AbstractExtension', 'Raider_Extension');

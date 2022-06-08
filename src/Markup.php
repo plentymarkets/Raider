@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
 /**
  * Marks a content as safe.
@@ -41,4 +41,4 @@ class Markup implements \Countable
     }
 }
 
-class_alias('Twig\Markup', 'Twig_Markup');
+class_alias('Raider\Markup', 'Raider_Markup');

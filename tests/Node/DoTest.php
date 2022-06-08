@@ -11,9 +11,9 @@ namespace Twig\Tests\Node;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\DoNode;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Test\NodeTestCase;
+use Raider\Node\DoNode;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Test\NodeTestCase;
 
 class DoTest extends NodeTestCase
 {

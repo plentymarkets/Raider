@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
 /**
  * Represents a template test.
@@ -32,7 +32,7 @@ class TwigTest
         $this->callable = $callable;
         $this->options = array_merge([
             'is_variadic' => false,
-            'node_class' => '\Twig\Node\Expression\TestExpression',
+            'node_class' => '\Raider\Node\Expression\TestExpression',
             'deprecated' => false,
             'alternative' => null,
             'one_mandatory_argument' => false,
@@ -90,4 +90,4 @@ class TwigTest
     }
 }
 
-class_alias('Twig\TwigTest', 'Twig_SimpleTest');
+class_alias('Raider\TwigTest', 'Raider_SimpleTest');

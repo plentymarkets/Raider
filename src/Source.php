@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
 /**
  * Holds information about a non-compiled Twig template.
@@ -52,4 +52,4 @@ class Source
     }
 }
 
-class_alias('Twig\Source', 'Twig_Source');
+class_alias('Raider\Source', 'Raider_Source');

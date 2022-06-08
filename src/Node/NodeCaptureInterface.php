@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
 /**
  * Represents a node that captures any nested displayable nodes.
@@ -20,4 +20,4 @@ interface NodeCaptureInterface
 {
 }
 
-class_alias('Twig\Node\NodeCaptureInterface', 'Twig_NodeCaptureInterface');
+class_alias('Raider\Node\NodeCaptureInterface', 'Raider_NodeCaptureInterface');

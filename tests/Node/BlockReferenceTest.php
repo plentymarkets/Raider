@@ -11,8 +11,8 @@ namespace Twig\Tests\Node;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\BlockReferenceNode;
-use Twig\Test\NodeTestCase;
+use Raider\Node\BlockReferenceNode;
+use Raider\Test\NodeTestCase;
 
 class BlockReferenceTest extends NodeTestCase
 {

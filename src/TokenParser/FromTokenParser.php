@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\Expression\AssignNameExpression;
-use Twig\Node\ImportNode;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Node\Expression\AssignNameExpression;
+use Raider\Node\ImportNode;
+use Raider\Token;
 
 /**
  * Imports macros.
@@ -69,4 +69,4 @@ class FromTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\FromTokenParser', 'Twig_TokenParser_From');
+class_alias('Raider\TokenParser\FromTokenParser', 'Raider_TokenParser_From');

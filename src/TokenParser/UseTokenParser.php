@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Node;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Node;
+use Raider\Token;
 
 /**
  * Imports blocks defined in another template into the current template.
@@ -72,4 +72,4 @@ class UseTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\UseTokenParser', 'Twig_TokenParser_Use');
+class_alias('Raider\TokenParser\UseTokenParser', 'Raider_TokenParser_Use');

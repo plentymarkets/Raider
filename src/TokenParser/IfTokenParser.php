@@ -10,12 +10,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\IfNode;
-use Twig\Node\Node;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Node\IfNode;
+use Raider\Node\Node;
+use Raider\Token;
 
 /**
  * Tests a condition.
@@ -88,4 +88,4 @@ class IfTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\IfTokenParser', 'Twig_TokenParser_If');
+class_alias('Raider\TokenParser\IfTokenParser', 'Raider_TokenParser_If');

@@ -7,4 +7,4 @@ Exception for an undefined parent
 --DATA--
 return []
 --EXCEPTION--
-Twig\Error\LoaderError: Template "foo.html" is not defined in "index.twig" at line 2.
+Raider\Error\LoaderError: Template "foo.html" is not defined in "index.twig" at line 2.

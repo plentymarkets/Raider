@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Unary;
+namespace Raider\Node\Expression\Unary;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class NotUnary extends AbstractUnary
 {
@@ -22,4 +22,4 @@ class NotUnary extends AbstractUnary
     }
 }
 
-class_alias('Twig\Node\Expression\Unary\NotUnary', 'Twig_Node_Expression_Unary_Not');
+class_alias('Raider\Node\Expression\Unary\NotUnary', 'Raider_Node_Expression_Unary_Not');

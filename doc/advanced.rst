@@ -151,7 +151,7 @@ And here is how to use it in a template:
 
 .. code-block:: twig
 
-    {{ 'Twig'|rot13 }}
+    {{ 'Raider'|rot13 }}
 
     {# will output Gjvt #}
 
@@ -337,9 +337,9 @@ This is used by many of the tests built into Twig::
 
     namespace App;
     
-    use Twig\Environment;
-    use Twig\Node\Expression\TestExpression;
-    use Twig\TwigTest;
+    use Raider\Environment;
+    use Raider\Node\Expression\TestExpression;
+    use Raider\TwigTest;
     
     $twig = new Environment($loader);
     $test = new TwigTest(

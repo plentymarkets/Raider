@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Binary;
+namespace Raider\Node\Expression\Binary;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class PowerBinary extends AbstractBinary
 {
@@ -36,4 +36,4 @@ class PowerBinary extends AbstractBinary
     }
 }
 
-class_alias('Twig\Node\Expression\Binary\PowerBinary', 'Twig_Node_Expression_Binary_Power');
+class_alias('Raider\Node\Expression\Binary\PowerBinary', 'Raider_Node_Expression_Binary_Power');

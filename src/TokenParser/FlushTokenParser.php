@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\FlushNode;
-use Twig\Token;
+use Raider\Node\FlushNode;
+use Raider\Token;
 
 /**
  * Flushes the output to the client.
@@ -36,4 +36,4 @@ class FlushTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\FlushTokenParser', 'Twig_TokenParser_Flush');
+class_alias('Raider\TokenParser\FlushTokenParser', 'Raider_TokenParser_Flush');

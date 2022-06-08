@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class ConstantExpression extends AbstractExpression
 {
@@ -27,4 +27,4 @@ class ConstantExpression extends AbstractExpression
     }
 }
 
-class_alias('Twig\Node\Expression\ConstantExpression', 'Twig_Node_Expression_Constant');
+class_alias('Raider\Node\Expression\ConstantExpression', 'Raider_Node_Expression_Constant');

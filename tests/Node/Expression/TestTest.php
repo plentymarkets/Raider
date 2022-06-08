@@ -11,13 +11,13 @@ namespace Twig\Tests\Node\Expression;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\Test\NullTest;
-use Twig\Node\Expression\TestExpression;
-use Twig\Node\Node;
-use Twig\Test\NodeTestCase;
-use Twig\TwigTest;
+use Raider\Environment;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\Test\NullTest;
+use Raider\Node\Expression\TestExpression;
+use Raider\Node\Node;
+use Raider\Test\NodeTestCase;
+use Raider\TwigTest;
 
 class TestTest extends NodeTestCase
 {
@@ -35,7 +35,7 @@ class TestTest extends NodeTestCase
 
     public function getTests()
     {
-        $environment = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $environment = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
         $environment->addTest(new TwigTest('barbar', 'Twig\Tests\Node\Expression\twig_tests_test_barbar', ['is_variadic' => true, 'need_context' => true]));
 
         $tests = [];

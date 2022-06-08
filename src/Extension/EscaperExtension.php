@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension {
-use Twig\NodeVisitor\EscaperNodeVisitor;
-use Twig\TokenParser\AutoEscapeTokenParser;
-use Twig\TwigFilter;
+namespace Raider\Extension {
+use Raider\NodeVisitor\EscaperNodeVisitor;
+use Raider\TokenParser\AutoEscapeTokenParser;
+use Raider\TwigFilter;
 
 /**
  * @final
@@ -72,7 +72,7 @@ class EscaperExtension extends AbstractExtension
         }
 
         if ('name' === $defaultStrategy) {
-            $defaultStrategy = ['\Twig\FileExtensionEscapingStrategy', 'guess'];
+            $defaultStrategy = ['\Raider\FileExtensionEscapingStrategy', 'guess'];
         }
 
         $this->defaultStrategy = $defaultStrategy;
@@ -102,7 +102,7 @@ class EscaperExtension extends AbstractExtension
     }
 }
 
-class_alias('Twig\Extension\EscaperExtension', 'Twig_Extension_Escaper');
+class_alias('Raider\Extension\EscaperExtension', 'Raider_Extension_Escaper');
 }
 
 namespace {

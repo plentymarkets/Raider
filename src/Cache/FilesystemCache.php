@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Cache;
+namespace Raider\Cache;
 
 /**
  * Implements a cache on the filesystem.
@@ -90,4 +90,4 @@ class FilesystemCache implements CacheInterface
     }
 }
 
-class_alias('Twig\Cache\FilesystemCache', 'Twig_Cache_Filesystem');
+class_alias('Raider\Cache\FilesystemCache', 'Raider_Cache_Filesystem');

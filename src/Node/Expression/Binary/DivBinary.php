@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Binary;
+namespace Raider\Node\Expression\Binary;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class DivBinary extends AbstractBinary
 {
@@ -22,4 +22,4 @@ class DivBinary extends AbstractBinary
     }
 }
 
-class_alias('Twig\Node\Expression\Binary\DivBinary', 'Twig_Node_Expression_Binary_Div');
+class_alias('Raider\Node\Expression\Binary\DivBinary', 'Raider_Node_Expression_Binary_Div');

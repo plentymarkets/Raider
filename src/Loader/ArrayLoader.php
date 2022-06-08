@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Loader;
+namespace Raider\Loader;
 
-use Twig\Error\LoaderError;
-use Twig\Source;
+use Raider\Error\LoaderError;
+use Raider\Source;
 
 /**
  * Loads a template from an array.
@@ -99,4 +99,4 @@ class ArrayLoader implements LoaderInterface, ExistsLoaderInterface, SourceConte
     }
 }
 
-class_alias('Twig\Loader\ArrayLoader', 'Twig_Loader_Array');
+class_alias('Raider\Loader\ArrayLoader', 'Raider_Loader_Array');

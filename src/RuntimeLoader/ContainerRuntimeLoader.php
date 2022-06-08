@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\RuntimeLoader;
+namespace Raider\RuntimeLoader;
 
 use Psr\Container\ContainerInterface;
 
@@ -38,4 +38,4 @@ class ContainerRuntimeLoader implements RuntimeLoaderInterface
     }
 }
 
-class_alias('Twig\RuntimeLoader\ContainerRuntimeLoader', 'Twig_ContainerRuntimeLoader');
+class_alias('Raider\RuntimeLoader\ContainerRuntimeLoader', 'Raider_ContainerRuntimeLoader');

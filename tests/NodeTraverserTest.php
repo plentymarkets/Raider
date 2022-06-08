@@ -11,10 +11,10 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Node\Node;
-use Twig\NodeTraverser;
-use Twig\NodeVisitor\NodeVisitorInterface;
+use Raider\Environment;
+use Raider\Node\Node;
+use Raider\NodeTraverser;
+use Raider\NodeVisitor\NodeVisitorInterface;
 
 class NodeTraverserTest extends \PHPUnit\Framework\TestCase
 {
@@ -23,7 +23,7 @@ class NodeTraverserTest extends \PHPUnit\Framework\TestCase
      */
     public function testNodeIsNullWhenTraversing()
     {
-        $env = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $env = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
         $traverser = new NodeTraverser($env, [new IdentityVisitor()]);
         $n = new Node([new Node([]), null, new Node([])]);
         $this->assertCount(3, $traverser->traverse($n));
@@ -32,12 +32,12 @@ class NodeTraverserTest extends \PHPUnit\Framework\TestCase
 
 class IdentityVisitor implements NodeVisitorInterface
 {
-    public function enterNode(\Twig_NodeInterface $node, Environment $env)
+    public function enterNode(\Raider_NodeInterface $node, Environment $env)
     {
         return $node;
     }
 
-    public function leaveNode(\Twig_NodeInterface $node, Environment $env)
+    public function leaveNode(\Raider_NodeInterface $node, Environment $env)
     {
         return $node;
     }

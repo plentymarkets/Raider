@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * Represents a sandbox node.
@@ -20,7 +20,7 @@ use Twig\Compiler;
  */
 class SandboxNode extends Node
 {
-    public function __construct(\Twig_NodeInterface $body, $lineno, $tag = null)
+    public function __construct(\Raider_NodeInterface $body, $lineno, $tag = null)
     {
         parent::__construct(['body' => $body], [], $lineno, $tag);
     }
@@ -51,4 +51,4 @@ class SandboxNode extends Node
     }
 }
 
-class_alias('Twig\Node\SandboxNode', 'Twig_Node_Sandbox');
+class_alias('Raider\Node\SandboxNode', 'Raider_Node_Sandbox');

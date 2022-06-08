@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Profiler\Dumper;
+namespace Raider\Profiler\Dumper;
 
-use Twig\Profiler\Profile;
+use Raider\Profiler\Profile;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -48,4 +48,4 @@ class HtmlDumper extends BaseDumper
     }
 }
 
-class_alias('Twig\Profiler\Dumper\HtmlDumper', 'Twig_Profiler_Dumper_Html');
+class_alias('Raider\Profiler\Dumper\HtmlDumper', 'Raider_Profiler_Dumper_Html');

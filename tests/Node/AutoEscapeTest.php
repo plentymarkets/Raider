@@ -11,10 +11,10 @@ namespace Twig\Tests\Node;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\AutoEscapeNode;
-use Twig\Node\Node;
-use Twig\Node\TextNode;
-use Twig\Test\NodeTestCase;
+use Raider\Node\AutoEscapeNode;
+use Raider\Node\Node;
+use Raider\Node\TextNode;
+use Raider\Test\NodeTestCase;
 
 class AutoEscapeTest extends NodeTestCase
 {

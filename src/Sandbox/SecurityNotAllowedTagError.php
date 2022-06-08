@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Sandbox;
+namespace Raider\Sandbox;
 
 /**
  * Exception thrown when a not allowed tag is used in a template.
@@ -32,4 +32,4 @@ class SecurityNotAllowedTagError extends SecurityError
     }
 }
 
-class_alias('Twig\Sandbox\SecurityNotAllowedTagError', 'Twig_Sandbox_SecurityNotAllowedTagError');
+class_alias('Raider\Sandbox\SecurityNotAllowedTagError', 'Raider_Sandbox_SecurityNotAllowedTagError');

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\Expression\AssignNameExpression;
-use Twig\Node\ImportNode;
-use Twig\Token;
+use Raider\Node\Expression\AssignNameExpression;
+use Raider\Node\ImportNode;
+use Raider\Token;
 
 /**
  * Imports macros.
@@ -42,4 +42,4 @@ class ImportTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\ImportTokenParser', 'Twig_TokenParser_Import');
+class_alias('Raider\TokenParser\ImportTokenParser', 'Raider_TokenParser_Import');

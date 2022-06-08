@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * Represents a spaceless node.
@@ -22,7 +22,7 @@ use Twig\Compiler;
  */
 class SpacelessNode extends Node
 {
-    public function __construct(\Twig_NodeInterface $body, $lineno, $tag = 'spaceless')
+    public function __construct(\Raider_NodeInterface $body, $lineno, $tag = 'spaceless')
     {
         parent::__construct(['body' => $body], [], $lineno, $tag);
     }
@@ -44,4 +44,4 @@ class SpacelessNode extends Node
     }
 }
 
-class_alias('Twig\Node\SpacelessNode', 'Twig_Node_Spaceless');
+class_alias('Raider\Node\SpacelessNode', 'Raider_Node_Spaceless');

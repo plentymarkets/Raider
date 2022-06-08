@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
-use Twig\NodeVisitor\NodeVisitorInterface;
+use Raider\NodeVisitor\NodeVisitorInterface;
 
 /**
  * A node traverser.
@@ -46,9 +46,9 @@ class NodeTraverser
     /**
      * Traverses a node and calls the registered visitors.
      *
-     * @return \Twig_NodeInterface
+     * @return \Raider_NodeInterface
      */
-    public function traverse(\Twig_NodeInterface $node)
+    public function traverse(\Raider_NodeInterface $node)
     {
         ksort($this->visitors);
         foreach ($this->visitors as $visitors) {
@@ -60,7 +60,7 @@ class NodeTraverser
         return $node;
     }
 
-    protected function traverseForVisitor(NodeVisitorInterface $visitor, \Twig_NodeInterface $node = null)
+    protected function traverseForVisitor(NodeVisitorInterface $visitor, \Raider_NodeInterface $node = null)
     {
         if (null === $node) {
             return;
@@ -86,4 +86,4 @@ class NodeTraverser
     }
 }
 
-class_alias('Twig\NodeTraverser', 'Twig_NodeTraverser');
+class_alias('Raider\NodeTraverser', 'Raider_NodeTraverser');

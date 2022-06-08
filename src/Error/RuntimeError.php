@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Error;
+namespace Raider\Error;
 
 /**
  * Exception thrown when an error occurs at runtime.
@@ -21,4 +21,4 @@ class RuntimeError extends Error
 {
 }
 
-class_alias('Twig\Error\RuntimeError', 'Twig_Error_Runtime');
+class_alias('Raider\Error\RuntimeError', 'Raider_Error_Runtime');

@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\NodeVisitor;
+namespace Raider\NodeVisitor;
 
-use Twig\Environment;
-use Twig\Node\Expression\BlockReferenceExpression;
-use Twig\Node\Expression\ConditionalExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\FilterExpression;
-use Twig\Node\Expression\FunctionExpression;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\Node\Expression\MethodCallExpression;
-use Twig\Node\Expression\NameExpression;
-use Twig\Node\Expression\ParentExpression;
-use Twig\Node\Node;
+use Raider\Environment;
+use Raider\Node\Expression\BlockReferenceExpression;
+use Raider\Node\Expression\ConditionalExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\FilterExpression;
+use Raider\Node\Expression\FunctionExpression;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\Node\Expression\MethodCallExpression;
+use Raider\Node\Expression\NameExpression;
+use Raider\Node\Expression\ParentExpression;
+use Raider\Node\Node;
 
 /**
  * @final
@@ -36,7 +36,7 @@ class SafeAnalysisNodeVisitor extends AbstractNodeVisitor
         $this->safeVars = $safeVars;
     }
 
-    public function getSafe(\Twig_NodeInterface $node)
+    public function getSafe(\Raider_NodeInterface $node)
     {
         $hash = spl_object_hash($node);
         if (!isset($this->data[$hash])) {
@@ -56,7 +56,7 @@ class SafeAnalysisNodeVisitor extends AbstractNodeVisitor
         }
     }
 
-    protected function setSafe(\Twig_NodeInterface $node, array $safe)
+    protected function setSafe(\Raider_NodeInterface $node, array $safe)
     {
         $hash = spl_object_hash($node);
         if (isset($this->data[$hash])) {
@@ -161,4 +161,4 @@ class SafeAnalysisNodeVisitor extends AbstractNodeVisitor
     }
 }
 
-class_alias('Twig\NodeVisitor\SafeAnalysisNodeVisitor', 'Twig_NodeVisitor_SafeAnalysis');
+class_alias('Raider\NodeVisitor\SafeAnalysisNodeVisitor', 'Raider_NodeVisitor_SafeAnalysis');

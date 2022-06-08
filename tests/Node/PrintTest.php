@@ -11,9 +11,9 @@ namespace Twig\Tests\Node;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\PrintNode;
-use Twig\Test\NodeTestCase;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\PrintNode;
+use Raider\Test\NodeTestCase;
 
 class PrintTest extends NodeTestCase
 {

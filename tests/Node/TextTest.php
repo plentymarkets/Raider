@@ -11,8 +11,8 @@ namespace Twig\Tests\Node;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\TextNode;
-use Twig\Test\NodeTestCase;
+use Raider\Node\TextNode;
+use Raider\Test\NodeTestCase;
 
 class TextTest extends NodeTestCase
 {

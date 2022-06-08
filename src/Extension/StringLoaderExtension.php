@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension {
-use Twig\TwigFunction;
+namespace Raider\Extension {
+use Raider\TwigFunction;
 
 /**
  * @final
@@ -30,12 +30,12 @@ class StringLoaderExtension extends AbstractExtension
     }
 }
 
-class_alias('Twig\Extension\StringLoaderExtension', 'Twig_Extension_StringLoader');
+class_alias('Raider\Extension\StringLoaderExtension', 'Raider_Extension_StringLoader');
 }
 
 namespace {
-use Twig\Environment;
-use Twig\TemplateWrapper;
+use Raider\Environment;
+use Raider\TemplateWrapper;
 
 /**
  * Loads a template from a string.

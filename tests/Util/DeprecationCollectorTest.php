@@ -11,9 +11,9 @@ namespace Twig\Tests\Util;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\TwigFunction;
-use Twig\Util\DeprecationCollector;
+use Raider\Environment;
+use Raider\TwigFunction;
+use Raider\Util\DeprecationCollector;
 
 class DeprecationCollectorTest extends \PHPUnit\Framework\TestCase
 {
@@ -22,13 +22,13 @@ class DeprecationCollectorTest extends \PHPUnit\Framework\TestCase
      */
     public function testCollect()
     {
-        $twig = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $twig = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
         $twig->addFunction(new TwigFunction('deprec', [$this, 'deprec'], ['deprecated' => true]));
 
         $collector = new DeprecationCollector($twig);
-        $deprecations = $collector->collect(new Twig_Tests_Util_Iterator());
+        $deprecations = $collector->collect(new Raider_Tests_Util_Iterator());
 
-        $this->assertEquals(['Twig Function "deprec" is deprecated in deprec.twig at line 1.'], $deprecations);
+        $this->assertEquals(['Raider Function "deprec" is deprecated in deprec.twig at line 1.'], $deprecations);
     }
 
     public function deprec()
@@ -36,7 +36,7 @@ class DeprecationCollectorTest extends \PHPUnit\Framework\TestCase
     }
 }
 
-class Twig_Tests_Util_Iterator implements \IteratorAggregate
+class Raider_Tests_Util_Iterator implements \IteratorAggregate
 {
     public function getIterator()
     {

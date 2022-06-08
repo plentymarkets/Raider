@@ -9,30 +9,30 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
-use Twig\Cache\CacheInterface;
-use Twig\Cache\FilesystemCache;
-use Twig\Cache\NullCache;
-use Twig\Error\Error;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Error\SyntaxError;
-use Twig\Extension\CoreExtension;
-use Twig\Extension\EscaperExtension;
-use Twig\Extension\ExtensionInterface;
-use Twig\Extension\GlobalsInterface;
-use Twig\Extension\InitRuntimeInterface;
-use Twig\Extension\OptimizerExtension;
-use Twig\Extension\StagingExtension;
-use Twig\Loader\ArrayLoader;
-use Twig\Loader\ChainLoader;
-use Twig\Loader\LoaderInterface;
-use Twig\Loader\SourceContextLoaderInterface;
-use Twig\Node\ModuleNode;
-use Twig\NodeVisitor\NodeVisitorInterface;
-use Twig\RuntimeLoader\RuntimeLoaderInterface;
-use Twig\TokenParser\TokenParserInterface;
+use Raider\Cache\CacheInterface;
+use Raider\Cache\FilesystemCache;
+use Raider\Cache\NullCache;
+use Raider\Error\Error;
+use Raider\Error\LoaderError;
+use Raider\Error\RuntimeError;
+use Raider\Error\SyntaxError;
+use Raider\Extension\CoreExtension;
+use Raider\Extension\EscaperExtension;
+use Raider\Extension\ExtensionInterface;
+use Raider\Extension\GlobalsInterface;
+use Raider\Extension\InitRuntimeInterface;
+use Raider\Extension\OptimizerExtension;
+use Raider\Extension\StagingExtension;
+use Raider\Loader\ArrayLoader;
+use Raider\Loader\ChainLoader;
+use Raider\Loader\LoaderInterface;
+use Raider\Loader\SourceContextLoaderInterface;
+use Raider\Node\ModuleNode;
+use Raider\NodeVisitor\NodeVisitorInterface;
+use Raider\RuntimeLoader\RuntimeLoaderInterface;
+use Raider\TokenParser\TokenParserInterface;
 
 /**
  * Stores the Twig configuration and renders templates.
@@ -95,10 +95,10 @@ class Environment
      *  * charset: The charset used by the templates (default to UTF-8).
      *
      *  * base_template_class: The base template class to use for generated
-     *                         templates (default to \Twig\Template).
+     *                         templates (default to \Raider\Template).
      *
      *  * cache: An absolute path where to store the compiled templates,
-     *           a \Twig\Cache\CacheInterface implementation,
+     *           a \Raider\Cache\CacheInterface implementation,
      *           or false to disable compilation cache (default).
      *
      *  * auto_reload: Whether to reload the template if the original source changed.
@@ -130,7 +130,7 @@ class Environment
         $options = array_merge([
             'debug' => false,
             'charset' => 'UTF-8',
-            'base_template_class' => '\Twig\Template',
+            'base_template_class' => '\Raider\Template',
             'strict_variables' => false,
             'autoescape' => 'html',
             'cache' => false,
@@ -307,7 +307,7 @@ class Environment
         } elseif ($cache instanceof CacheInterface) {
             $this->originalCache = $this->cache = $cache;
         } else {
-            throw new \LogicException('Cache can only be a string, false, or a \Twig\Cache\CacheInterface implementation.');
+            throw new \LogicException('Cache can only be a string, false, or a \Raider\Cache\CacheInterface implementation.');
         }
     }
 
@@ -402,7 +402,7 @@ class Environment
     /**
      * Loads a template.
      *
-     * @param string|TemplateWrapper|\Twig\Template $name The template name
+     * @param string|TemplateWrapper|\Raider\Template $name The template name
      *
      * @throws LoaderError  When the template cannot be found
      * @throws RuntimeError When a previously generated cache is corrupted
@@ -432,7 +432,7 @@ class Environment
      * @param string $name  The template name
      * @param int    $index The index if it is an embedded template
      *
-     * @return \Twig_TemplateInterface A template instance representing the given template name
+     * @return \Raider_TemplateInterface A template instance representing the given template name
      *
      * @throws LoaderError  When the template cannot be found
      * @throws RuntimeError When a previously generated cache is corrupted
@@ -583,10 +583,10 @@ class Environment
     /**
      * Tries to load a template consecutively from an array.
      *
-     * Similar to load() but it also accepts instances of \Twig\Template and
-     * \Twig\TemplateWrapper, and an array of templates where each is tried to be loaded.
+     * Similar to load() but it also accepts instances of \Raider\Template and
+     * \Raider\TemplateWrapper, and an array of templates where each is tried to be loaded.
      *
-     * @param string|Template|\Twig\TemplateWrapper|array $names A template or an array of templates to try consecutively
+     * @param string|Template|\Raider\TemplateWrapper|array $names A template or an array of templates to try consecutively
      *
      * @return TemplateWrapper|Template
      *
@@ -652,7 +652,7 @@ class Environment
     /**
      * Gets the Lexer instance.
      *
-     * @return \Twig_LexerInterface
+     * @return \Raider_LexerInterface
      *
      * @deprecated since 1.25 (to be removed in 2.0)
      */
@@ -667,7 +667,7 @@ class Environment
         return $this->lexer;
     }
 
-    public function setLexer(\Twig_LexerInterface $lexer)
+    public function setLexer(\Raider_LexerInterface $lexer)
     {
         $this->lexer = $lexer;
     }
@@ -699,7 +699,7 @@ class Environment
     /**
      * Gets the Parser instance.
      *
-     * @return \Twig_ParserInterface
+     * @return \Raider_ParserInterface
      *
      * @deprecated since 1.25 (to be removed in 2.0)
      */
@@ -714,7 +714,7 @@ class Environment
         return $this->parser;
     }
 
-    public function setParser(\Twig_ParserInterface $parser)
+    public function setParser(\Raider_ParserInterface $parser)
     {
         $this->parser = $parser;
     }
@@ -738,7 +738,7 @@ class Environment
     /**
      * Gets the Compiler instance.
      *
-     * @return \Twig_CompilerInterface
+     * @return \Raider_CompilerInterface
      *
      * @deprecated since 1.25 (to be removed in 2.0)
      */
@@ -753,7 +753,7 @@ class Environment
         return $this->compiler;
     }
 
-    public function setCompiler(\Twig_CompilerInterface $compiler)
+    public function setCompiler(\Raider_CompilerInterface $compiler)
     {
         $this->compiler = $compiler;
     }
@@ -763,7 +763,7 @@ class Environment
      *
      * @return string The compiled PHP source code
      */
-    public function compile(\Twig_NodeInterface $node)
+    public function compile(\Raider_NodeInterface $node)
     {
         if (null === $this->compiler) {
             $this->compiler = new Compiler($this);
@@ -802,7 +802,7 @@ class Environment
     public function setLoader(LoaderInterface $loader)
     {
         if (!$loader instanceof SourceContextLoaderInterface && 0 !== strpos(\get_class($loader), 'Mock_')) {
-            @trigger_error(sprintf('Twig loader "%s" should implement Twig\Loader\SourceContextLoaderInterface since version 1.27.', \get_class($loader)), \E_USER_DEPRECATED);
+            @trigger_error(sprintf('Raider loader "%s" should implement Twig\Loader\SourceContextLoaderInterface since version 1.27.', \get_class($loader)), \E_USER_DEPRECATED);
         }
 
         $this->loader = $loader;
@@ -856,8 +856,8 @@ class Environment
                 $m = new \ReflectionMethod($extension, 'initRuntime');
 
                 $parentClass = $m->getDeclaringClass()->getName();
-                if ('Twig_Extension' !== $parentClass && 'Twig\Extension\AbstractExtension' !== $parentClass) {
-                    @trigger_error(sprintf('Defining the initRuntime() method in the "%s" extension is deprecated since version 1.23. Use the `needs_environment` option to get the \Twig_Environment instance in filters, functions, or tests; or explicitly implement Twig\Extension\InitRuntimeInterface if needed (not recommended).', $name), \E_USER_DEPRECATED);
+                if ('Raider_Extension' !== $parentClass && 'Raider\Extension\AbstractExtension' !== $parentClass) {
+                    @trigger_error(sprintf('Defining the initRuntime() method in the "%s" extension is deprecated since version 1.23. Use the `needs_environment` option to get the \Raider_Environment instance in filters, functions, or tests; or explicitly implement Twig\Extension\InitRuntimeInterface if needed (not recommended).', $name), \E_USER_DEPRECATED);
                 }
             }
 
@@ -1045,7 +1045,7 @@ class Environment
     /**
      * Gets the registered Token Parsers.
      *
-     * @return \Twig_TokenParserBrokerInterface
+     * @return \Raider_TokenParserBrokerInterface
      *
      * @internal
      */
@@ -1061,7 +1061,7 @@ class Environment
     /**
      * Gets registered tags.
      *
-     * Be warned that this method cannot return tags defined by \Twig_TokenParserBrokerInterface classes.
+     * Be warned that this method cannot return tags defined by \Raider_TokenParserBrokerInterface classes.
      *
      * @return TokenParserInterface[]
      *
@@ -1107,20 +1107,20 @@ class Environment
     /**
      * Registers a Filter.
      *
-     * @param string|TwigFilter                $name   The filter name or a \Twig_SimpleFilter instance
-     * @param \Twig_FilterInterface|TwigFilter $filter
+     * @param string|TwigFilter                $name   The filter name or a \Raider_SimpleFilter instance
+     * @param \Raider_FilterInterface|TwigFilter $filter
      */
     public function addFilter($name, $filter = null)
     {
-        if (!$name instanceof TwigFilter && !($filter instanceof TwigFilter || $filter instanceof \Twig_FilterInterface)) {
-            throw new \LogicException('A filter must be an instance of \Twig_FilterInterface or \Twig_SimpleFilter.');
+        if (!$name instanceof TwigFilter && !($filter instanceof TwigFilter || $filter instanceof \Raider_FilterInterface)) {
+            throw new \LogicException('A filter must be an instance of \Raider_FilterInterface or \Raider_SimpleFilter.');
         }
 
         if ($name instanceof TwigFilter) {
             $filter = $name;
             $name = $filter->getName();
         } else {
-            @trigger_error(sprintf('Passing a name as a first argument to the %s method is deprecated since version 1.21. Pass an instance of "Twig_SimpleFilter" instead when defining filter "%s".', __METHOD__, $name), \E_USER_DEPRECATED);
+            @trigger_error(sprintf('Passing a name as a first argument to the %s method is deprecated since version 1.21. Pass an instance of "Raider_SimpleFilter" instead when defining filter "%s".', __METHOD__, $name), \E_USER_DEPRECATED);
         }
 
         if ($this->extensionInitialized) {
@@ -1138,7 +1138,7 @@ class Environment
      *
      * @param string $name The filter name
      *
-     * @return \Twig_Filter|false
+     * @return \Raider_Filter|false
      *
      * @internal
      */
@@ -1184,7 +1184,7 @@ class Environment
      *
      * Be warned that this method cannot return filters defined with registerUndefinedFilterCallback.
      *
-     * @return \Twig_FilterInterface[]
+     * @return \Raider_FilterInterface[]
      *
      * @see registerUndefinedFilterCallback
      *
@@ -1202,20 +1202,20 @@ class Environment
     /**
      * Registers a Test.
      *
-     * @param string|TwigTest              $name The test name or a \Twig_SimpleTest instance
-     * @param \Twig_TestInterface|TwigTest $test A \Twig_TestInterface instance or a \Twig_SimpleTest instance
+     * @param string|TwigTest              $name The test name or a \Raider_SimpleTest instance
+     * @param \Raider_TestInterface|TwigTest $test A \Raider_TestInterface instance or a \Raider_SimpleTest instance
      */
     public function addTest($name, $test = null)
     {
-        if (!$name instanceof TwigTest && !($test instanceof TwigTest || $test instanceof \Twig_TestInterface)) {
-            throw new \LogicException('A test must be an instance of \Twig_TestInterface or \Twig_SimpleTest.');
+        if (!$name instanceof TwigTest && !($test instanceof TwigTest || $test instanceof \Raider_TestInterface)) {
+            throw new \LogicException('A test must be an instance of \Raider_TestInterface or \Raider_SimpleTest.');
         }
 
         if ($name instanceof TwigTest) {
             $test = $name;
             $name = $test->getName();
         } else {
-            @trigger_error(sprintf('Passing a name as a first argument to the %s method is deprecated since version 1.21. Pass an instance of "Twig_SimpleTest" instead when defining test "%s".', __METHOD__, $name), \E_USER_DEPRECATED);
+            @trigger_error(sprintf('Passing a name as a first argument to the %s method is deprecated since version 1.21. Pass an instance of "Raider_SimpleTest" instead when defining test "%s".', __METHOD__, $name), \E_USER_DEPRECATED);
         }
 
         if ($this->extensionInitialized) {
@@ -1228,7 +1228,7 @@ class Environment
     /**
      * Gets the registered Tests.
      *
-     * @return \Twig_TestInterface[]
+     * @return \Raider_TestInterface[]
      *
      * @internal
      */
@@ -1246,7 +1246,7 @@ class Environment
      *
      * @param string $name The test name
      *
-     * @return \Twig_Test|false
+     * @return \Raider_Test|false
      *
      * @internal
      */
@@ -1279,20 +1279,20 @@ class Environment
     /**
      * Registers a Function.
      *
-     * @param string|TwigFunction                  $name     The function name or a \Twig_SimpleFunction instance
-     * @param \Twig_FunctionInterface|TwigFunction $function
+     * @param string|TwigFunction                  $name     The function name or a \Raider_SimpleFunction instance
+     * @param \Raider_FunctionInterface|TwigFunction $function
      */
     public function addFunction($name, $function = null)
     {
-        if (!$name instanceof TwigFunction && !($function instanceof TwigFunction || $function instanceof \Twig_FunctionInterface)) {
-            throw new \LogicException('A function must be an instance of \Twig_FunctionInterface or \Twig_SimpleFunction.');
+        if (!$name instanceof TwigFunction && !($function instanceof TwigFunction || $function instanceof \Raider_FunctionInterface)) {
+            throw new \LogicException('A function must be an instance of \Raider_FunctionInterface or \Raider_SimpleFunction.');
         }
 
         if ($name instanceof TwigFunction) {
             $function = $name;
             $name = $function->getName();
         } else {
-            @trigger_error(sprintf('Passing a name as a first argument to the %s method is deprecated since version 1.21. Pass an instance of "Twig_SimpleFunction" instead when defining function "%s".', __METHOD__, $name), \E_USER_DEPRECATED);
+            @trigger_error(sprintf('Passing a name as a first argument to the %s method is deprecated since version 1.21. Pass an instance of "Raider_SimpleFunction" instead when defining function "%s".', __METHOD__, $name), \E_USER_DEPRECATED);
         }
 
         if ($this->extensionInitialized) {
@@ -1310,7 +1310,7 @@ class Environment
      *
      * @param string $name function name
      *
-     * @return \Twig_Function|false
+     * @return \Raider_Function|false
      *
      * @internal
      */
@@ -1356,7 +1356,7 @@ class Environment
      *
      * Be warned that this method cannot return functions defined with registerUndefinedFunctionCallback.
      *
-     * @return \Twig_FunctionInterface[]
+     * @return \Raider_FunctionInterface[]
      *
      * @see registerUndefinedFunctionCallback
      *
@@ -1495,7 +1495,7 @@ class Environment
                 $m = new \ReflectionMethod($extension, 'getGlobals');
 
                 $parentClass = $m->getDeclaringClass()->getName();
-                if ('Twig_Extension' !== $parentClass && 'Twig\Extension\AbstractExtension' !== $parentClass) {
+                if ('Raider_Extension' !== $parentClass && 'Raider\Extension\AbstractExtension' !== $parentClass) {
                     @trigger_error(sprintf('Defining the getGlobals() method in the "%s" extension without explicitly implementing Twig\Extension\GlobalsInterface is deprecated since version 1.23.', $name), \E_USER_DEPRECATED);
                 }
             }
@@ -1522,7 +1522,7 @@ class Environment
             return;
         }
 
-        $this->parsers = new \Twig_TokenParserBroker([], [], false);
+        $this->parsers = new \Raider_TokenParserBroker([], [], false);
         $this->filters = [];
         $this->functions = [];
         $this->tests = [];
@@ -1548,7 +1548,7 @@ class Environment
             if ($filter instanceof TwigFilter) {
                 $name = $filter->getName();
             } else {
-                @trigger_error(sprintf('Using an instance of "%s" for filter "%s" is deprecated since version 1.21. Use \Twig_SimpleFilter instead.', \get_class($filter), $name), \E_USER_DEPRECATED);
+                @trigger_error(sprintf('Using an instance of "%s" for filter "%s" is deprecated since version 1.21. Use \Raider_SimpleFilter instead.', \get_class($filter), $name), \E_USER_DEPRECATED);
             }
 
             $this->filters[$name] = $filter;
@@ -1559,7 +1559,7 @@ class Environment
             if ($function instanceof TwigFunction) {
                 $name = $function->getName();
             } else {
-                @trigger_error(sprintf('Using an instance of "%s" for function "%s" is deprecated since version 1.21. Use \Twig_SimpleFunction instead.', \get_class($function), $name), \E_USER_DEPRECATED);
+                @trigger_error(sprintf('Using an instance of "%s" for function "%s" is deprecated since version 1.21. Use \Raider_SimpleFunction instead.', \get_class($function), $name), \E_USER_DEPRECATED);
             }
 
             $this->functions[$name] = $function;
@@ -1570,7 +1570,7 @@ class Environment
             if ($test instanceof TwigTest) {
                 $name = $test->getName();
             } else {
-                @trigger_error(sprintf('Using an instance of "%s" for test "%s" is deprecated since version 1.21. Use \Twig_SimpleTest instead.', \get_class($test), $name), \E_USER_DEPRECATED);
+                @trigger_error(sprintf('Using an instance of "%s" for test "%s" is deprecated since version 1.21. Use \Raider_SimpleTest instead.', \get_class($test), $name), \E_USER_DEPRECATED);
             }
 
             $this->tests[$name] = $test;
@@ -1580,12 +1580,12 @@ class Environment
         foreach ($extension->getTokenParsers() as $parser) {
             if ($parser instanceof TokenParserInterface) {
                 $this->parsers->addTokenParser($parser);
-            } elseif ($parser instanceof \Twig_TokenParserBrokerInterface) {
-                @trigger_error('Registering a \Twig_TokenParserBrokerInterface instance is deprecated since version 1.21.', \E_USER_DEPRECATED);
+            } elseif ($parser instanceof \Raider_TokenParserBrokerInterface) {
+                @trigger_error('Registering a \Raider_TokenParserBrokerInterface instance is deprecated since version 1.21.', \E_USER_DEPRECATED);
 
                 $this->parsers->addTokenParserBroker($parser);
             } else {
-                throw new \LogicException('getTokenParsers() must return an array of \Twig_TokenParserInterface or \Twig_TokenParserBrokerInterface instances.');
+                throw new \LogicException('getTokenParsers() must return an array of \Raider_TokenParserInterface or \Raider_TokenParserBrokerInterface instances.');
             }
         }
 
@@ -1635,4 +1635,4 @@ class Environment
     }
 }
 
-class_alias('Twig\Environment', 'Twig_Environment');
+class_alias('Raider\Environment', 'Raider_Environment');

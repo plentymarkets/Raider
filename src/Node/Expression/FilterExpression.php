@@ -10,14 +10,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
-use Twig\TwigFilter;
+use Raider\Compiler;
+use Raider\TwigFilter;
 
 class FilterExpression extends CallExpression
 {
-    public function __construct(\Twig_NodeInterface $node, ConstantExpression $filterName, \Twig_NodeInterface $arguments, $lineno, $tag = null)
+    public function __construct(\Raider_NodeInterface $node, ConstantExpression $filterName, \Raider_NodeInterface $arguments, $lineno, $tag = null)
     {
         parent::__construct(['node' => $node, 'filter' => $filterName, 'arguments' => $arguments], [], $lineno, $tag);
     }
@@ -33,7 +33,7 @@ class FilterExpression extends CallExpression
         $this->setAttribute('needs_environment', $filter->needsEnvironment());
         $this->setAttribute('needs_context', $filter->needsContext());
         $this->setAttribute('arguments', $filter->getArguments());
-        if ($filter instanceof \Twig_FilterCallableInterface || $filter instanceof TwigFilter) {
+        if ($filter instanceof \Raider_FilterCallableInterface || $filter instanceof TwigFilter) {
             $this->setAttribute('callable', $filter->getCallable());
         }
         if ($filter instanceof TwigFilter) {
@@ -44,4 +44,4 @@ class FilterExpression extends CallExpression
     }
 }
 
-class_alias('Twig\Node\Expression\FilterExpression', 'Twig_Node_Expression_Filter');
+class_alias('Raider\Node\Expression\FilterExpression', 'Raider_Node_Expression_Filter');

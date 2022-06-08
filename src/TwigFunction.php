@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
-use Twig\Node\Node;
+use Raider\Node\Node;
 
 /**
  * Represents a template function.
@@ -37,7 +37,7 @@ class TwigFunction
             'is_variadic' => false,
             'is_safe' => null,
             'is_safe_callback' => null,
-            'node_class' => '\Twig\Node\Expression\FunctionExpression',
+            'node_class' => '\Raider\Node\Expression\FunctionExpression',
             'deprecated' => false,
             'alternative' => null,
         ], $options);
@@ -112,7 +112,7 @@ class TwigFunction
     }
 }
 
-class_alias('Twig\TwigFunction', 'Twig_SimpleFunction');
+class_alias('Raider\TwigFunction', 'Raider_SimpleFunction');
 
 // Ensure that the aliased name is loaded to keep BC for classes implementing the typehint with the old aliased name.
-class_exists('Twig\Node\Node');
+class_exists('Raider\Node\Node');

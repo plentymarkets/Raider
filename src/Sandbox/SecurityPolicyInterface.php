@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Sandbox;
+namespace Raider\Sandbox;
 
 /**
  * Interface that all security policy classes must implements.
@@ -25,4 +25,4 @@ interface SecurityPolicyInterface
     public function checkPropertyAllowed($obj, $method);
 }
 
-class_alias('Twig\Sandbox\SecurityPolicyInterface', 'Twig_Sandbox_SecurityPolicyInterface');
+class_alias('Raider\Sandbox\SecurityPolicyInterface', 'Raider_Sandbox_SecurityPolicyInterface');

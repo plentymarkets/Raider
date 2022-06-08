@@ -10,14 +10,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\BlockNode;
-use Twig\Node\BlockReferenceNode;
-use Twig\Node\Node;
-use Twig\Node\PrintNode;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Node\BlockNode;
+use Raider\Node\BlockReferenceNode;
+use Raider\Node\Node;
+use Raider\Node\PrintNode;
+use Raider\Token;
 
 /**
  * Marks a section of a template as being reusable.
@@ -77,4 +77,4 @@ class BlockTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\BlockTokenParser', 'Twig_TokenParser_Block');
+class_alias('Raider\TokenParser\BlockTokenParser', 'Raider_TokenParser_Block');

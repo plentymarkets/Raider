@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -21,7 +21,7 @@ class CheckSecurityCallNode extends Node
     public function compile(Compiler $compiler)
     {
         $compiler
-            ->write("\$this->sandbox = \$this->env->getExtension('\Twig\Extension\SandboxExtension');\n")
+            ->write("\$this->sandbox = \$this->env->getExtension('\Raider\Extension\SandboxExtension');\n")
             ->write("\$this->checkSecurity();\n")
         ;
     }

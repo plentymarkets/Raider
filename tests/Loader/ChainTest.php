@@ -11,13 +11,13 @@ namespace Twig\Tests\Loader;
  * file that was distributed with this source code.
  */
 
-use Twig\Loader\ArrayLoader;
-use Twig\Loader\ChainLoader;
-use Twig\Loader\ExistsLoaderInterface;
-use Twig\Loader\FilesystemLoader;
-use Twig\Loader\LoaderInterface;
-use Twig\Loader\SourceContextLoaderInterface;
-use Twig\Source;
+use Raider\Loader\ArrayLoader;
+use Raider\Loader\ChainLoader;
+use Raider\Loader\ExistsLoaderInterface;
+use Raider\Loader\FilesystemLoader;
+use Raider\Loader\LoaderInterface;
+use Raider\Loader\SourceContextLoaderInterface;
+use Raider\Source;
 
 class ChainTest extends \PHPUnit\Framework\TestCase
 {
@@ -58,7 +58,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     public function testGetSourceContextWhenTemplateDoesNotExist()
     {
-        $this->expectException('\Twig\Error\LoaderError');
+        $this->expectException('\Raider\Error\LoaderError');
 
         $loader = new ChainLoader([]);
 
@@ -70,7 +70,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
      */
     public function testGetSourceWhenTemplateDoesNotExist()
     {
-        $this->expectException('\Twig\Error\LoaderError');
+        $this->expectException('\Raider\Error\LoaderError');
 
         $loader = new ChainLoader([]);
 
@@ -90,7 +90,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     public function testGetCacheKeyWhenTemplateDoesNotExist()
     {
-        $this->expectException('\Twig\Error\LoaderError');
+        $this->expectException('\Raider\Error\LoaderError');
 
         $loader = new ChainLoader([]);
 
@@ -113,7 +113,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
         // can be removed in 2.0
         $loader2 = $this->createMock('Twig\Tests\Loader\ChainTestLoaderInterface');
-        //$loader2 = $this->createMock(['\Twig\Loader\LoaderInterface', '\Twig\Loader\SourceContextLoaderInterface']);
+        //$loader2 = $this->createMock(['\Raider\Loader\LoaderInterface', '\Raider\Loader\SourceContextLoaderInterface']);
         $loader2->expects($this->once())->method('getSourceContext')->willReturn(new Source('content', 'index'));
 
         $loader = new ChainLoader();

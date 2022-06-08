@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
-use Twig\Node\Expression\Binary\AndBinary;
-use Twig\Node\Expression\Test\DefinedTest;
-use Twig\Node\Expression\Test\NullTest;
-use Twig\Node\Expression\Unary\NotUnary;
-use Twig\Node\Node;
+use Raider\Compiler;
+use Raider\Node\Expression\Binary\AndBinary;
+use Raider\Node\Expression\Test\DefinedTest;
+use Raider\Node\Expression\Test\NullTest;
+use Raider\Node\Expression\Unary\NotUnary;
+use Raider\Node\Node;
 
 class NullCoalesceExpression extends ConditionalExpression
 {
-    public function __construct(\Twig_NodeInterface $left, \Twig_NodeInterface $right, $lineno)
+    public function __construct(\Raider_NodeInterface $left, \Raider_NodeInterface $right, $lineno)
     {
         $test = new DefinedTest(clone $left, 'defined', new Node(), $left->getTemplateLine());
         // for "block()", we don't need the null test as the return value is always a string
@@ -59,4 +59,4 @@ class NullCoalesceExpression extends ConditionalExpression
     }
 }
 
-class_alias('Twig\Node\Expression\NullCoalesceExpression', 'Twig_Node_Expression_NullCoalesce');
+class_alias('Raider\Node\Expression\NullCoalesceExpression', 'Raider_Node_Expression_NullCoalesce');

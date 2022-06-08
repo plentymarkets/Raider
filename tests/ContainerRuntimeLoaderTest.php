@@ -11,7 +11,7 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\RuntimeLoader\ContainerRuntimeLoader;
+use Raider\RuntimeLoader\ContainerRuntimeLoader;
 
 class ContainerRuntimeLoaderTest extends \PHPUnit\Framework\TestCase
 {

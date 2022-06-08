@@ -11,9 +11,9 @@ namespace Twig\Tests\Loader;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Error\LoaderError;
-use Twig\Loader\FilesystemLoader;
+use Raider\Environment;
+use Raider\Error\LoaderError;
+use Raider\Loader\FilesystemLoader;
 
 class FilesystemTest extends \PHPUnit\Framework\TestCase
 {
@@ -155,7 +155,7 @@ class FilesystemTest extends \PHPUnit\Framework\TestCase
         try {
             $loader->getSourceContext('@named/nowhere.html');
         } catch (\Exception $e) {
-            $this->assertInstanceOf('\Twig\Error\LoaderError', $e);
+            $this->assertInstanceOf('\Raider\Error\LoaderError', $e);
             $this->assertStringContainsString('Unable to find template "@named/nowhere.html"', $e->getMessage());
         }
     }

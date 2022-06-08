@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\Expression\TempNameExpression;
-use Twig\Node\Node;
-use Twig\Node\PrintNode;
-use Twig\Node\SetNode;
-use Twig\Token;
+use Raider\Node\Expression\TempNameExpression;
+use Raider\Node\Node;
+use Raider\Node\PrintNode;
+use Raider\Node\SetNode;
+use Raider\Token;
 
 /**
  * Applies filters on a section of a template.

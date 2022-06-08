@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Profiler;
+namespace Raider\Profiler;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -185,4 +185,4 @@ class Profile implements \IteratorAggregate, \Serializable
     }
 }
 
-class_alias('Twig\Profiler\Profile', 'Twig_Profiler_Profile');
+class_alias('Raider\Profiler\Profile', 'Raider_Profiler_Profile');

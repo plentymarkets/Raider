@@ -11,8 +11,8 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Loader\ArrayLoader;
+use Raider\Environment;
+use Raider\Loader\ArrayLoader;
 
 class TemplateWrapperTest extends \PHPUnit\Framework\TestCase
 {

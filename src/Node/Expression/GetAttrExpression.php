@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
-use Twig\Template;
+use Raider\Compiler;
+use Raider\Template;
 
 class GetAttrExpression extends AbstractExpression
 {
@@ -77,4 +77,4 @@ class GetAttrExpression extends AbstractExpression
     }
 }
 
-class_alias('Twig\Node\Expression\GetAttrExpression', 'Twig_Node_Expression_GetAttr');
+class_alias('Raider\Node\Expression\GetAttrExpression', 'Raider_Node_Expression_GetAttr');

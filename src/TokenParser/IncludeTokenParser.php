@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\IncludeNode;
-use Twig\Token;
+use Raider\Node\IncludeNode;
+use Raider\Token;
 
 /**
  * Includes a template.
@@ -65,4 +65,4 @@ class IncludeTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\IncludeTokenParser', 'Twig_TokenParser_Include');
+class_alias('Raider\TokenParser\IncludeTokenParser', 'Raider_TokenParser_Include');

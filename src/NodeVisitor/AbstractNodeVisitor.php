@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\NodeVisitor;
+namespace Raider\NodeVisitor;
 
-use Twig\Environment;
-use Twig\Node\Node;
+use Raider\Environment;
+use Raider\Node\Node;
 
 /**
  * Used to make node visitors compatible with Twig 1.x and 2.x.
@@ -23,19 +23,19 @@ use Twig\Node\Node;
  */
 abstract class AbstractNodeVisitor implements NodeVisitorInterface
 {
-    final public function enterNode(\Twig_NodeInterface $node, Environment $env)
+    final public function enterNode(\Raider_NodeInterface $node, Environment $env)
     {
         if (!$node instanceof Node) {
-            throw new \LogicException(sprintf('%s only supports \Twig\Node\Node instances.', __CLASS__));
+            throw new \LogicException(sprintf('%s only supports \Raider\Node\Node instances.', __CLASS__));
         }
 
         return $this->doEnterNode($node, $env);
     }
 
-    final public function leaveNode(\Twig_NodeInterface $node, Environment $env)
+    final public function leaveNode(\Raider_NodeInterface $node, Environment $env)
     {
         if (!$node instanceof Node) {
-            throw new \LogicException(sprintf('%s only supports \Twig\Node\Node instances.', __CLASS__));
+            throw new \LogicException(sprintf('%s only supports \Raider\Node\Node instances.', __CLASS__));
         }
 
         return $this->doLeaveNode($node, $env);
@@ -56,4 +56,4 @@ abstract class AbstractNodeVisitor implements NodeVisitorInterface
     abstract protected function doLeaveNode(Node $node, Environment $env);
 }
 
-class_alias('Twig\NodeVisitor\AbstractNodeVisitor', 'Twig_BaseNodeVisitor');
+class_alias('Raider\NodeVisitor\AbstractNodeVisitor', 'Raider_BaseNodeVisitor');

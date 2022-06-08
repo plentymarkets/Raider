@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
-use Twig\Node\Node;
+use Raider\Compiler;
+use Raider\Node\Node;
 
 /**
  * Represents a block call node.
@@ -25,7 +25,7 @@ class BlockReferenceExpression extends AbstractExpression
     /**
      * @param Node|null $template
      */
-    public function __construct(\Twig_NodeInterface $name, $template, $lineno, $tag = null)
+    public function __construct(\Raider_NodeInterface $name, $template, $lineno, $tag = null)
     {
         if (\is_bool($template)) {
             @trigger_error(sprintf('The %s method "$asString" argument is deprecated since version 1.28 and will be removed in 2.0.', __METHOD__), \E_USER_DEPRECATED);
@@ -95,4 +95,4 @@ class BlockReferenceExpression extends AbstractExpression
     }
 }
 
-class_alias('Twig\Node\Expression\BlockReferenceExpression', 'Twig_Node_Expression_BlockReference');
+class_alias('Raider\Node\Expression\BlockReferenceExpression', 'Raider_Node_Expression_BlockReference');

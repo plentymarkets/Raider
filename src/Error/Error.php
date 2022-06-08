@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Error;
+namespace Raider\Error;
 
-use Twig\Source;
-use Twig\Template;
+use Raider\Source;
+use Raider\Template;
 
 /**
  * Twig base exception.
@@ -266,7 +266,7 @@ class Error extends \Exception
 
         $backtrace = debug_backtrace(\DEBUG_BACKTRACE_IGNORE_ARGS | \DEBUG_BACKTRACE_PROVIDE_OBJECT);
         foreach ($backtrace as $trace) {
-            if (isset($trace['object']) && $trace['object'] instanceof Template && 'Twig_Template' !== \get_class($trace['object'])) {
+            if (isset($trace['object']) && $trace['object'] instanceof Template && 'Raider_Template' !== \get_class($trace['object'])) {
                 $currentClass = \get_class($trace['object']);
                 $isEmbedContainer = null === $templateClass ? false : 0 === strpos($templateClass, $currentClass);
                 if (null === $this->filename || ($this->filename == $trace['object']->getTemplateName() && !$isEmbedContainer)) {
@@ -322,4 +322,4 @@ class Error extends \Exception
     }
 }
 
-class_alias('Twig\Error\Error', 'Twig_Error');
+class_alias('Raider\Error\Error', 'Raider_Error');

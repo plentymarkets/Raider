@@ -15,4 +15,4 @@
 --DATA--
 return []
 --EXCEPTION--
-Twig\Error\SyntaxError: Unknown "linput" function in "index.twig" at line 6.
+Raider\Error\SyntaxError: Unknown "linput" function in "index.twig" at line 6.

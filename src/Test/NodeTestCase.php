@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Test;
+namespace Raider\Test;
 
 use PHPUnit\Framework\TestCase;
-use Twig\Compiler;
-use Twig\Environment;
-use Twig\Loader\ArrayLoader;
-use Twig\Node\Node;
+use Raider\Compiler;
+use Raider\Environment;
+use Raider\Loader\ArrayLoader;
+use Raider\Node\Node;
 
 abstract class NodeTestCase extends TestCase
 {
@@ -76,4 +76,4 @@ abstract class NodeTestCase extends TestCase
     }
 }
 
-class_alias('Twig\Test\NodeTestCase', 'Twig_Test_NodeTestCase');
+class_alias('Raider\Test\NodeTestCase', 'Raider_Test_NodeTestCase');

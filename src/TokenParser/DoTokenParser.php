@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\DoNode;
-use Twig\Token;
+use Raider\Node\DoNode;
+use Raider\Token;
 
 /**
  * Evaluates an expression, discarding the returned value.
@@ -36,4 +36,4 @@ class DoTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\DoTokenParser', 'Twig_TokenParser_Do');
+class_alias('Raider\TokenParser\DoTokenParser', 'Raider_TokenParser_Do');

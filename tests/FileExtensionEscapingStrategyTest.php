@@ -11,7 +11,7 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\FileExtensionEscapingStrategy;
+use Raider\FileExtensionEscapingStrategy;
 
 class FileExtensionEscapingStrategyTest extends \PHPUnit\Framework\TestCase
 {

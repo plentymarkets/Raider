@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\SetNode;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Node\SetNode;
+use Raider\Token;
 
 /**
  * Defines a variable.
@@ -71,4 +71,4 @@ class SetTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\SetTokenParser', 'Twig_TokenParser_Set');
+class_alias('Raider\TokenParser\SetTokenParser', 'Raider_TokenParser_Set');

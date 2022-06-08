@@ -11,7 +11,7 @@ namespace Twig\Tests\Profiler\Dumper;
  * file that was distributed with this source code.
  */
 
-use Twig\Profiler\Dumper\TextDumper;
+use Raider\Profiler\Dumper\TextDumper;
 
 class TextTest extends AbstractTest
 {

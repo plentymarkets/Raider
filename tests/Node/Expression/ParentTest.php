@@ -11,8 +11,8 @@ namespace Twig\Tests\Node\Expression;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\Expression\ParentExpression;
-use Twig\Test\NodeTestCase;
+use Raider\Node\Expression\ParentExpression;
+use Raider\Test\NodeTestCase;
 
 class ParentTest extends NodeTestCase
 {

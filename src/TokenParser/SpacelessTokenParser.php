@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\SpacelessNode;
-use Twig\Token;
+use Raider\Node\SpacelessNode;
+use Raider\Token;
 
 /**
  * Remove whitespaces between HTML tags.
@@ -50,4 +50,4 @@ class SpacelessTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\SpacelessTokenParser', 'Twig_TokenParser_Spaceless');
+class_alias('Raider\TokenParser\SpacelessTokenParser', 'Raider_TokenParser_Spaceless');

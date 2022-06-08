@@ -11,10 +11,10 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Lexer;
-use Twig\Source;
-use Twig\Token;
+use Raider\Environment;
+use Raider\Lexer;
+use Raider\Source;
+use Raider\Token;
 
 class LexerTest extends \PHPUnit\Framework\TestCase
 {
@@ -23,7 +23,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
      */
     public function testLegacyConstructorSignature()
     {
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize('{{ foo }}', 'foo');
         $this->assertEquals('foo', $stream->getFilename());
         $this->assertEquals('{{ foo }}', $stream->getSource());
@@ -33,7 +33,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{% § %}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
 
         $stream->expect(Token::BLOCK_START_TYPE);
@@ -44,7 +44,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{{ §() }}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
 
         $stream->expect(Token::VAR_START_TYPE);
@@ -61,7 +61,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
 
     protected function countToken($template, $type, $value = null)
     {
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
 
         $count = 0;
@@ -86,7 +86,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
             ."baz\n"
             ."}}\n";
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
 
         // foo\nbar\n
@@ -106,7 +106,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
             ."baz\n"
             ."}}\n";
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
 
         // foo\nbar
@@ -121,7 +121,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{# '.str_repeat('*', 100000).' #}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $lexer->tokenize(new Source($template, 'index'));
 
         // add a dummy assertion here to satisfy PHPUnit, the only thing we want to test is that the code above
@@ -133,7 +133,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{% verbatim %}'.str_repeat('*', 100000).'{% endverbatim %}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $lexer->tokenize(new Source($template, 'index'));
 
         // add a dummy assertion here to satisfy PHPUnit, the only thing we want to test is that the code above
@@ -145,7 +145,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{{ '.str_repeat('x', 100000).' }}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $lexer->tokenize(new Source($template, 'index'));
 
         // add a dummy assertion here to satisfy PHPUnit, the only thing we want to test is that the code above
@@ -157,7 +157,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{% '.str_repeat('x', 100000).' %}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $lexer->tokenize(new Source($template, 'index'));
 
         // add a dummy assertion here to satisfy PHPUnit, the only thing we want to test is that the code above
@@ -169,7 +169,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{{ 922337203685477580700 }}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
         $stream->next();
         $node = $stream->next();
@@ -182,7 +182,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
             "{{ 'foo \' bar' }}" => 'foo \' bar',
             '{{ "foo \" bar" }}' => 'foo " bar',
         ];
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         foreach ($tests as $template => $expected) {
             $stream = $lexer->tokenize(new Source($template, 'index'));
             $stream->expect(Token::VAR_START_TYPE);
@@ -198,7 +198,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = 'foo {{ "bar #{ baz + 1 }" }}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
         $stream->expect(Token::TEXT_TYPE, 'foo ');
         $stream->expect(Token::VAR_START_TYPE);
@@ -219,7 +219,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{{ "bar \#{baz+1}" }}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
         $stream->expect(Token::VAR_START_TYPE);
         $stream->expect(Token::STRING_TYPE, 'bar #{baz+1}');
@@ -234,7 +234,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{{ "bar # baz" }}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
         $stream->expect(Token::VAR_START_TYPE);
         $stream->expect(Token::STRING_TYPE, 'bar # baz');
@@ -247,12 +247,12 @@ class LexerTest extends \PHPUnit\Framework\TestCase
 
     public function testStringWithUnterminatedInterpolation()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unclosed """');
 
         $template = '{{ "bar #{x" }}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $lexer->tokenize(new Source($template, 'index'));
     }
 
@@ -260,7 +260,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{{ "bar #{ "foo#{bar}" }" }}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
         $stream->expect(Token::VAR_START_TYPE);
         $stream->expect(Token::STRING_TYPE, 'bar ');
@@ -281,7 +281,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = '{% foo "bar #{ "foo#{bar}" }" %}';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
         $stream->expect(Token::BLOCK_START_TYPE);
         $stream->expect(Token::NAME_TYPE, 'foo');
@@ -303,7 +303,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
     {
         $template = "{{ 1 and\n0}}";
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $stream = $lexer->tokenize(new Source($template, 'index'));
         $stream->expect(Token::VAR_START_TYPE);
         $stream->expect(Token::NUMBER_TYPE, 1);
@@ -316,7 +316,7 @@ class LexerTest extends \PHPUnit\Framework\TestCase
 
     public function testUnterminatedVariable()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unclosed "variable" in "index" at line 3');
 
         $template = '
@@ -328,13 +328,13 @@ bar
 
 ';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $lexer->tokenize(new Source($template, 'index'));
     }
 
     public function testUnterminatedBlock()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unclosed "block" in "index" at line 3');
 
         $template = '
@@ -346,14 +346,14 @@ bar
 
 ';
 
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
         $lexer->tokenize(new Source($template, 'index'));
     }
 
     public function testOverridingSyntax()
     {
         $template = '[# comment #]{# variable #}/# if true #/true/# endif #/';
-        $lexer = new Lexer(new Environment($this->createMock('\Twig\Loader\LoaderInterface')), [
+        $lexer = new Lexer(new Environment($this->createMock('\Raider\Loader\LoaderInterface')), [
             'tag_comment' => ['[#', '#]'],
             'tag_block' => ['/#', '#/'],
             'tag_variable' => ['{#', '#}'],

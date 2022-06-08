@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\RuntimeLoader;
+namespace Raider\RuntimeLoader;
 
 /**
  * Lazy loads the runtime implementations for a Twig element.
@@ -38,4 +38,4 @@ class FactoryRuntimeLoader implements RuntimeLoaderInterface
     }
 }
 
-class_alias('Twig\RuntimeLoader\FactoryRuntimeLoader', 'Twig_FactoryRuntimeLoader');
+class_alias('Raider\RuntimeLoader\FactoryRuntimeLoader', 'Raider_FactoryRuntimeLoader');

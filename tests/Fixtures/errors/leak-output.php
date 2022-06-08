@@ -4,10 +4,10 @@ namespace Twig\Tests\Fixtures\errors;
 
 require __DIR__.'/../../../vendor/autoload.php';
 
-use Twig\Environment;
-use Twig\Extension\AbstractExtension;
-use Twig\Loader\ArrayLoader;
-use Twig\TwigFilter;
+use Raider\Environment;
+use Raider\Extension\AbstractExtension;
+use Raider\Loader\ArrayLoader;
+use Raider\TwigFilter;
 
 class BrokenExtension extends AbstractExtension
 {

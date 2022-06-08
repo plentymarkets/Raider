@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Sandbox;
+namespace Raider\Sandbox;
 
-use Twig\Markup;
+use Raider\Markup;
 
 /**
  * Represents a security policy which need to be enforced when sandbox mode is enabled.
@@ -88,7 +88,7 @@ class SecurityPolicy implements SecurityPolicyInterface
 
     public function checkMethodAllowed($obj, $method)
     {
-        if ($obj instanceof \Twig_TemplateInterface || $obj instanceof Markup) {
+        if ($obj instanceof \Raider_TemplateInterface || $obj instanceof Markup) {
             return;
         }
 
@@ -126,4 +126,4 @@ class SecurityPolicy implements SecurityPolicyInterface
     }
 }
 
-class_alias('Twig\Sandbox\SecurityPolicy', 'Twig_Sandbox_SecurityPolicy');
+class_alias('Raider\Sandbox\SecurityPolicy', 'Raider_Sandbox_SecurityPolicy');

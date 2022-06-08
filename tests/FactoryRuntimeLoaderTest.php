@@ -11,7 +11,7 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\RuntimeLoader\FactoryRuntimeLoader;
+use Raider\RuntimeLoader\FactoryRuntimeLoader;
 
 class FactoryRuntimeLoaderTest extends \PHPUnit\Framework\TestCase
 {

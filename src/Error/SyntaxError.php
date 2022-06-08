@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Error;
+namespace Raider\Error;
 
 /**
  * \Exception thrown when a syntax error occurs during lexing or parsing of a template.
@@ -54,4 +54,4 @@ class SyntaxError extends Error
     }
 }
 
-class_alias('Twig\Error\SyntaxError', 'Twig_Error_Syntax');
+class_alias('Raider\Error\SyntaxError', 'Raider_Error_Syntax');

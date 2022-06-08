@@ -11,12 +11,12 @@ namespace Twig\Tests\Node\Expression;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\FunctionExpression;
-use Twig\Node\Node;
-use Twig\Test\NodeTestCase;
-use Twig\TwigFunction;
+use Raider\Environment;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\FunctionExpression;
+use Raider\Node\Node;
+use Raider\Test\NodeTestCase;
+use Raider\TwigFunction;
 
 class FunctionTest extends NodeTestCase
 {
@@ -32,7 +32,7 @@ class FunctionTest extends NodeTestCase
 
     public function getTests()
     {
-        $environment = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $environment = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
         $environment->addFunction(new TwigFunction('foo', 'foo', []));
         $environment->addFunction(new TwigFunction('bar', 'bar', ['needs_environment' => true]));
         $environment->addFunction(new TwigFunction('foofoo', 'foofoo', ['needs_context' => true]));

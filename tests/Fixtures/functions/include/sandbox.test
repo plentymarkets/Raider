@@ -10,4 +10,4 @@
 --DATA--
 return []
 --EXCEPTION--
-Twig\Sandbox\SecurityNotAllowedFilterError: Filter "e" is not allowed in "foo.twig" at line 4.
+Raider\Sandbox\SecurityNotAllowedFilterError: Filter "e" is not allowed in "foo.twig" at line 4.

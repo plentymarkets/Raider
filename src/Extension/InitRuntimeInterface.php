@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension;
+namespace Raider\Extension;
 
 /**
  * Enables usage of the deprecated Twig\Extension\AbstractExtension::initRuntime() method.
@@ -23,4 +23,4 @@ interface InitRuntimeInterface
 {
 }
 
-class_alias('Twig\Extension\InitRuntimeInterface', 'Twig_Extension_InitRuntimeInterface');
+class_alias('Raider\Extension\InitRuntimeInterface', 'Raider_Extension_InitRuntimeInterface');

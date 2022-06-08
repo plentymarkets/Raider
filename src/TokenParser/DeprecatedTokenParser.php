@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\DeprecatedNode;
-use Twig\Token;
+use Raider\Node\DeprecatedNode;
+use Raider\Token;
 
 /**
  * Deprecates a section of a template.
@@ -41,4 +41,4 @@ class DeprecatedTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\DeprecatedTokenParser', 'Twig_TokenParser_Deprecated');
+class_alias('Raider\TokenParser\DeprecatedTokenParser', 'Raider_TokenParser_Deprecated');

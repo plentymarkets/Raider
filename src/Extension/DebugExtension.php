@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension {
-use Twig\TwigFunction;
+namespace Raider\Extension {
+use Raider\TwigFunction;
 
 /**
  * @final
@@ -40,13 +40,13 @@ class DebugExtension extends AbstractExtension
     }
 }
 
-class_alias('Twig\Extension\DebugExtension', 'Twig_Extension_Debug');
+class_alias('Raider\Extension\DebugExtension', 'Raider_Extension_Debug');
 }
 
 namespace {
-use Twig\Environment;
-use Twig\Template;
-use Twig\TemplateWrapper;
+use Raider\Environment;
+use Raider\Template;
+use Raider\TemplateWrapper;
 
 function twig_var_dump(Environment $env, $context, array $vars = [])
 {

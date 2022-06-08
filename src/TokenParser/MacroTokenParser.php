@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\BodyNode;
-use Twig\Node\MacroNode;
-use Twig\Node\Node;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Node\BodyNode;
+use Raider\Node\MacroNode;
+use Raider\Node\Node;
+use Raider\Token;
 
 /**
  * Defines a macro.
@@ -65,4 +65,4 @@ class MacroTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\MacroTokenParser', 'Twig_TokenParser_Macro');
+class_alias('Raider\TokenParser\MacroTokenParser', 'Raider_TokenParser_Macro');

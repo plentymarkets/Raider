@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Util;
+namespace Raider\Util;
 
-use Twig\Environment;
-use Twig\Error\SyntaxError;
-use Twig\Source;
+use Raider\Environment;
+use Raider\Error\SyntaxError;
+use Raider\Source;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -89,4 +89,4 @@ class DeprecationCollector
     }
 }
 
-class_alias('Twig\Util\DeprecationCollector', 'Twig_Util_DeprecationCollector');
+class_alias('Raider\Util\DeprecationCollector', 'Raider_Util_DeprecationCollector');

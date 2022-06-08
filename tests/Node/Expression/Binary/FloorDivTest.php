@@ -11,9 +11,9 @@ namespace Twig\Tests\Node\Expression\Binary;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\Expression\Binary\FloorDivBinary;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Test\NodeTestCase;
+use Raider\Node\Expression\Binary\FloorDivBinary;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Test\NodeTestCase;
 
 class FloorDivTest extends NodeTestCase
 {

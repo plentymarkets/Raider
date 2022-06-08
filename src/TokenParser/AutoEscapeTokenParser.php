@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\AutoEscapeNode;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Node\AutoEscapeNode;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Token;
 
 /**
  * Marks a section of a template to be escaped or not.
@@ -85,4 +85,4 @@ class AutoEscapeTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\AutoEscapeTokenParser', 'Twig_TokenParser_AutoEscape');
+class_alias('Raider\TokenParser\AutoEscapeTokenParser', 'Raider_TokenParser_AutoEscape');

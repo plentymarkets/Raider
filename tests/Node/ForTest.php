@@ -11,13 +11,13 @@ namespace Twig\Tests\Node;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\Expression\AssignNameExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\NameExpression;
-use Twig\Node\ForNode;
-use Twig\Node\Node;
-use Twig\Node\PrintNode;
-use Twig\Test\NodeTestCase;
+use Raider\Node\Expression\AssignNameExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\NameExpression;
+use Raider\Node\ForNode;
+use Raider\Node\Node;
+use Raider\Node\PrintNode;
+use Raider\Test\NodeTestCase;
 
 class ForTest extends NodeTestCase
 {
@@ -36,7 +36,7 @@ class ForTest extends NodeTestCase
         $this->assertEquals($valueTarget, $node->getNode('value_target'));
         $this->assertEquals($seq, $node->getNode('seq'));
         $this->assertTrue($node->getAttribute('ifexpr'));
-        $this->assertInstanceOf('\Twig\Node\IfNode', $node->getNode('body'));
+        $this->assertInstanceOf('\Raider\Node\IfNode', $node->getNode('body'));
         $this->assertEquals($body, $node->getNode('body')->getNode('tests')->getNode(1)->getNode(0));
         $this->assertFalse($node->hasNode('else'));
 

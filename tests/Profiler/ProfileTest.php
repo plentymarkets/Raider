@@ -11,7 +11,7 @@ namespace Twig\Tests\Profiler;
  * file that was distributed with this source code.
  */
 
-use Twig\Profiler\Profile;
+use Raider\Profiler\Profile;
 
 class ProfileTest extends \PHPUnit\Framework\TestCase
 {

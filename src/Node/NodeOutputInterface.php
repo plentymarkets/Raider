@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
 /**
  * Represents a displayable node in the AST.
@@ -20,4 +20,4 @@ interface NodeOutputInterface
 {
 }
 
-class_alias('Twig\Node\NodeOutputInterface', 'Twig_NodeOutputInterface');
+class_alias('Raider\Node\NodeOutputInterface', 'Raider_NodeOutputInterface');

@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Test;
+namespace Raider\Test;
 
 use PHPUnit\Framework\TestCase;
-use Twig\Environment;
-use Twig\Error\Error;
-use Twig\Extension\ExtensionInterface;
-use Twig\Loader\ArrayLoader;
-use Twig\Loader\SourceContextLoaderInterface;
-use Twig\RuntimeLoader\RuntimeLoaderInterface;
-use Twig\Source;
-use Twig\TwigFilter;
-use Twig\TwigFunction;
-use Twig\TwigTest;
+use Raider\Environment;
+use Raider\Error\Error;
+use Raider\Extension\ExtensionInterface;
+use Raider\Loader\ArrayLoader;
+use Raider\Loader\SourceContextLoaderInterface;
+use Raider\RuntimeLoader\RuntimeLoaderInterface;
+use Raider\Source;
+use Raider\TwigFilter;
+use Raider\TwigFunction;
+use Raider\TwigTest;
 
 /**
  * Integration test helper.
@@ -254,4 +254,4 @@ abstract class IntegrationTestCase extends TestCase
     }
 }
 
-class_alias('Twig\Test\IntegrationTestCase', 'Twig_Test_IntegrationTestCase');
+class_alias('Raider\Test\IntegrationTestCase', 'Raider_Test_IntegrationTestCase');

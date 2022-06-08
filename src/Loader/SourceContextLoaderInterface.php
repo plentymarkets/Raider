@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Loader;
+namespace Raider\Loader;
 
-use Twig\Error\LoaderError;
-use Twig\Source;
+use Raider\Error\LoaderError;
+use Raider\Source;
 
 /**
  * Adds a getSourceContext() method for loaders.
@@ -35,4 +35,4 @@ interface SourceContextLoaderInterface
     public function getSourceContext($name);
 }
 
-class_alias('Twig\Loader\SourceContextLoaderInterface', 'Twig_SourceContextLoaderInterface');
+class_alias('Raider\Loader\SourceContextLoaderInterface', 'Raider_SourceContextLoaderInterface');

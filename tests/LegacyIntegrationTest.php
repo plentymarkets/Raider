@@ -11,8 +11,8 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Extension\AbstractExtension;
-use Twig\Test\IntegrationTestCase;
+use Raider\Extension\AbstractExtension;
+use Raider\Test\IntegrationTestCase;
 
 class LegacyIntegrationTest extends IntegrationTestCase
 {
@@ -43,7 +43,7 @@ class LegacyTwigTestExtension extends AbstractExtension
     public function getTests()
     {
         return [
-            'multi word' => new \Twig_Test_Method($this, 'is_multi_word'),
+            'multi word' => new \Raider_Test_Method($this, 'is_multi_word'),
         ];
     }
 

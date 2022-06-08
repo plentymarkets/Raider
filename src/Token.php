@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
 /**
  * Represents a Token.
@@ -165,7 +165,7 @@ class Token
                 throw new \LogicException(sprintf('Token of type "%s" does not exist.', $type));
         }
 
-        return $short ? $name : 'Twig\Token::'.$name;
+        return $short ? $name : 'Raider\Token::'.$name;
     }
 
     /**
@@ -212,4 +212,4 @@ class Token
     }
 }
 
-class_alias('Twig\Token', 'Twig_Token');
+class_alias('Raider\Token', 'Raider_Token');

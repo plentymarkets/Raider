@@ -11,10 +11,10 @@ namespace Twig\Tests\Node;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\Expression\AssignNameExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\ImportNode;
-use Twig\Test\NodeTestCase;
+use Raider\Node\Expression\AssignNameExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\ImportNode;
+use Raider\Test\NodeTestCase;
 
 class ImportTest extends NodeTestCase
 {

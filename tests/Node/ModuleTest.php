@@ -11,17 +11,17 @@ namespace Twig\Tests\Node;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Node\Expression\AssignNameExpression;
-use Twig\Node\Expression\ConditionalExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\ImportNode;
-use Twig\Node\ModuleNode;
-use Twig\Node\Node;
-use Twig\Node\SetNode;
-use Twig\Node\TextNode;
-use Twig\Source;
-use Twig\Test\NodeTestCase;
+use Raider\Environment;
+use Raider\Node\Expression\AssignNameExpression;
+use Raider\Node\Expression\ConditionalExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\ImportNode;
+use Raider\Node\ModuleNode;
+use Raider\Node\Node;
+use Raider\Node\SetNode;
+use Raider\Node\TextNode;
+use Raider\Source;
+use Raider\Test\NodeTestCase;
 
 class ModuleTest extends NodeTestCase
 {
@@ -44,7 +44,7 @@ class ModuleTest extends NodeTestCase
 
     public function getTests()
     {
-        $twig = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $twig = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
 
         $tests = [];
 
@@ -59,19 +59,19 @@ class ModuleTest extends NodeTestCase
         $tests[] = [$node, <<<EOF
 <?php
 
-use Twig\Environment;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Markup;
-use Twig\Sandbox\SecurityError;
-use Twig\Sandbox\SecurityNotAllowedTagError;
-use Twig\Sandbox\SecurityNotAllowedFilterError;
-use Twig\Sandbox\SecurityNotAllowedFunctionError;
-use Twig\Source;
-use Twig\Template;
+use Raider\Environment;
+use Raider\Error\LoaderError;
+use Raider\Error\RuntimeError;
+use Raider\Markup;
+use Raider\Sandbox\SecurityError;
+use Raider\Sandbox\SecurityNotAllowedTagError;
+use Raider\Sandbox\SecurityNotAllowedFilterError;
+use Raider\Sandbox\SecurityNotAllowedFunctionError;
+use Raider\Source;
+use Raider\Template;
 
 /* foo.twig */
-class __TwigTemplate_%x extends \Twig\Template
+class __TwigTemplate_%x extends \Raider\Template
 {
     public function __construct(Environment \$env)
     {
@@ -124,19 +124,19 @@ EOF
         $tests[] = [$node, <<<EOF
 <?php
 
-use Twig\Environment;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Markup;
-use Twig\Sandbox\SecurityError;
-use Twig\Sandbox\SecurityNotAllowedTagError;
-use Twig\Sandbox\SecurityNotAllowedFilterError;
-use Twig\Sandbox\SecurityNotAllowedFunctionError;
-use Twig\Source;
-use Twig\Template;
+use Raider\Environment;
+use Raider\Error\LoaderError;
+use Raider\Error\RuntimeError;
+use Raider\Markup;
+use Raider\Sandbox\SecurityError;
+use Raider\Sandbox\SecurityNotAllowedTagError;
+use Raider\Sandbox\SecurityNotAllowedFilterError;
+use Raider\Sandbox\SecurityNotAllowedFunctionError;
+use Raider\Source;
+use Raider\Template;
 
 /* foo.twig */
-class __TwigTemplate_%x extends \Twig\Template
+class __TwigTemplate_%x extends \Raider\Template
 {
     public function __construct(Environment \$env)
     {
@@ -201,24 +201,24 @@ EOF
                         2
                     );
 
-        $twig = new Environment($this->createMock('\Twig\Loader\LoaderInterface'), ['debug' => true]);
+        $twig = new Environment($this->createMock('\Raider\Loader\LoaderInterface'), ['debug' => true]);
         $node = new ModuleNode($body, $extends, $blocks, $macros, $traits, new Node([]), $source);
         $tests[] = [$node, <<<EOF
 <?php
 
-use Twig\Environment;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Markup;
-use Twig\Sandbox\SecurityError;
-use Twig\Sandbox\SecurityNotAllowedTagError;
-use Twig\Sandbox\SecurityNotAllowedFilterError;
-use Twig\Sandbox\SecurityNotAllowedFunctionError;
-use Twig\Source;
-use Twig\Template;
+use Raider\Environment;
+use Raider\Error\LoaderError;
+use Raider\Error\RuntimeError;
+use Raider\Markup;
+use Raider\Sandbox\SecurityError;
+use Raider\Sandbox\SecurityNotAllowedTagError;
+use Raider\Sandbox\SecurityNotAllowedFilterError;
+use Raider\Sandbox\SecurityNotAllowedFunctionError;
+use Raider\Source;
+use Raider\Template;
 
 /* foo.twig */
-class __TwigTemplate_%x extends \Twig\Template
+class __TwigTemplate_%x extends \Raider\Template
 {
     protected function doGetParent(array \$context)
     {

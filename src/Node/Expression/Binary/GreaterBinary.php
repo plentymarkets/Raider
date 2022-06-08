@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Binary;
+namespace Raider\Node\Expression\Binary;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class GreaterBinary extends AbstractBinary
 {
@@ -21,4 +21,4 @@ class GreaterBinary extends AbstractBinary
     }
 }
 
-class_alias('Twig\Node\Expression\Binary\GreaterBinary', 'Twig_Node_Expression_Binary_Greater');
+class_alias('Raider\Node\Expression\Binary\GreaterBinary', 'Raider_Node_Expression_Binary_Greater');

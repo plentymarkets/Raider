@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Test;
+namespace Raider\Node\Expression\Test;
 
-use Twig\Compiler;
-use Twig\Node\Expression\TestExpression;
+use Raider\Compiler;
+use Raider\Node\Expression\TestExpression;
 
 /**
  * Checks if a number is odd.
@@ -34,4 +34,4 @@ class OddTest extends TestExpression
     }
 }
 
-class_alias('Twig\Node\Expression\Test\OddTest', 'Twig_Node_Expression_Test_Odd');
+class_alias('Raider\Node\Expression\Test\OddTest', 'Raider_Node_Expression_Test_Odd');

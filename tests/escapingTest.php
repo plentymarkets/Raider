@@ -2,8 +2,8 @@
 
 namespace Twig\Tests;
 
-use Twig\Environment;
-use Twig\Loader\LoaderInterface;
+use Raider\Environment;
+use Raider\Loader\LoaderInterface;
 
 /**
  * This class is adapted from code coming from Zend Framework.

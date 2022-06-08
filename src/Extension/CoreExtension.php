@@ -9,29 +9,29 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension {
-use Twig\ExpressionParser;
-use Twig\TokenParser\ApplyTokenParser;
-use Twig\TokenParser\BlockTokenParser;
-use Twig\TokenParser\DeprecatedTokenParser;
-use Twig\TokenParser\DoTokenParser;
-use Twig\TokenParser\EmbedTokenParser;
-use Twig\TokenParser\ExtendsTokenParser;
-use Twig\TokenParser\FilterTokenParser;
-use Twig\TokenParser\FlushTokenParser;
-use Twig\TokenParser\ForTokenParser;
-use Twig\TokenParser\FromTokenParser;
-use Twig\TokenParser\IfTokenParser;
-use Twig\TokenParser\ImportTokenParser;
-use Twig\TokenParser\IncludeTokenParser;
-use Twig\TokenParser\MacroTokenParser;
-use Twig\TokenParser\SetTokenParser;
-use Twig\TokenParser\SpacelessTokenParser;
-use Twig\TokenParser\UseTokenParser;
-use Twig\TokenParser\WithTokenParser;
-use Twig\TwigFilter;
-use Twig\TwigFunction;
-use Twig\TwigTest;
+namespace Raider\Extension {
+use Raider\ExpressionParser;
+use Raider\TokenParser\ApplyTokenParser;
+use Raider\TokenParser\BlockTokenParser;
+use Raider\TokenParser\DeprecatedTokenParser;
+use Raider\TokenParser\DoTokenParser;
+use Raider\TokenParser\EmbedTokenParser;
+use Raider\TokenParser\ExtendsTokenParser;
+use Raider\TokenParser\FilterTokenParser;
+use Raider\TokenParser\FlushTokenParser;
+use Raider\TokenParser\ForTokenParser;
+use Raider\TokenParser\FromTokenParser;
+use Raider\TokenParser\IfTokenParser;
+use Raider\TokenParser\ImportTokenParser;
+use Raider\TokenParser\IncludeTokenParser;
+use Raider\TokenParser\MacroTokenParser;
+use Raider\TokenParser\SetTokenParser;
+use Raider\TokenParser\SpacelessTokenParser;
+use Raider\TokenParser\UseTokenParser;
+use Raider\TokenParser\WithTokenParser;
+use Raider\TwigFilter;
+use Raider\TwigFunction;
+use Raider\TwigTest;
 
 /**
  * @final
@@ -206,7 +206,7 @@ class CoreExtension extends AbstractExtension
             new TwigFilter('last', 'twig_last', ['needs_environment' => true]),
 
             // iteration and runtime
-            new TwigFilter('default', '_twig_default_filter', ['node_class' => '\Twig\Node\Expression\Filter\DefaultFilter']),
+            new TwigFilter('default', '_twig_default_filter', ['node_class' => '\Raider\Node\Expression\Filter\DefaultFilter']),
             new TwigFilter('keys', 'twig_get_array_keys_filter'),
 
             // escaping
@@ -240,16 +240,16 @@ class CoreExtension extends AbstractExtension
     public function getTests()
     {
         return [
-            new TwigTest('even', null, ['node_class' => '\Twig\Node\Expression\Test\EvenTest']),
-            new TwigTest('odd', null, ['node_class' => '\Twig\Node\Expression\Test\OddTest']),
-            new TwigTest('defined', null, ['node_class' => '\Twig\Node\Expression\Test\DefinedTest']),
-            new TwigTest('sameas', null, ['node_class' => '\Twig\Node\Expression\Test\SameasTest', 'deprecated' => '1.21', 'alternative' => 'same as']),
-            new TwigTest('same as', null, ['node_class' => '\Twig\Node\Expression\Test\SameasTest', 'one_mandatory_argument' => true]),
-            new TwigTest('none', null, ['node_class' => '\Twig\Node\Expression\Test\NullTest']),
-            new TwigTest('null', null, ['node_class' => '\Twig\Node\Expression\Test\NullTest']),
-            new TwigTest('divisibleby', null, ['node_class' => '\Twig\Node\Expression\Test\DivisiblebyTest', 'deprecated' => '1.21', 'alternative' => 'divisible by']),
-            new TwigTest('divisible by', null, ['node_class' => '\Twig\Node\Expression\Test\DivisiblebyTest', 'one_mandatory_argument' => true]),
-            new TwigTest('constant', null, ['node_class' => '\Twig\Node\Expression\Test\ConstantTest']),
+            new TwigTest('even', null, ['node_class' => '\Raider\Node\Expression\Test\EvenTest']),
+            new TwigTest('odd', null, ['node_class' => '\Raider\Node\Expression\Test\OddTest']),
+            new TwigTest('defined', null, ['node_class' => '\Raider\Node\Expression\Test\DefinedTest']),
+            new TwigTest('sameas', null, ['node_class' => '\Raider\Node\Expression\Test\SameasTest', 'deprecated' => '1.21', 'alternative' => 'same as']),
+            new TwigTest('same as', null, ['node_class' => '\Raider\Node\Expression\Test\SameasTest', 'one_mandatory_argument' => true]),
+            new TwigTest('none', null, ['node_class' => '\Raider\Node\Expression\Test\NullTest']),
+            new TwigTest('null', null, ['node_class' => '\Raider\Node\Expression\Test\NullTest']),
+            new TwigTest('divisibleby', null, ['node_class' => '\Raider\Node\Expression\Test\DivisiblebyTest', 'deprecated' => '1.21', 'alternative' => 'divisible by']),
+            new TwigTest('divisible by', null, ['node_class' => '\Raider\Node\Expression\Test\DivisiblebyTest', 'one_mandatory_argument' => true]),
+            new TwigTest('constant', null, ['node_class' => '\Raider\Node\Expression\Test\ConstantTest']),
             new TwigTest('empty', 'twig_test_empty'),
             new TwigTest('iterable', 'twig_test_iterable'),
         ];
@@ -259,39 +259,39 @@ class CoreExtension extends AbstractExtension
     {
         return [
             [
-                'not' => ['precedence' => 50, 'class' => '\Twig\Node\Expression\Unary\NotUnary'],
-                '-' => ['precedence' => 500, 'class' => '\Twig\Node\Expression\Unary\NegUnary'],
-                '+' => ['precedence' => 500, 'class' => '\Twig\Node\Expression\Unary\PosUnary'],
+                'not' => ['precedence' => 50, 'class' => '\Raider\Node\Expression\Unary\NotUnary'],
+                '-' => ['precedence' => 500, 'class' => '\Raider\Node\Expression\Unary\NegUnary'],
+                '+' => ['precedence' => 500, 'class' => '\Raider\Node\Expression\Unary\PosUnary'],
             ],
             [
-                'or' => ['precedence' => 10, 'class' => '\Twig\Node\Expression\Binary\OrBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                'and' => ['precedence' => 15, 'class' => '\Twig\Node\Expression\Binary\AndBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                'b-or' => ['precedence' => 16, 'class' => '\Twig\Node\Expression\Binary\BitwiseOrBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                'b-xor' => ['precedence' => 17, 'class' => '\Twig\Node\Expression\Binary\BitwiseXorBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                'b-and' => ['precedence' => 18, 'class' => '\Twig\Node\Expression\Binary\BitwiseAndBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '==' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\EqualBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '!=' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\NotEqualBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '<' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\LessBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '>' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\GreaterBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '>=' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\GreaterEqualBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '<=' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\LessEqualBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                'not in' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\NotInBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                'in' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\InBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                'matches' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\MatchesBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                'starts with' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\StartsWithBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                'ends with' => ['precedence' => 20, 'class' => '\Twig\Node\Expression\Binary\EndsWithBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '..' => ['precedence' => 25, 'class' => '\Twig\Node\Expression\Binary\RangeBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '+' => ['precedence' => 30, 'class' => '\Twig\Node\Expression\Binary\AddBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '-' => ['precedence' => 30, 'class' => '\Twig\Node\Expression\Binary\SubBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '~' => ['precedence' => 40, 'class' => '\Twig\Node\Expression\Binary\ConcatBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '*' => ['precedence' => 60, 'class' => '\Twig\Node\Expression\Binary\MulBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '/' => ['precedence' => 60, 'class' => '\Twig\Node\Expression\Binary\DivBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '//' => ['precedence' => 60, 'class' => '\Twig\Node\Expression\Binary\FloorDivBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '%' => ['precedence' => 60, 'class' => '\Twig\Node\Expression\Binary\ModBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'or' => ['precedence' => 10, 'class' => '\Raider\Node\Expression\Binary\OrBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'and' => ['precedence' => 15, 'class' => '\Raider\Node\Expression\Binary\AndBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'b-or' => ['precedence' => 16, 'class' => '\Raider\Node\Expression\Binary\BitwiseOrBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'b-xor' => ['precedence' => 17, 'class' => '\Raider\Node\Expression\Binary\BitwiseXorBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'b-and' => ['precedence' => 18, 'class' => '\Raider\Node\Expression\Binary\BitwiseAndBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '==' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\EqualBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '!=' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\NotEqualBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '<' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\LessBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '>' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\GreaterBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '>=' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\GreaterEqualBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '<=' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\LessEqualBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'not in' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\NotInBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'in' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\InBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'matches' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\MatchesBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'starts with' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\StartsWithBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                'ends with' => ['precedence' => 20, 'class' => '\Raider\Node\Expression\Binary\EndsWithBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '..' => ['precedence' => 25, 'class' => '\Raider\Node\Expression\Binary\RangeBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '+' => ['precedence' => 30, 'class' => '\Raider\Node\Expression\Binary\AddBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '-' => ['precedence' => 30, 'class' => '\Raider\Node\Expression\Binary\SubBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '~' => ['precedence' => 40, 'class' => '\Raider\Node\Expression\Binary\ConcatBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '*' => ['precedence' => 60, 'class' => '\Raider\Node\Expression\Binary\MulBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '/' => ['precedence' => 60, 'class' => '\Raider\Node\Expression\Binary\DivBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '//' => ['precedence' => 60, 'class' => '\Raider\Node\Expression\Binary\FloorDivBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
+                '%' => ['precedence' => 60, 'class' => '\Raider\Node\Expression\Binary\ModBinary', 'associativity' => ExpressionParser::OPERATOR_LEFT],
                 'is' => ['precedence' => 100, 'associativity' => ExpressionParser::OPERATOR_LEFT],
                 'is not' => ['precedence' => 100, 'associativity' => ExpressionParser::OPERATOR_LEFT],
-                '**' => ['precedence' => 200, 'class' => '\Twig\Node\Expression\Binary\PowerBinary', 'associativity' => ExpressionParser::OPERATOR_RIGHT],
-                '??' => ['precedence' => 300, 'class' => '\Twig\Node\Expression\NullCoalesceExpression', 'associativity' => ExpressionParser::OPERATOR_RIGHT],
+                '**' => ['precedence' => 200, 'class' => '\Raider\Node\Expression\Binary\PowerBinary', 'associativity' => ExpressionParser::OPERATOR_RIGHT],
+                '??' => ['precedence' => 300, 'class' => '\Raider\Node\Expression\NullCoalesceExpression', 'associativity' => ExpressionParser::OPERATOR_RIGHT],
             ],
         ];
     }
@@ -302,19 +302,19 @@ class CoreExtension extends AbstractExtension
     }
 }
 
-class_alias('Twig\Extension\CoreExtension', 'Twig_Extension_Core');
+class_alias('Raider\Extension\CoreExtension', 'Raider_Extension_Core');
 }
 
 namespace {
-use Twig\Environment;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Loader\SourceContextLoaderInterface;
-use Twig\Markup;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Node;
-use Twig\Template;
-use Twig\TemplateWrapper;
+use Raider\Environment;
+use Raider\Error\LoaderError;
+use Raider\Error\RuntimeError;
+use Raider\Loader\SourceContextLoaderInterface;
+use Raider\Markup;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Node;
+use Raider\Template;
+use Raider\TemplateWrapper;
 
 /**
  * Cycles over a value.
@@ -419,7 +419,7 @@ function twig_random(Environment $env, $values = null, $max = null)
 function twig_date_format_filter(Environment $env, $date, $format = null, $timezone = null)
 {
     if (null === $format) {
-        $formats = $env->getExtension('\Twig\Extension\CoreExtension')->getDateFormat();
+        $formats = $env->getExtension('\Raider\Extension\CoreExtension')->getDateFormat();
         $format = $date instanceof \DateInterval ? $formats[1] : $formats[0];
     }
 
@@ -468,7 +468,7 @@ function twig_date_converter(Environment $env, $date = null, $timezone = null)
     // determine the timezone
     if (false !== $timezone) {
         if (null === $timezone) {
-            $timezone = $env->getExtension('\Twig\Extension\CoreExtension')->getTimezone();
+            $timezone = $env->getExtension('\Raider\Extension\CoreExtension')->getTimezone();
         } elseif (!$timezone instanceof \DateTimeZone) {
             $timezone = new \DateTimeZone($timezone);
         }
@@ -493,14 +493,14 @@ function twig_date_converter(Environment $env, $date = null, $timezone = null)
             $date = 'now';
         }
 
-        return new \DateTime($date, false !== $timezone ? $timezone : $env->getExtension('\Twig\Extension\CoreExtension')->getTimezone());
+        return new \DateTime($date, false !== $timezone ? $timezone : $env->getExtension('\Raider\Extension\CoreExtension')->getTimezone());
     }
 
     $asString = (string) $date;
     if (ctype_digit($asString) || (!empty($asString) && '-' === $asString[0] && ctype_digit(substr($asString, 1)))) {
         $date = new \DateTime('@'.$date);
     } else {
-        $date = new \DateTime($date, $env->getExtension('\Twig\Extension\CoreExtension')->getTimezone());
+        $date = new \DateTime($date, $env->getExtension('\Raider\Extension\CoreExtension')->getTimezone());
     }
 
     if (false !== $timezone) {
@@ -572,7 +572,7 @@ function twig_round($value, $precision = 0, $method = 'common')
  */
 function twig_number_format_filter(Environment $env, $number, $decimal = null, $decimalPoint = null, $thousandSep = null)
 {
-    $defaults = $env->getExtension('\Twig\Extension\CoreExtension')->getNumberFormat();
+    $defaults = $env->getExtension('\Raider\Extension\CoreExtension')->getNumberFormat();
     if (null === $decimal) {
         $decimal = $defaults[0];
     }
@@ -1145,7 +1145,7 @@ function twig_escape_filter(Environment $env, $string, $strategy = 'html', $char
             static $escapers;
 
             if (null === $escapers) {
-                $escapers = $env->getExtension('\Twig\Extension\CoreExtension')->getEscapers();
+                $escapers = $env->getExtension('\Raider\Extension\CoreExtension')->getEscapers();
             }
 
             if (isset($escapers[$strategy])) {
@@ -1564,8 +1564,8 @@ function twig_include(Environment $env, $context, $template, $variables = [], $w
         $variables = array_merge($context, $variables);
     }
 
-    if ($isSandboxed = $sandboxed && $env->hasExtension('\Twig\Extension\SandboxExtension')) {
-        $sandbox = $env->getExtension('\Twig\Extension\SandboxExtension');
+    if ($isSandboxed = $sandboxed && $env->hasExtension('\Raider\Extension\SandboxExtension')) {
+        $sandbox = $env->getExtension('\Raider\Extension\SandboxExtension');
         if (!$alreadySandboxed = $sandbox->isSandboxed()) {
             $sandbox->enableSandbox();
         }
@@ -1715,7 +1715,7 @@ function twig_array_filter(Environment $env, $array, $arrow)
         throw new RuntimeError(sprintf('The "filter" filter expects an array or "Traversable", got "%s".', \is_object($array) ? \get_class($array) : \gettype($array)));
     }
 
-    if (!$arrow instanceof Closure && $env->hasExtension('\Twig\Extension\SandboxExtension') && $env->getExtension('\Twig\Extension\SandboxExtension')->isSandboxed()) {
+    if (!$arrow instanceof Closure && $env->hasExtension('\Raider\Extension\SandboxExtension') && $env->getExtension('\Raider\Extension\SandboxExtension')->isSandboxed()) {
         throw new RuntimeError('The callable passed to "filter" filter must be a Closure in sandbox mode.');
     }
 
@@ -1733,7 +1733,7 @@ function twig_array_filter(Environment $env, $array, $arrow)
 
 function twig_array_map(Environment $env, $array, $arrow)
 {
-    if (!$arrow instanceof Closure && $env->hasExtension('\Twig\Extension\SandboxExtension') && $env->getExtension('\Twig\Extension\SandboxExtension')->isSandboxed()) {
+    if (!$arrow instanceof Closure && $env->hasExtension('\Raider\Extension\SandboxExtension') && $env->getExtension('\Raider\Extension\SandboxExtension')->isSandboxed()) {
         throw new RuntimeError('The callable passed to the "map" filter must be a Closure in sandbox mode.');
     }
 
@@ -1747,7 +1747,7 @@ function twig_array_map(Environment $env, $array, $arrow)
 
 function twig_array_reduce(Environment $env, $array, $arrow, $initial = null)
 {
-    if (!$arrow instanceof Closure && $env->hasExtension('\Twig\Extension\SandboxExtension') && $env->getExtension('\Twig\Extension\SandboxExtension')->isSandboxed()) {
+    if (!$arrow instanceof Closure && $env->hasExtension('\Raider\Extension\SandboxExtension') && $env->getExtension('\Raider\Extension\SandboxExtension')->isSandboxed()) {
         throw new RuntimeError('The callable passed to the "reduce" filter must be a Closure in sandbox mode.');
     }
 

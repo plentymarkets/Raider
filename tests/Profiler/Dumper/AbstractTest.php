@@ -11,7 +11,7 @@ namespace Twig\Tests\Profiler\Dumper;
  * file that was distributed with this source code.
  */
 
-use Twig\Profiler\Profile;
+use Raider\Profiler\Profile;
 
 abstract class AbstractTest extends \PHPUnit\Framework\TestCase
 {

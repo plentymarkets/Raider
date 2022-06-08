@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Loader;
+namespace Raider\Loader;
 
-use Twig\Error\LoaderError;
-use Twig\Source;
+use Raider\Error\LoaderError;
+use Raider\Source;
 
 /**
  * Loads templates from other loaders.
@@ -161,4 +161,4 @@ class ChainLoader implements LoaderInterface, ExistsLoaderInterface, SourceConte
     }
 }
 
-class_alias('Twig\Loader\ChainLoader', 'Twig_Loader_Chain');
+class_alias('Raider\Loader\ChainLoader', 'Raider_Loader_Chain');

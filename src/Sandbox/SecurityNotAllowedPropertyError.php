@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Sandbox;
+namespace Raider\Sandbox;
 
 /**
  * Exception thrown when a not allowed class property is used in a template.
@@ -39,4 +39,4 @@ class SecurityNotAllowedPropertyError extends SecurityError
     }
 }
 
-class_alias('Twig\Sandbox\SecurityNotAllowedPropertyError', 'Twig_Sandbox_SecurityNotAllowedPropertyError');
+class_alias('Raider\Sandbox\SecurityNotAllowedPropertyError', 'Raider_Sandbox_SecurityNotAllowedPropertyError');

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * Internal node used by the for node.
@@ -53,4 +53,4 @@ class ForLoopNode extends Node
     }
 }
 
-class_alias('Twig\Node\ForLoopNode', 'Twig_Node_ForLoop');
+class_alias('Raider\Node\ForLoopNode', 'Raider_Node_ForLoop');

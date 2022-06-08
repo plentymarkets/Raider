@@ -5,4 +5,4 @@ Positional arguments after named arguments in a call
 --DATA--
 return []
 --EXCEPTION--
-Twig\Error\SyntaxError: Positional arguments cannot be used after named arguments for function "date" in "index.twig" at line 2.
+Raider\Error\SyntaxError: Positional arguments cannot be used after named arguments for function "date" in "index.twig" at line 2.

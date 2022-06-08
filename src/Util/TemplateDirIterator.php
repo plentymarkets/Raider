@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Util;
+namespace Raider\Util;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -27,4 +27,4 @@ class TemplateDirIterator extends \IteratorIterator
     }
 }
 
-class_alias('Twig\Util\TemplateDirIterator', 'Twig_Util_TemplateDirIterator');
+class_alias('Raider\Util\TemplateDirIterator', 'Raider_Util_TemplateDirIterator');

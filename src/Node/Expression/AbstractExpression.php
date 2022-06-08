@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Node\Node;
+use Raider\Node\Node;
 
 /**
  * Abstract class for all nodes that represents an expression.
@@ -23,4 +23,4 @@ abstract class AbstractExpression extends Node
 {
 }
 
-class_alias('Twig\Node\Expression\AbstractExpression', 'Twig_Node_Expression');
+class_alias('Raider\Node\Expression\AbstractExpression', 'Raider_Node_Expression');

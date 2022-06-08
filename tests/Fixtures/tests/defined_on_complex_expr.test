@@ -5,4 +5,4 @@
 --DATA--
 return []
 --EXCEPTION--
-Twig\Error\SyntaxError: The "defined" test only works with simple variables in "index.twig" at line 2.
+Raider\Error\SyntaxError: The "defined" test only works with simple variables in "index.twig" at line 2.

@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Node\Expression\AbstractExpression;
+use Raider\Compiler;
+use Raider\Node\Expression\AbstractExpression;
 
 /**
  * Represents an include node.
@@ -105,4 +105,4 @@ class IncludeNode extends Node implements NodeOutputInterface
     }
 }
 
-class_alias('Twig\Node\IncludeNode', 'Twig_Node_Include');
+class_alias('Raider\Node\IncludeNode', 'Raider_Node_Include');

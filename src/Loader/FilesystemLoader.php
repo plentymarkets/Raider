@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Loader;
+namespace Raider\Loader;
 
-use Twig\Error\LoaderError;
-use Twig\Source;
+use Raider\Error\LoaderError;
+use Raider\Source;
 
 /**
  * Loads template from the filesystem.
@@ -320,4 +320,4 @@ class FilesystemLoader implements LoaderInterface, ExistsLoaderInterface, Source
     }
 }
 
-class_alias('Twig\Loader\FilesystemLoader', 'Twig_Loader_Filesystem');
+class_alias('Raider\Loader\FilesystemLoader', 'Raider_Loader_Filesystem');

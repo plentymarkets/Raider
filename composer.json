@@ -1,7 +1,7 @@
 {
-    "name": "twig/twig",
+    "name": "twig/raider",
     "type": "library",
-    "description": "Twig, the flexible, fast, and secure template language for PHP",
+    "description": "Raider, the flexible, fast, and secure template language for PHP",
     "keywords": ["templating"],
     "homepage": "https://twig.symfony.com",
     "license": "BSD-3-Clause",
@@ -33,10 +33,10 @@
     },
     "autoload": {
         "psr-0" : {
-            "Twig_" : "lib/"
+            "Raider_" : "lib/"
         },
         "psr-4" : {
-            "Twig\\" : "src/"
+            "Raider\\" : "src/"
         }
     },
     "autoload-dev": {

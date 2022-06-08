@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
 /**
  * Represents a body node.
@@ -20,4 +20,4 @@ class BodyNode extends Node
 {
 }
 
-class_alias('Twig\Node\BodyNode', 'Twig_Node_Body');
+class_alias('Raider\Node\BodyNode', 'Raider_Node_Body');

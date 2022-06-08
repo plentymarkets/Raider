@@ -10,29 +10,29 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\BlockNode;
-use Twig\Node\BlockReferenceNode;
-use Twig\Node\BodyNode;
-use Twig\Node\Expression\AbstractExpression;
-use Twig\Node\MacroNode;
-use Twig\Node\ModuleNode;
-use Twig\Node\Node;
-use Twig\Node\NodeCaptureInterface;
-use Twig\Node\NodeOutputInterface;
-use Twig\Node\PrintNode;
-use Twig\Node\TextNode;
-use Twig\NodeVisitor\NodeVisitorInterface;
-use Twig\TokenParser\TokenParserInterface;
+use Raider\Error\SyntaxError;
+use Raider\Node\BlockNode;
+use Raider\Node\BlockReferenceNode;
+use Raider\Node\BodyNode;
+use Raider\Node\Expression\AbstractExpression;
+use Raider\Node\MacroNode;
+use Raider\Node\ModuleNode;
+use Raider\Node\Node;
+use Raider\Node\NodeCaptureInterface;
+use Raider\Node\NodeOutputInterface;
+use Raider\Node\PrintNode;
+use Raider\Node\TextNode;
+use Raider\NodeVisitor\NodeVisitorInterface;
+use Raider\TokenParser\TokenParserInterface;
 
 /**
  * Default parser implementation.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-class Parser implements \Twig_ParserInterface
+class Parser implements \Raider_ParserInterface
 {
     protected $stack = [];
     protected $stream;
@@ -398,7 +398,7 @@ class Parser implements \Twig_ParserInterface
         return $this->stream->getCurrent();
     }
 
-    protected function filterBodyNodes(\Twig_NodeInterface $node)
+    protected function filterBodyNodes(\Raider_NodeInterface $node)
     {
         // check that the body does not contain non-empty output nodes
         if (
@@ -436,4 +436,4 @@ class Parser implements \Twig_ParserInterface
     }
 }
 
-class_alias('Twig\Parser', 'Twig_Parser');
+class_alias('Raider\Parser', 'Raider_Parser');

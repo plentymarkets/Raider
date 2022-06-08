@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * Represents a block call node.
@@ -35,4 +35,4 @@ class BlockReferenceNode extends Node implements NodeOutputInterface
     }
 }
 
-class_alias('Twig\Node\BlockReferenceNode', 'Twig_Node_BlockReference');
+class_alias('Raider\Node\BlockReferenceNode', 'Raider_Node_BlockReference');

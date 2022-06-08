@@ -2,7 +2,7 @@
 
 namespace Twig\Tests\Node\Expression\PHP53;
 
-$env = new \Twig\Environment(new \Twig\Loader\ArrayLoader([]));
-$env->addFilter(new \Twig\TwigFilter('anonymous', function () {}));
+$env = new \Raider\Environment(new \Raider\Loader\ArrayLoader([]));
+$env->addFilter(new \Raider\TwigFilter('anonymous', function () {}));
 
 return $env;

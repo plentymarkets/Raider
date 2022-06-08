@@ -7,4 +7,4 @@
 --DATA--
 return []
 --EXCEPTION--
-Twig\Error\SyntaxError: Cannot use "extend" in a macro in "index.twig" at line 3.
+Raider\Error\SyntaxError: Cannot use "extend" in a macro in "index.twig" at line 3.

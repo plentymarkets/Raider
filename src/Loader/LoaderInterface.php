@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Loader;
+namespace Raider\Loader;
 
-use Twig\Error\LoaderError;
+use Raider\Error\LoaderError;
 
 /**
  * Interface all loaders must implement.
@@ -58,4 +58,4 @@ interface LoaderInterface
     public function isFresh($name, $time);
 }
 
-class_alias('Twig\Loader\LoaderInterface', 'Twig_LoaderInterface');
+class_alias('Raider\Loader\LoaderInterface', 'Raider_LoaderInterface');

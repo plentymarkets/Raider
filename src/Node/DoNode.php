@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Node\Expression\AbstractExpression;
+use Raider\Compiler;
+use Raider\Node\Expression\AbstractExpression;
 
 /**
  * Represents a do node.
@@ -37,4 +37,4 @@ class DoNode extends Node
     }
 }
 
-class_alias('Twig\Node\DoNode', 'Twig_Node_Do');
+class_alias('Raider\Node\DoNode', 'Raider_Node_Do');

@@ -15,4 +15,4 @@
 --DATA--
 return []
 --EXCEPTION--
-Twig\Error\RuntimeError: Variable "foo" does not exist in "index.twig" at line 7.
+Raider\Error\RuntimeError: Variable "foo" does not exist in "index.twig" at line 7.

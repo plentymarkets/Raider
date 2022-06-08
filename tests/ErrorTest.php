@@ -11,12 +11,12 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Error\Error;
-use Twig\Error\RuntimeError;
-use Twig\Loader\ArrayLoader;
-use Twig\Loader\FilesystemLoader;
-use Twig\Source;
+use Raider\Environment;
+use Raider\Error\Error;
+use Raider\Error\RuntimeError;
+use Raider\Loader\ArrayLoader;
+use Raider\Loader\FilesystemLoader;
+use Raider\Source;
 
 class ErrorTest extends \PHPUnit\Framework\TestCase
 {

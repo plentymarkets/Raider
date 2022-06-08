@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
-use Twig\Node\Node;
+use Raider\Compiler;
+use Raider\Node\Node;
 
 /**
  * Represents an arrow function.

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Binary;
+namespace Raider\Node\Expression\Binary;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class FloorDivBinary extends AbstractBinary
 {
@@ -28,4 +28,4 @@ class FloorDivBinary extends AbstractBinary
     }
 }
 
-class_alias('Twig\Node\Expression\Binary\FloorDivBinary', 'Twig_Node_Expression_Binary_FloorDiv');
+class_alias('Raider\Node\Expression\Binary\FloorDivBinary', 'Raider_Node_Expression_Binary_FloorDiv');

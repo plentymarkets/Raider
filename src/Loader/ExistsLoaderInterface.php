@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Loader;
+namespace Raider\Loader;
 
 /**
  * Adds an exists() method for loaders.
@@ -30,4 +30,4 @@ interface ExistsLoaderInterface
     public function exists($name);
 }
 
-class_alias('Twig\Loader\ExistsLoaderInterface', 'Twig_ExistsLoaderInterface');
+class_alias('Raider\Loader\ExistsLoaderInterface', 'Raider_ExistsLoaderInterface');

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class TempNameExpression extends AbstractExpression
 {
@@ -30,4 +30,4 @@ class TempNameExpression extends AbstractExpression
     }
 }
 
-class_alias('Twig\Node\Expression\TempNameExpression', 'Twig_Node_Expression_TempName');
+class_alias('Raider\Node\Expression\TempNameExpression', 'Raider_Node_Expression_TempName');

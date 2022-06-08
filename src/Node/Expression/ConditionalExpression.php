@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class ConditionalExpression extends AbstractExpression
 {
@@ -35,4 +35,4 @@ class ConditionalExpression extends AbstractExpression
     }
 }
 
-class_alias('Twig\Node\Expression\ConditionalExpression', 'Twig_Node_Expression_Conditional');
+class_alias('Raider\Node\Expression\ConditionalExpression', 'Raider_Node_Expression_Conditional');

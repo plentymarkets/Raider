@@ -10,16 +10,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
-use Twig\Error\SyntaxError;
+use Raider\Error\SyntaxError;
 
 /**
  * Lexes a template string.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-class Lexer implements \Twig_LexerInterface
+class Lexer implements \Raider_LexerInterface
 {
     protected $tokens;
     protected $code;
@@ -163,7 +163,7 @@ class Lexer implements \Twig_LexerInterface
     public function tokenize($code, $name = null)
     {
         if (!$code instanceof Source) {
-            @trigger_error(sprintf('Passing a string as the $code argument of %s() is deprecated since version 1.27 and will be removed in 2.0. Pass a \Twig\Source instance instead.', __METHOD__), \E_USER_DEPRECATED);
+            @trigger_error(sprintf('Passing a string as the $code argument of %s() is deprecated since version 1.27 and will be removed in 2.0. Pass a \Raider\Source instance instead.', __METHOD__), \E_USER_DEPRECATED);
             $this->source = new Source($code, $name);
         } else {
             $this->source = $code;
@@ -398,7 +398,7 @@ class Lexer implements \Twig_LexerInterface
     protected function lexRawData($tag)
     {
         if ('raw' === $tag) {
-            @trigger_error(sprintf('Twig Tag "raw" is deprecated since version 1.21. Use "verbatim" instead in %s at line %d.', $this->filename, $this->lineno), \E_USER_DEPRECATED);
+            @trigger_error(sprintf('Raider Tag "raw" is deprecated since version 1.21. Use "verbatim" instead in %s at line %d.', $this->filename, $this->lineno), \E_USER_DEPRECATED);
         }
 
         if (!preg_match(str_replace('%s', $tag, $this->regexes['lex_raw_data']), $this->code, $match, \PREG_OFFSET_CAPTURE, $this->cursor)) {
@@ -535,4 +535,4 @@ class Lexer implements \Twig_LexerInterface
     }
 }
 
-class_alias('Twig\Lexer', 'Twig_Lexer');
+class_alias('Raider\Lexer', 'Raider_Lexer');

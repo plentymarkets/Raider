@@ -15,4 +15,4 @@
 --DATA--
 return []
 --EXCEPTION--
-Twig\Error\SyntaxError: Unknown "another" function in "index.twig" at line 7.
+Raider\Error\SyntaxError: Unknown "another" function in "index.twig" at line 7.

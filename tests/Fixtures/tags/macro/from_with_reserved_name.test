@@ -5,4 +5,4 @@
 --DATA--
 return []
 --EXCEPTION--
-Twig\Error\SyntaxError: "templateName" cannot be an imported macro as it is a reserved keyword in "index.twig" at line 2.
+Raider\Error\SyntaxError: "templateName" cannot be an imported macro as it is a reserved keyword in "index.twig" at line 2.

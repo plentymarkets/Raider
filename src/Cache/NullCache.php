@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Cache;
+namespace Raider\Cache;
 
 /**
  * Implements a no-cache strategy.
@@ -39,4 +39,4 @@ class NullCache implements CacheInterface
     }
 }
 
-class_alias('Twig\Cache\NullCache', 'Twig_Cache_Null');
+class_alias('Raider\Cache\NullCache', 'Raider_Cache_Null');

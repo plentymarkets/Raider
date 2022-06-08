@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
-use Twig\TwigTest;
+use Raider\Compiler;
+use Raider\TwigTest;
 
 class TestExpression extends CallExpression
 {
-    public function __construct(\Twig_NodeInterface $node, $name, ?\Twig_NodeInterface $arguments, $lineno)
+    public function __construct(\Raider_NodeInterface $node, $name, ?\Raider_NodeInterface $arguments, $lineno)
     {
         $nodes = ['node' => $node];
         if (null !== $arguments) {
@@ -37,7 +37,7 @@ class TestExpression extends CallExpression
         if ($test instanceof TwigTest) {
             $this->setAttribute('arguments', $test->getArguments());
         }
-        if ($test instanceof \Twig_TestCallableInterface || $test instanceof TwigTest) {
+        if ($test instanceof \Raider_TestCallableInterface || $test instanceof TwigTest) {
             $this->setAttribute('callable', $test->getCallable());
         }
         if ($test instanceof TwigTest) {
@@ -48,4 +48,4 @@ class TestExpression extends CallExpression
     }
 }
 
-class_alias('Twig\Node\Expression\TestExpression', 'Twig_Node_Expression_Test');
+class_alias('Raider\Node\Expression\TestExpression', 'Raider_Node_Expression_Test');

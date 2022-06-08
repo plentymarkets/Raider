@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\IncludeNode;
-use Twig\Node\SandboxNode;
-use Twig\Node\TextNode;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Node\IncludeNode;
+use Raider\Node\SandboxNode;
+use Raider\Node\TextNode;
+use Raider\Token;
 
 /**
  * Marks a section of a template as untrusted code that must be evaluated in the sandbox mode.
@@ -64,4 +64,4 @@ class SandboxTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\SandboxTokenParser', 'Twig_TokenParser_Sandbox');
+class_alias('Raider\TokenParser\SandboxTokenParser', 'Raider_TokenParser_Sandbox');

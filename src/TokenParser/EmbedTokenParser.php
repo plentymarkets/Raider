@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\EmbedNode;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\NameExpression;
-use Twig\Token;
+use Raider\Node\EmbedNode;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\NameExpression;
+use Raider\Token;
 
 /**
  * Embeds a template.
@@ -71,4 +71,4 @@ class EmbedTokenParser extends IncludeTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\EmbedTokenParser', 'Twig_TokenParser_Embed');
+class_alias('Raider\TokenParser\EmbedTokenParser', 'Raider_TokenParser_Embed');

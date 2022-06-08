@@ -11,9 +11,9 @@ namespace Twig\Tests\Node\Expression\Binary;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\Expression\Binary\OrBinary;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Test\NodeTestCase;
+use Raider\Node\Expression\Binary\OrBinary;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Test\NodeTestCase;
 
 class OrTest extends NodeTestCase
 {

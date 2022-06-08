@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension;
+namespace Raider\Extension;
 
-use Twig\NodeVisitor\OptimizerNodeVisitor;
+use Raider\NodeVisitor\OptimizerNodeVisitor;
 
 /**
  * @final
@@ -36,4 +36,4 @@ class OptimizerExtension extends AbstractExtension
     }
 }
 
-class_alias('Twig\Extension\OptimizerExtension', 'Twig_Extension_Optimizer');
+class_alias('Raider\Extension\OptimizerExtension', 'Raider_Extension_Optimizer');

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Profiler\Node;
+namespace Raider\Profiler\Node;
 
-use Twig\Compiler;
-use Twig\Node\Node;
+use Raider\Compiler;
+use Raider\Node\Node;
 
 /**
  * Represents a profile leave node.
@@ -35,4 +35,4 @@ class LeaveProfileNode extends Node
     }
 }
 
-class_alias('Twig\Profiler\Node\LeaveProfileNode', 'Twig_Profiler_Node_LeaveProfile');
+class_alias('Raider\Profiler\Node\LeaveProfileNode', 'Raider_Profiler_Node_LeaveProfile');

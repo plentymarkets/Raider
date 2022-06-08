@@ -10,24 +10,24 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\Expression\ArrayExpression;
-use Twig\Node\Expression\ArrowFunctionExpression;
-use Twig\Node\Expression\AssignNameExpression;
-use Twig\Node\Expression\Binary\ConcatBinary;
-use Twig\Node\Expression\BlockReferenceExpression;
-use Twig\Node\Expression\ConditionalExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\Node\Expression\MethodCallExpression;
-use Twig\Node\Expression\NameExpression;
-use Twig\Node\Expression\ParentExpression;
-use Twig\Node\Expression\Unary\NegUnary;
-use Twig\Node\Expression\Unary\NotUnary;
-use Twig\Node\Expression\Unary\PosUnary;
-use Twig\Node\Node;
+use Raider\Error\SyntaxError;
+use Raider\Node\Expression\ArrayExpression;
+use Raider\Node\Expression\ArrowFunctionExpression;
+use Raider\Node\Expression\AssignNameExpression;
+use Raider\Node\Expression\Binary\ConcatBinary;
+use Raider\Node\Expression\BlockReferenceExpression;
+use Raider\Node\Expression\ConditionalExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\Node\Expression\MethodCallExpression;
+use Raider\Node\Expression\NameExpression;
+use Raider\Node\Expression\ParentExpression;
+use Raider\Node\Expression\Unary\NegUnary;
+use Raider\Node\Expression\Unary\NotUnary;
+use Raider\Node\Expression\Unary\PosUnary;
+use Raider\Node\Node;
 
 /**
  * Parses expressions.
@@ -267,11 +267,11 @@ class ExpressionParser
                     $class = $this->unaryOperators[$token->getValue()]['class'];
 
                     $ref = new \ReflectionClass($class);
-                    $negClass = 'Twig\Node\Expression\Unary\NegUnary';
-                    $posClass = 'Twig\Node\Expression\Unary\PosUnary';
-                    if (!(\in_array($ref->getName(), [$negClass, $posClass, 'Twig_Node_Expression_Unary_Neg', 'Twig_Node_Expression_Unary_Pos'])
+                    $negClass = 'Raider\Node\Expression\Unary\NegUnary';
+                    $posClass = 'Raider\Node\Expression\Unary\PosUnary';
+                    if (!(\in_array($ref->getName(), [$negClass, $posClass, 'Raider_Node_Expression_Unary_Neg', 'Raider_Node_Expression_Unary_Pos'])
                         || $ref->isSubclassOf($negClass) || $ref->isSubclassOf($posClass)
-                        || $ref->isSubclassOf('Twig_Node_Expression_Unary_Neg') || $ref->isSubclassOf('Twig_Node_Expression_Unary_Pos'))
+                        || $ref->isSubclassOf('Raider_Node_Expression_Unary_Neg') || $ref->isSubclassOf('Raider_Node_Expression_Unary_Pos'))
                     ) {
                         throw new SyntaxError(sprintf('Unexpected unary operator "%s".', $token->getValue()), $token->getLine(), $this->parser->getStream()->getSourceContext());
                     }
@@ -697,12 +697,12 @@ class ExpressionParser
         return new Node($targets);
     }
 
-    private function parseNotTestExpression(\Twig_NodeInterface $node)
+    private function parseNotTestExpression(\Raider_NodeInterface $node)
     {
         return new NotUnary($this->parseTestExpression($node), $this->parser->getCurrentToken()->getLine());
     }
 
-    private function parseTestExpression(\Twig_NodeInterface $node)
+    private function parseTestExpression(\Raider_NodeInterface $node)
     {
         $stream = $this->parser->getStream();
         list($name, $test) = $this->getTest($node->getTemplateLine());
@@ -748,7 +748,7 @@ class ExpressionParser
     {
         if ($test instanceof TwigTest && $test->isDeprecated()) {
             $stream = $this->parser->getStream();
-            $message = sprintf('Twig Test "%s" is deprecated', $test->getName());
+            $message = sprintf('Raider Test "%s" is deprecated', $test->getName());
             if (!\is_bool($test->getDeprecatedVersion())) {
                 $message .= sprintf(' since version %s', $test->getDeprecatedVersion());
             }
@@ -765,7 +765,7 @@ class ExpressionParser
             return $test->getNodeClass();
         }
 
-        return $test instanceof \Twig_Test_Node ? $test->getClass() : 'Twig\Node\Expression\TestExpression';
+        return $test instanceof \Raider_Test_Node ? $test->getClass() : 'Raider\Node\Expression\TestExpression';
     }
 
     protected function getFunctionNodeClass($name, $line)
@@ -778,7 +778,7 @@ class ExpressionParser
         }
 
         if ($function instanceof TwigFunction && $function->isDeprecated()) {
-            $message = sprintf('Twig Function "%s" is deprecated', $function->getName());
+            $message = sprintf('Raider Function "%s" is deprecated', $function->getName());
             if (!\is_bool($function->getDeprecatedVersion())) {
                 $message .= sprintf(' since version %s', $function->getDeprecatedVersion());
             }
@@ -795,7 +795,7 @@ class ExpressionParser
             return $function->getNodeClass();
         }
 
-        return $function instanceof \Twig_Function_Node ? $function->getClass() : 'Twig\Node\Expression\FunctionExpression';
+        return $function instanceof \Raider_Function_Node ? $function->getClass() : 'Raider\Node\Expression\FunctionExpression';
     }
 
     protected function getFilterNodeClass($name, $line)
@@ -808,7 +808,7 @@ class ExpressionParser
         }
 
         if ($filter instanceof TwigFilter && $filter->isDeprecated()) {
-            $message = sprintf('Twig Filter "%s" is deprecated', $filter->getName());
+            $message = sprintf('Raider Filter "%s" is deprecated', $filter->getName());
             if (!\is_bool($filter->getDeprecatedVersion())) {
                 $message .= sprintf(' since version %s', $filter->getDeprecatedVersion());
             }
@@ -825,11 +825,11 @@ class ExpressionParser
             return $filter->getNodeClass();
         }
 
-        return $filter instanceof \Twig_Filter_Node ? $filter->getClass() : 'Twig\Node\Expression\FilterExpression';
+        return $filter instanceof \Raider_Filter_Node ? $filter->getClass() : 'Raider\Node\Expression\FilterExpression';
     }
 
     // checks that the node only contains "constant" elements
-    protected function checkConstantExpression(\Twig_NodeInterface $node)
+    protected function checkConstantExpression(\Raider_NodeInterface $node)
     {
         if (!($node instanceof ConstantExpression || $node instanceof ArrayExpression
             || $node instanceof NegUnary || $node instanceof PosUnary
@@ -847,4 +847,4 @@ class ExpressionParser
     }
 }
 
-class_alias('Twig\ExpressionParser', 'Twig_ExpressionParser');
+class_alias('Raider\ExpressionParser', 'Raider_ExpressionParser');

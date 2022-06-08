@@ -12,17 +12,17 @@ namespace Twig\Tests;
  */
 
 use PHPUnit\Framework\TestCase;
-use Twig\Environment;
-use Twig\Error\RuntimeError;
-use Twig\Extension\SandboxExtension;
-use Twig\Loader\ArrayLoader;
-use Twig\Loader\LoaderInterface;
-use Twig\Loader\SourceContextLoaderInterface;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\NodeVisitor\NodeVisitorInterface;
-use Twig\Sandbox\SecurityError;
-use Twig\Sandbox\SecurityPolicy;
-use Twig\Template;
+use Raider\Environment;
+use Raider\Error\RuntimeError;
+use Raider\Extension\SandboxExtension;
+use Raider\Loader\ArrayLoader;
+use Raider\Loader\LoaderInterface;
+use Raider\Loader\SourceContextLoaderInterface;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\NodeVisitor\NodeVisitorInterface;
+use Raider\Sandbox\SecurityError;
+use Raider\Sandbox\SecurityPolicy;
+use Raider\Template;
 
 class TemplateTest extends TestCase
 {
@@ -30,7 +30,7 @@ class TemplateTest extends TestCase
     {
         $this->expectException('\LogicException');
 
-        $twig = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $twig = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
         $template = new TemplateForTest($twig);
         $template->displayBlock('foo', [], ['foo' => [new \stdClass(), 'foo']]);
     }
@@ -90,7 +90,7 @@ class TemplateTest extends TestCase
      */
     public function testGetAttributeWithSandbox($object, $item, $allowed)
     {
-        $twig = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $twig = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
         $policy = new SecurityPolicy([], [], [/*method*/], [/*prop*/], []);
         $twig->addExtension(new SandboxExtension($policy, !$allowed));
         $template = new TemplateForTest($twig);
@@ -131,21 +131,21 @@ class TemplateTest extends TestCase
     {
         // to be removed in 2.0
         $twig = new Environment($this->createMock('Twig\Tests\TemplateTestLoaderInterface'));
-        //$twig = new Environment($this->createMock('\Twig\Loader\LoaderInterface', '\Twig\Loader\SourceContextLoaderInterface'));
+        //$twig = new Environment($this->createMock('\Raider\Loader\LoaderInterface', '\Raider\Loader\SourceContextLoaderInterface'));
 
         $template = new TemplateForTest($twig, 'index.twig');
         $template1 = new TemplateForTest($twig, 'index1.twig');
 
-        $this->assertInstanceOf('\Twig\Markup', $template->getAttribute($template1, 'string'));
+        $this->assertInstanceOf('\Raider\Markup', $template->getAttribute($template1, 'string'));
         $this->assertEquals('some_string', $template->getAttribute($template1, 'string'));
 
-        $this->assertInstanceOf('\Twig\Markup', $template->getAttribute($template1, 'true'));
+        $this->assertInstanceOf('\Raider\Markup', $template->getAttribute($template1, 'true'));
         $this->assertEquals('1', $template->getAttribute($template1, 'true'));
 
-        $this->assertInstanceOf('\Twig\Markup', $template->getAttribute($template1, 'zero'));
+        $this->assertInstanceOf('\Raider\Markup', $template->getAttribute($template1, 'zero'));
         $this->assertEquals('0', $template->getAttribute($template1, 'zero'));
 
-        $this->assertNotInstanceof('\Twig\Markup', $template->getAttribute($template1, 'empty'));
+        $this->assertNotInstanceof('\Raider\Markup', $template->getAttribute($template1, 'empty'));
         $this->assertSame('', $template->getAttribute($template1, 'empty'));
 
         $this->assertFalse($template->getAttribute($template1, 'env', [], Template::ANY_CALL, true));
@@ -179,21 +179,21 @@ class TemplateTest extends TestCase
     {
         // to be removed in 2.0
         $twig = new Environment($this->createMock('Twig\Tests\TemplateTestLoaderInterface'));
-        //$twig = new Environment($this->createMock('\Twig\Loader\LoaderInterface', '\Twig\Loader\SourceContextLoaderInterface'));
+        //$twig = new Environment($this->createMock('\Raider\Loader\LoaderInterface', '\Raider\Loader\SourceContextLoaderInterface'));
 
         $template = new TemplateForTest($twig, 'index.twig');
         $template1 = new TemplateForTest($twig, 'index1.twig');
 
-        $this->assertInstanceOf('\Twig\Markup', $template->getAttribute($template1, 'string'));
+        $this->assertInstanceOf('\Raider\Markup', $template->getAttribute($template1, 'string'));
         $this->assertEquals('some_string', $template->getAttribute($template1, 'string'));
 
-        $this->assertInstanceOf('\Twig\Markup', $template->getAttribute($template1, 'true'));
+        $this->assertInstanceOf('\Raider\Markup', $template->getAttribute($template1, 'true'));
         $this->assertEquals('1', $template->getAttribute($template1, 'true'));
 
-        $this->assertInstanceOf('\Twig\Markup', $template->getAttribute($template1, 'zero'));
+        $this->assertInstanceOf('\Raider\Markup', $template->getAttribute($template1, 'zero'));
         $this->assertEquals('0', $template->getAttribute($template1, 'zero'));
 
-        $this->assertNotInstanceof('\Twig\Markup', $template->getAttribute($template1, 'empty'));
+        $this->assertNotInstanceof('\Raider\Markup', $template->getAttribute($template1, 'empty'));
         $this->assertSame('', $template->getAttribute($template1, 'empty'));
 
         $blocks = ['name' => [$template1, 'block_name']];
@@ -233,7 +233,7 @@ class TemplateTest extends TestCase
 
     public function testGetAttributeOnArrayWithConfusableKey()
     {
-        $template = new TemplateForTest(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $template = new TemplateForTest(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
 
         $array = ['Zero', 'One', -1 => 'MinusOne', '' => 'EmptyString', '1.5' => 'FloatButString', '01' => 'IntegerButStringWithLeadingZeros'];
 
@@ -267,7 +267,7 @@ class TemplateTest extends TestCase
      */
     public function testGetAttribute($defined, $value, $object, $item, $arguments, $type)
     {
-        $template = new TemplateForTest(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $template = new TemplateForTest(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
 
         $this->assertEquals($value, $template->getAttribute($object, $item, $arguments, $type));
     }
@@ -277,12 +277,12 @@ class TemplateTest extends TestCase
      */
     public function testGetAttributeStrict($defined, $value, $object, $item, $arguments, $type, $exceptionMessage = null)
     {
-        $template = new TemplateForTest(new Environment($this->createMock('\Twig\Loader\LoaderInterface'), ['strict_variables' => true]));
+        $template = new TemplateForTest(new Environment($this->createMock('\Raider\Loader\LoaderInterface'), ['strict_variables' => true]));
 
         if ($defined) {
             $this->assertEquals($value, $template->getAttribute($object, $item, $arguments, $type));
         } else {
-            $this->expectException('\Twig\Error\RuntimeError');
+            $this->expectException('\Raider\Error\RuntimeError');
             if (null !== $exceptionMessage) {
                 $this->expectExceptionMessage($exceptionMessage);
             }
@@ -295,7 +295,7 @@ class TemplateTest extends TestCase
      */
     public function testGetAttributeDefined($defined, $value, $object, $item, $arguments, $type)
     {
-        $template = new TemplateForTest(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $template = new TemplateForTest(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
 
         $this->assertEquals($defined, $template->getAttribute($object, $item, $arguments, $type, true));
     }
@@ -305,14 +305,14 @@ class TemplateTest extends TestCase
      */
     public function testGetAttributeDefinedStrict($defined, $value, $object, $item, $arguments, $type)
     {
-        $template = new TemplateForTest(new Environment($this->createMock('\Twig\Loader\LoaderInterface'), ['strict_variables' => true]));
+        $template = new TemplateForTest(new Environment($this->createMock('\Raider\Loader\LoaderInterface'), ['strict_variables' => true]));
 
         $this->assertEquals($defined, $template->getAttribute($object, $item, $arguments, $type, true));
     }
 
     public function testGetAttributeCallExceptions()
     {
-        $template = new TemplateForTest(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $template = new TemplateForTest(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
 
         $object = new TemplateMagicMethodExceptionObject();
 
@@ -453,10 +453,10 @@ class TemplateTest extends TestCase
 
     public function testGetIsMethods()
     {
-        $this->expectException('\Twig\Error\RuntimeError');
+        $this->expectException('\Raider\Error\RuntimeError');
 
         $getIsObject = new TemplateGetIsMethods();
-        $template = new TemplateForTest(new Environment($this->createMock('\Twig\Loader\LoaderInterface'), ['strict_variables' => true]));
+        $template = new TemplateForTest(new Environment($this->createMock('\Raider\Loader\LoaderInterface'), ['strict_variables' => true]));
         // first time should not create a cache for "get"
         $this->assertNull($template->getAttribute($getIsObject, 'get'));
         // 0 should be in the method cache now, so this should fail
@@ -790,7 +790,7 @@ class TemplateMagicMethodExceptionObject
 
 class CExtDisablingNodeVisitor implements NodeVisitorInterface
 {
-    public function enterNode(\Twig_NodeInterface $node, Environment $env)
+    public function enterNode(\Raider_NodeInterface $node, Environment $env)
     {
         if ($node instanceof GetAttrExpression) {
             $node->setAttribute('disable_c_ext', true);
@@ -799,7 +799,7 @@ class CExtDisablingNodeVisitor implements NodeVisitorInterface
         return $node;
     }
 
-    public function leaveNode(\Twig_NodeInterface $node, Environment $env)
+    public function leaveNode(\Raider_NodeInterface $node, Environment $env)
     {
         return $node;
     }

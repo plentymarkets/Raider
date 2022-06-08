@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Parser;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Parser;
+use Raider\Token;
 
 /**
  * Interface implemented by token parsers.
@@ -30,7 +30,7 @@ interface TokenParserInterface
     /**
      * Parses a token and returns a node.
      *
-     * @return \Twig_NodeInterface
+     * @return \Raider_NodeInterface
      *
      * @throws SyntaxError
      */
@@ -44,8 +44,8 @@ interface TokenParserInterface
     public function getTag();
 }
 
-class_alias('Twig\TokenParser\TokenParserInterface', 'Twig_TokenParserInterface');
+class_alias('Raider\TokenParser\TokenParserInterface', 'Raider_TokenParserInterface');
 
 // Ensure that the aliased name is loaded to keep BC for classes implementing the typehint with the old aliased name.
-class_exists('Twig\Token');
-class_exists('Twig\Parser');
+class_exists('Raider\Token');
+class_exists('Raider\Parser');

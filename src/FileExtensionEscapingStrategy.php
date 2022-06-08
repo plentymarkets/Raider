@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
 /**
  * Default autoescaping strategy based on file names.
@@ -59,4 +59,4 @@ class FileExtensionEscapingStrategy
     }
 }
 
-class_alias('Twig\FileExtensionEscapingStrategy', 'Twig_FileExtensionEscapingStrategy');
+class_alias('Raider\FileExtensionEscapingStrategy', 'Raider_FileExtensionEscapingStrategy');

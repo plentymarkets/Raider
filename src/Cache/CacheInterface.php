@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Cache;
+namespace Raider\Cache;
 
 /**
  * Interface implemented by cache classes.
@@ -57,4 +57,4 @@ interface CacheInterface
     public function getTimestamp($key);
 }
 
-class_alias('Twig\Cache\CacheInterface', 'Twig_CacheInterface');
+class_alias('Raider\Cache\CacheInterface', 'Raider_CacheInterface');

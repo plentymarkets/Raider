@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig;
+namespace Raider;
 
-use Twig\Node\Node;
+use Raider\Node\Node;
 
 /**
  * Represents a template filter.
@@ -39,7 +39,7 @@ class TwigFilter
             'is_safe_callback' => null,
             'pre_escape' => null,
             'preserves_safety' => null,
-            'node_class' => '\Twig\Node\Expression\FilterExpression',
+            'node_class' => '\Raider\Node\Expression\FilterExpression',
             'deprecated' => false,
             'alternative' => null,
         ], $options);
@@ -122,7 +122,7 @@ class TwigFilter
     }
 }
 
-class_alias('Twig\TwigFilter', 'Twig_SimpleFilter');
+class_alias('Raider\TwigFilter', 'Raider_SimpleFilter');
 
 // Ensure that the aliased name is loaded to keep BC for classes implementing the typehint with the old aliased name.
-class_exists('Twig\Node\Node');
+class_exists('Raider\Node\Node');

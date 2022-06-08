@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Filter;
+namespace Raider\Node\Expression\Filter;
 
-use Twig\Compiler;
-use Twig\Node\Expression\ConditionalExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\FilterExpression;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\Node\Expression\NameExpression;
-use Twig\Node\Expression\Test\DefinedTest;
-use Twig\Node\Node;
+use Raider\Compiler;
+use Raider\Node\Expression\ConditionalExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\FilterExpression;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\Node\Expression\NameExpression;
+use Raider\Node\Expression\Test\DefinedTest;
+use Raider\Node\Node;
 
 /**
  * Returns the value or the default value when it is undefined or empty.
@@ -29,7 +29,7 @@ use Twig\Node\Node;
  */
 class DefaultFilter extends FilterExpression
 {
-    public function __construct(\Twig_NodeInterface $node, ConstantExpression $filterName, \Twig_NodeInterface $arguments, $lineno, $tag = null)
+    public function __construct(\Raider_NodeInterface $node, ConstantExpression $filterName, \Raider_NodeInterface $arguments, $lineno, $tag = null)
     {
         $default = new FilterExpression($node, new ConstantExpression('default', $node->getTemplateLine()), $arguments, $node->getTemplateLine());
 
@@ -51,4 +51,4 @@ class DefaultFilter extends FilterExpression
     }
 }
 
-class_alias('Twig\Node\Expression\Filter\DefaultFilter', 'Twig_Node_Expression_Filter_Default');
+class_alias('Raider\Node\Expression\Filter\DefaultFilter', 'Raider_Node_Expression_Filter_Default');

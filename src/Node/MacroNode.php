@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Error\SyntaxError;
+use Raider\Compiler;
+use Raider\Error\SyntaxError;
 
 /**
  * Represents a macro node.
@@ -23,7 +23,7 @@ class MacroNode extends Node
 {
     public const VARARGS_NAME = 'varargs';
 
-    public function __construct($name, \Twig_NodeInterface $body, \Twig_NodeInterface $arguments, $lineno, $tag = null)
+    public function __construct($name, \Raider_NodeInterface $body, \Raider_NodeInterface $arguments, $lineno, $tag = null)
     {
         foreach ($arguments as $argumentName => $argument) {
             if (self::VARARGS_NAME === $argumentName) {
@@ -133,4 +133,4 @@ class MacroNode extends Node
     }
 }
 
-class_alias('Twig\Node\MacroNode', 'Twig_Node_Macro');
+class_alias('Raider\Node\MacroNode', 'Raider_Node_Macro');

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Error;
+namespace Raider\Error;
 
 /**
  * Exception thrown when an error occurs during template loading.
@@ -20,4 +20,4 @@ class LoaderError extends Error
 {
 }
 
-class_alias('Twig\Error\LoaderError', 'Twig_Error_Loader');
+class_alias('Raider\Error\LoaderError', 'Raider_Error_Loader');

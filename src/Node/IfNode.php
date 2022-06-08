@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * Represents an if node.
@@ -21,7 +21,7 @@ use Twig\Compiler;
  */
 class IfNode extends Node
 {
-    public function __construct(\Twig_NodeInterface $tests, ?\Twig_NodeInterface $else, $lineno, $tag = null)
+    public function __construct(\Raider_NodeInterface $tests, ?\Raider_NodeInterface $else, $lineno, $tag = null)
     {
         $nodes = ['tests' => $tests];
         if (null !== $else) {
@@ -69,4 +69,4 @@ class IfNode extends Node
     }
 }
 
-class_alias('Twig\Node\IfNode', 'Twig_Node_If');
+class_alias('Raider\Node\IfNode', 'Raider_Node_If');

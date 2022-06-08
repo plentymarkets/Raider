@@ -11,33 +11,33 @@ namespace Twig\Tests\NodeVisitor;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Node\ForNode;
-use Twig\Source;
+use Raider\Environment;
+use Raider\Node\ForNode;
+use Raider\Source;
 
 class OptimizerTest extends \PHPUnit\Framework\TestCase
 {
     public function testRenderBlockOptimizer()
     {
-        $env = new Environment($this->createMock('\Twig\Loader\LoaderInterface'), ['cache' => false, 'autoescape' => false]);
+        $env = new Environment($this->createMock('\Raider\Loader\LoaderInterface'), ['cache' => false, 'autoescape' => false]);
 
         $stream = $env->parse($env->tokenize(new Source('{{ block("foo") }}', 'index')));
 
         $node = $stream->getNode('body')->getNode(0);
 
-        $this->assertInstanceOf('\Twig\Node\Expression\BlockReferenceExpression', $node);
+        $this->assertInstanceOf('\Raider\Node\Expression\BlockReferenceExpression', $node);
         $this->assertTrue($node->getAttribute('output'));
     }
 
     public function testRenderParentBlockOptimizer()
     {
-        $env = new Environment($this->createMock('\Twig\Loader\LoaderInterface'), ['cache' => false, 'autoescape' => false]);
+        $env = new Environment($this->createMock('\Raider\Loader\LoaderInterface'), ['cache' => false, 'autoescape' => false]);
 
         $stream = $env->parse($env->tokenize(new Source('{% extends "foo" %}{% block content %}{{ parent() }}{% endblock %}', 'index')));
 
         $node = $stream->getNode('blocks')->getNode('content')->getNode(0)->getNode('body');
 
-        $this->assertInstanceOf('\Twig\Node\Expression\ParentExpression', $node);
+        $this->assertInstanceOf('\Raider\Node\Expression\ParentExpression', $node);
         $this->assertTrue($node->getAttribute('output'));
     }
 
@@ -46,7 +46,7 @@ class OptimizerTest extends \PHPUnit\Framework\TestCase
      */
     public function testForOptimizer($template, $expected)
     {
-        $env = new Environment($this->createMock('\Twig\Loader\LoaderInterface'), ['cache' => false]);
+        $env = new Environment($this->createMock('\Raider\Loader\LoaderInterface'), ['cache' => false]);
 
         $stream = $env->parse($env->tokenize(new Source($template, 'index')));
 
@@ -94,7 +94,7 @@ class OptimizerTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function checkForConfiguration(\Twig_NodeInterface $node = null, $target, $withLoop)
+    public function checkForConfiguration(\Raider_NodeInterface $node = null, $target, $withLoop)
     {
         if (null === $node) {
             return;

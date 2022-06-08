@@ -11,14 +11,14 @@ namespace Twig\Tests\Node;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Node\DeprecatedNode;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\FunctionExpression;
-use Twig\Node\IfNode;
-use Twig\Node\Node;
-use Twig\Test\NodeTestCase;
-use Twig\TwigFunction;
+use Raider\Environment;
+use Raider\Node\DeprecatedNode;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\FunctionExpression;
+use Raider\Node\IfNode;
+use Raider\Node\Node;
+use Raider\Test\NodeTestCase;
+use Raider\TwigFunction;
 
 class DeprecatedTest extends NodeTestCase
 {
@@ -60,7 +60,7 @@ if (true) {
 EOF
         ];
 
-        $environment = new Environment($this->createMock('\Twig\Loader\LoaderInterface'));
+        $environment = new Environment($this->createMock('\Raider\Loader\LoaderInterface'));
         $environment->addFunction(new TwigFunction('foo', 'foo', []));
 
         $expr = new FunctionExpression('foo', new Node(), 1);

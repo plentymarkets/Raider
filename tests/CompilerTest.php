@@ -11,14 +11,14 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Compiler;
-use Twig\Environment;
+use Raider\Compiler;
+use Raider\Environment;
 
 class CompilerTest extends \PHPUnit\Framework\TestCase
 {
     public function testReprNumericValueWithLocale()
     {
-        $compiler = new Compiler(new Environment($this->createMock('\Twig\Loader\LoaderInterface')));
+        $compiler = new Compiler(new Environment($this->createMock('\Raider\Loader\LoaderInterface')));
 
         $locale = setlocale(\LC_NUMERIC, 0);
         if (false === $locale) {

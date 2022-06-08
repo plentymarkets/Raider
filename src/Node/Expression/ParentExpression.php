@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression;
+namespace Raider\Node\Expression;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 /**
  * Represents a parent node.
@@ -45,4 +45,4 @@ class ParentExpression extends AbstractExpression
     }
 }
 
-class_alias('Twig\Node\Expression\ParentExpression', 'Twig_Node_Expression_Parent');
+class_alias('Raider\Node\Expression\ParentExpression', 'Raider_Node_Expression_Parent');

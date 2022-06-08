@@ -11,8 +11,8 @@ namespace Twig\Tests;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Loader\ArrayLoader;
+use Raider\Environment;
+use Raider\Loader\ArrayLoader;
 
 class FileCachingTest extends \PHPUnit\Framework\TestCase
 {

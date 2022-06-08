@@ -11,7 +11,7 @@ namespace Twig\Tests\Node\Expression;
  * file that was distributed with this source code.
  */
 
-use Twig\Node\Expression\CallExpression;
+use Raider\Node\Expression\CallExpression;
 
 class CallTest extends \PHPUnit\Framework\TestCase
 {
@@ -23,7 +23,7 @@ class CallTest extends \PHPUnit\Framework\TestCase
 
     public function testGetArgumentsWhenPositionalArgumentsAfterNamedArguments()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Positional arguments cannot be used after named arguments for function "date".');
 
         $node = new Node_Expression_Call([], ['type' => 'function', 'name' => 'date']);
@@ -32,7 +32,7 @@ class CallTest extends \PHPUnit\Framework\TestCase
 
     public function testGetArgumentsWhenArgumentIsDefinedTwice()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Argument "format" is defined twice for function "date".');
 
         $node = new Node_Expression_Call([], ['type' => 'function', 'name' => 'date']);
@@ -41,7 +41,7 @@ class CallTest extends \PHPUnit\Framework\TestCase
 
     public function testGetArgumentsWithWrongNamedArgumentName()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unknown argument "unknown" for function "date(format, timestamp)".');
 
         $node = new Node_Expression_Call([], ['type' => 'function', 'name' => 'date']);
@@ -50,7 +50,7 @@ class CallTest extends \PHPUnit\Framework\TestCase
 
     public function testGetArgumentsWithWrongNamedArgumentNames()
     {
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Unknown arguments "unknown1", "unknown2" for function "date(format, timestamp)".');
 
         $node = new Node_Expression_Call([], ['type' => 'function', 'name' => 'date']);
@@ -63,7 +63,7 @@ class CallTest extends \PHPUnit\Framework\TestCase
             $this->markTestSkipped('substr_compare() has a default value in 8.0, so the test does not work anymore, one should find another PHP built-in function for this test to work in PHP 8.');
         }
 
-        $this->expectException('\Twig\Error\SyntaxError');
+        $this->expectException('\Raider\Error\SyntaxError');
         $this->expectExceptionMessage('Argument "case_sensitivity" could not be assigned for function "substr_compare(main_str, str, offset, length, case_sensitivity)" because it is mapped to an internal PHP function which cannot determine default value for optional argument "length".');
 
         $node = new Node_Expression_Call([], ['type' => 'function', 'name' => 'substr_compare']);
@@ -107,10 +107,10 @@ class CallTest extends \PHPUnit\Framework\TestCase
     public function testResolveArgumentsWithMissingParameterForArbitraryArgumentsOnFunction()
     {
         $this->expectException('\LogicException');
-        $this->expectExceptionMessageMatches('#^The last parameter of "Twig\\\\Tests\\\\Node\\\\Expression\\\\custom_Twig_Tests_Node_Expression_CallTest_function" for function "foo" must be an array with default value, eg\\. "array \\$arg \\= \\[\\]"\\.$#');
+        $this->expectExceptionMessageMatches('#^The last parameter of "Twig\\\\Tests\\\\Node\\\\Expression\\\\custom_Raider_Tests_Node_Expression_CallTest_function" for function "foo" must be an array with default value, eg\\. "array \\$arg \\= \\[\\]"\\.$#');
 
         $node = new Node_Expression_Call([], ['type' => 'function', 'name' => 'foo', 'is_variadic' => true]);
-        $node->getArguments('Twig\Tests\Node\Expression\custom_Twig_Tests_Node_Expression_CallTest_function', []);
+        $node->getArguments('Twig\Tests\Node\Expression\custom_Raider_Tests_Node_Expression_CallTest_function', []);
     }
 
     public function testResolveArgumentsWithMissingParameterForArbitraryArgumentsOnObject()
@@ -138,6 +138,6 @@ class CallableTestClass
     }
 }
 
-function custom_Twig_Tests_Node_Expression_CallTest_function($required)
+function custom_Raider_Tests_Node_Expression_CallTest_function($required)
 {
 }

@@ -5,4 +5,4 @@ Argument is defined twice in a call
 --DATA--
 return []
 --EXCEPTION--
-Twig\Error\SyntaxError: Argument "date" is defined twice for function "date" in "index.twig" at line 2.
+Raider\Error\SyntaxError: Argument "date" is defined twice for function "date" in "index.twig" at line 2.

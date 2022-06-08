@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Test;
+namespace Raider\Node\Expression\Test;
 
-use Twig\Compiler;
-use Twig\Error\SyntaxError;
-use Twig\Node\Expression\ArrayExpression;
-use Twig\Node\Expression\BlockReferenceExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\FunctionExpression;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\Node\Expression\NameExpression;
-use Twig\Node\Expression\TestExpression;
+use Raider\Compiler;
+use Raider\Error\SyntaxError;
+use Raider\Node\Expression\ArrayExpression;
+use Raider\Node\Expression\BlockReferenceExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\FunctionExpression;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\Node\Expression\NameExpression;
+use Raider\Node\Expression\TestExpression;
 
 /**
  * Checks if a variable is defined in the current context.
@@ -33,7 +33,7 @@ use Twig\Node\Expression\TestExpression;
  */
 class DefinedTest extends TestExpression
 {
-    public function __construct(\Twig_NodeInterface $node, $name, ?\Twig_NodeInterface $arguments, $lineno)
+    public function __construct(\Raider_NodeInterface $node, $name, ?\Raider_NodeInterface $arguments, $lineno)
     {
         if ($node instanceof NameExpression) {
             $node->setAttribute('is_defined_test', true);
@@ -68,4 +68,4 @@ class DefinedTest extends TestExpression
     }
 }
 
-class_alias('Twig\Node\Expression\Test\DefinedTest', 'Twig_Node_Expression_Test_Defined');
+class_alias('Raider\Node\Expression\Test\DefinedTest', 'Raider_Node_Expression_Test_Defined');

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Profiler\Dumper;
+namespace Raider\Profiler\Dumper;
 
-use Twig\Profiler\Profile;
+use Raider\Profiler\Profile;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -73,4 +73,4 @@ EOF;
     }
 }
 
-class_alias('Twig\Profiler\Dumper\BlackfireDumper', 'Twig_Profiler_Dumper_Blackfire');
+class_alias('Raider\Profiler\Dumper\BlackfireDumper', 'Raider_Profiler_Dumper_Blackfire');

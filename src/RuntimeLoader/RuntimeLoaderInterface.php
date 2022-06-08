@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\RuntimeLoader;
+namespace Raider\RuntimeLoader;
 
 /**
  * Creates runtime implementations for Twig elements (filters/functions/tests).
@@ -28,4 +28,4 @@ interface RuntimeLoaderInterface
     public function load($class);
 }
 
-class_alias('Twig\RuntimeLoader\RuntimeLoaderInterface', 'Twig_RuntimeLoaderInterface');
+class_alias('Raider\RuntimeLoader\RuntimeLoaderInterface', 'Raider_RuntimeLoaderInterface');

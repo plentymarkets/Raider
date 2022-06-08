@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Profiler\NodeVisitor;
+namespace Raider\Profiler\NodeVisitor;
 
-use Twig\Environment;
-use Twig\Node\BlockNode;
-use Twig\Node\BodyNode;
-use Twig\Node\MacroNode;
-use Twig\Node\ModuleNode;
-use Twig\Node\Node;
-use Twig\NodeVisitor\AbstractNodeVisitor;
-use Twig\Profiler\Node\EnterProfileNode;
-use Twig\Profiler\Node\LeaveProfileNode;
-use Twig\Profiler\Profile;
+use Raider\Environment;
+use Raider\Node\BlockNode;
+use Raider\Node\BodyNode;
+use Raider\Node\MacroNode;
+use Raider\Node\ModuleNode;
+use Raider\Node\Node;
+use Raider\NodeVisitor\AbstractNodeVisitor;
+use Raider\Profiler\Node\EnterProfileNode;
+use Raider\Profiler\Node\LeaveProfileNode;
+use Raider\Profiler\Profile;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -77,4 +77,4 @@ class ProfilerNodeVisitor extends AbstractNodeVisitor
     }
 }
 
-class_alias('Twig\Profiler\NodeVisitor\ProfilerNodeVisitor', 'Twig_Profiler_NodeVisitor_Profiler');
+class_alias('Raider\Profiler\NodeVisitor\ProfilerNodeVisitor', 'Raider_Profiler_NodeVisitor_Profiler');

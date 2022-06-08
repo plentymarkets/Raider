@@ -9,22 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\NodeVisitor;
+namespace Raider\NodeVisitor;
 
-use Twig\Environment;
-use Twig\Node\AutoEscapeNode;
-use Twig\Node\BlockNode;
-use Twig\Node\BlockReferenceNode;
-use Twig\Node\DoNode;
-use Twig\Node\Expression\ConditionalExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\FilterExpression;
-use Twig\Node\Expression\InlinePrint;
-use Twig\Node\ImportNode;
-use Twig\Node\ModuleNode;
-use Twig\Node\Node;
-use Twig\Node\PrintNode;
-use Twig\NodeTraverser;
+use Raider\Environment;
+use Raider\Node\AutoEscapeNode;
+use Raider\Node\BlockNode;
+use Raider\Node\BlockReferenceNode;
+use Raider\Node\DoNode;
+use Raider\Node\Expression\ConditionalExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\FilterExpression;
+use Raider\Node\Expression\InlinePrint;
+use Raider\Node\ImportNode;
+use Raider\Node\ModuleNode;
+use Raider\Node\Node;
+use Raider\Node\PrintNode;
+use Raider\NodeTraverser;
 
 /**
  * @final
@@ -48,7 +48,7 @@ class EscaperNodeVisitor extends AbstractNodeVisitor
     protected function doEnterNode(Node $node, Environment $env)
     {
         if ($node instanceof ModuleNode) {
-            if ($env->hasExtension('\Twig\Extension\EscaperExtension') && $defaultStrategy = $env->getExtension('\Twig\Extension\EscaperExtension')->getDefaultStrategy($node->getTemplateName())) {
+            if ($env->hasExtension('\Raider\Extension\EscaperExtension') && $defaultStrategy = $env->getExtension('\Raider\Extension\EscaperExtension')->getDefaultStrategy($node->getTemplateName())) {
                 $this->defaultStrategy = $defaultStrategy;
             }
             $this->safeVars = [];
@@ -164,7 +164,7 @@ class EscaperNodeVisitor extends AbstractNodeVisitor
         return $filter;
     }
 
-    protected function isSafeFor($type, \Twig_NodeInterface $expression, $env)
+    protected function isSafeFor($type, \Raider_NodeInterface $expression, $env)
     {
         $safe = $this->safeAnalysis->getSafe($expression);
 
@@ -191,7 +191,7 @@ class EscaperNodeVisitor extends AbstractNodeVisitor
         return $this->defaultStrategy ? $this->defaultStrategy : false;
     }
 
-    protected function getEscaperFilter($type, \Twig_NodeInterface $node)
+    protected function getEscaperFilter($type, \Raider_NodeInterface $node)
     {
         $line = $node->getTemplateLine();
         $name = new ConstantExpression('escape', $line);
@@ -206,4 +206,4 @@ class EscaperNodeVisitor extends AbstractNodeVisitor
     }
 }
 
-class_alias('Twig\NodeVisitor\EscaperNodeVisitor', 'Twig_NodeVisitor_Escaper');
+class_alias('Raider\NodeVisitor\EscaperNodeVisitor', 'Raider_NodeVisitor_Escaper');

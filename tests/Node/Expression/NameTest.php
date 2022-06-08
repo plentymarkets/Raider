@@ -11,9 +11,9 @@ namespace Twig\Tests\Node\Expression;
  * file that was distributed with this source code.
  */
 
-use Twig\Environment;
-use Twig\Node\Expression\NameExpression;
-use Twig\Test\NodeTestCase;
+use Raider\Environment;
+use Raider\Node\Expression\NameExpression;
+use Raider\Test\NodeTestCase;
 
 class NameTest extends NodeTestCase
 {
@@ -29,8 +29,8 @@ class NameTest extends NodeTestCase
         $node = new NameExpression('foo', 1);
         $context = new NameExpression('_context', 1);
 
-        $env = new Environment($this->createMock('\Twig\Loader\LoaderInterface'), ['strict_variables' => true]);
-        $env1 = new Environment($this->createMock('\Twig\Loader\LoaderInterface'), ['strict_variables' => false]);
+        $env = new Environment($this->createMock('\Raider\Loader\LoaderInterface'), ['strict_variables' => true]);
+        $env1 = new Environment($this->createMock('\Raider\Loader\LoaderInterface'), ['strict_variables' => false]);
 
         if (\PHP_VERSION_ID >= 70000) {
             $output = '($context["foo"] ?? $this->getContext($context, "foo"))';

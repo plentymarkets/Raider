@@ -10,12 +10,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Node\Expression\AbstractExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Source;
+use Raider\Compiler;
+use Raider\Node\Expression\AbstractExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Source;
 
 /**
  * Represents a module node.
@@ -28,10 +28,10 @@ use Twig\Source;
  */
 class ModuleNode extends Node
 {
-    public function __construct(\Twig_NodeInterface $body, ?AbstractExpression $parent, \Twig_NodeInterface $blocks, \Twig_NodeInterface $macros, \Twig_NodeInterface $traits, $embeddedTemplates, $name, $source = '')
+    public function __construct(\Raider_NodeInterface $body, ?AbstractExpression $parent, \Raider_NodeInterface $blocks, \Raider_NodeInterface $macros, \Raider_NodeInterface $traits, $embeddedTemplates, $name, $source = '')
     {
         if (!$name instanceof Source) {
-            @trigger_error(sprintf('Passing a string as the $name argument of %s() is deprecated since version 1.27. Pass a \Twig\Source instance instead.', __METHOD__), \E_USER_DEPRECATED);
+            @trigger_error(sprintf('Passing a string as the $name argument of %s() is deprecated since version 1.27. Pass a \Raider\Source instance instead.', __METHOD__), \E_USER_DEPRECATED);
             $source = new Source($source, $name);
         } else {
             $source = $name;
@@ -163,16 +163,16 @@ class ModuleNode extends Node
         ;
         if (!$this->getAttribute('index')) {
             $compiler
-                ->write("use Twig\Environment;\n")
-                ->write("use Twig\Error\LoaderError;\n")
-                ->write("use Twig\Error\RuntimeError;\n")
-                ->write("use Twig\Markup;\n")
-                ->write("use Twig\Sandbox\SecurityError;\n")
-                ->write("use Twig\Sandbox\SecurityNotAllowedTagError;\n")
-                ->write("use Twig\Sandbox\SecurityNotAllowedFilterError;\n")
-                ->write("use Twig\Sandbox\SecurityNotAllowedFunctionError;\n")
-                ->write("use Twig\Source;\n")
-                ->write("use Twig\Template;\n\n")
+                ->write("use Raider\Environment;\n")
+                ->write("use Raider\Error\LoaderError;\n")
+                ->write("use Raider\Error\RuntimeError;\n")
+                ->write("use Raider\Markup;\n")
+                ->write("use Raider\Sandbox\SecurityError;\n")
+                ->write("use Raider\Sandbox\SecurityNotAllowedTagError;\n")
+                ->write("use Raider\Sandbox\SecurityNotAllowedFilterError;\n")
+                ->write("use Raider\Sandbox\SecurityNotAllowedFunctionError;\n")
+                ->write("use Raider\Source;\n")
+                ->write("use Raider\Template;\n\n")
             ;
         }
         $compiler
@@ -489,4 +489,4 @@ class ModuleNode extends Node
     }
 }
 
-class_alias('Twig\Node\ModuleNode', 'Twig_Node_Module');
+class_alias('Raider\Node\ModuleNode', 'Raider_Node_Module');

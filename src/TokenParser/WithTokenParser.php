@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Node\WithNode;
-use Twig\Token;
+use Raider\Node\WithNode;
+use Raider\Token;
 
 /**
  * Creates a nested scope.
@@ -54,4 +54,4 @@ class WithTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\WithTokenParser', 'Twig_TokenParser_With');
+class_alias('Raider\TokenParser\WithTokenParser', 'Raider_TokenParser_With');

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Extension;
+namespace Raider\Extension;
 
-use Twig\NodeVisitor\SandboxNodeVisitor;
-use Twig\Sandbox\SecurityPolicyInterface;
-use Twig\TokenParser\SandboxTokenParser;
+use Raider\NodeVisitor\SandboxNodeVisitor;
+use Raider\Sandbox\SecurityPolicyInterface;
+use Raider\TokenParser\SandboxTokenParser;
 
 /**
  * @final
@@ -106,4 +106,4 @@ class SandboxExtension extends AbstractExtension
     }
 }
 
-class_alias('Twig\Extension\SandboxExtension', 'Twig_Extension_Sandbox');
+class_alias('Raider\Extension\SandboxExtension', 'Raider_Extension_Sandbox');

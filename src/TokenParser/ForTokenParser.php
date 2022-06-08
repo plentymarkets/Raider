@@ -10,16 +10,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\Expression\AssignNameExpression;
-use Twig\Node\Expression\ConstantExpression;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\Node\Expression\NameExpression;
-use Twig\Node\ForNode;
-use Twig\Token;
-use Twig\TokenStream;
+use Raider\Error\SyntaxError;
+use Raider\Node\Expression\AssignNameExpression;
+use Raider\Node\Expression\ConstantExpression;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\Node\Expression\NameExpression;
+use Raider\Node\ForNode;
+use Raider\Token;
+use Raider\TokenStream;
 
 /**
  * Loops over each item of a sequence.
@@ -87,7 +87,7 @@ class ForTokenParser extends AbstractTokenParser
     }
 
     // the loop variable cannot be used in the condition
-    protected function checkLoopUsageCondition(TokenStream $stream, \Twig_NodeInterface $node)
+    protected function checkLoopUsageCondition(TokenStream $stream, \Raider_NodeInterface $node)
     {
         if ($node instanceof GetAttrExpression && $node->getNode('node') instanceof NameExpression && 'loop' == $node->getNode('node')->getAttribute('name')) {
             throw new SyntaxError('The "loop" variable cannot be used in a looping condition.', $node->getTemplateLine(), $stream->getSourceContext());
@@ -104,7 +104,7 @@ class ForTokenParser extends AbstractTokenParser
 
     // check usage of non-defined loop-items
     // it does not catch all problems (for instance when a for is included into another or when the variable is used in an include)
-    protected function checkLoopUsageBody(TokenStream $stream, \Twig_NodeInterface $node)
+    protected function checkLoopUsageBody(TokenStream $stream, \Raider_NodeInterface $node)
     {
         if ($node instanceof GetAttrExpression && $node->getNode('node') instanceof NameExpression && 'loop' == $node->getNode('node')->getAttribute('name')) {
             $attribute = $node->getNode('attribute');
@@ -133,4 +133,4 @@ class ForTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\ForTokenParser', 'Twig_TokenParser_For');
+class_alias('Raider\TokenParser\ForTokenParser', 'Raider_TokenParser_For');

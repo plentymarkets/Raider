@@ -10,11 +10,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\TokenParser;
+namespace Raider\TokenParser;
 
-use Twig\Error\SyntaxError;
-use Twig\Node\Node;
-use Twig\Token;
+use Raider\Error\SyntaxError;
+use Raider\Node\Node;
+use Raider\Token;
 
 /**
  * Extends a template by another one.
@@ -51,4 +51,4 @@ class ExtendsTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Twig\TokenParser\ExtendsTokenParser', 'Twig_TokenParser_Extends');
+class_alias('Raider\TokenParser\ExtendsTokenParser', 'Raider_TokenParser_Extends');

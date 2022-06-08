@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Sandbox;
+namespace Raider\Sandbox;
 
 /**
  * Exception thrown when a not allowed class method is used in a template.
@@ -39,4 +39,4 @@ class SecurityNotAllowedMethodError extends SecurityError
     }
 }
 
-class_alias('Twig\Sandbox\SecurityNotAllowedMethodError', 'Twig_Sandbox_SecurityNotAllowedMethodError');
+class_alias('Raider\Sandbox\SecurityNotAllowedMethodError', 'Raider_Sandbox_SecurityNotAllowedMethodError');

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node;
+namespace Raider\Node;
 
-use Twig\Compiler;
-use Twig\Node\Expression\AbstractExpression;
-use Twig\Node\Expression\ConstantExpression;
+use Raider\Compiler;
+use Raider\Node\Expression\AbstractExpression;
+use Raider\Node\Expression\ConstantExpression;
 
 /**
  * Represents a deprecated node.
@@ -52,4 +52,4 @@ class DeprecatedNode extends Node
     }
 }
 
-class_alias('Twig\Node\DeprecatedNode', 'Twig_Node_Deprecated');
+class_alias('Raider\Node\DeprecatedNode', 'Raider_Node_Deprecated');

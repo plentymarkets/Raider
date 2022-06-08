@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Twig\Node\Expression\Binary;
+namespace Raider\Node\Expression\Binary;
 
-use Twig\Compiler;
+use Raider\Compiler;
 
 class LessBinary extends AbstractBinary
 {
@@ -21,4 +21,4 @@ class LessBinary extends AbstractBinary
     }
 }
 
-class_alias('Twig\Node\Expression\Binary\LessBinary', 'Twig_Node_Expression_Binary_Less');
+class_alias('Raider\Node\Expression\Binary\LessBinary', 'Raider_Node_Expression_Binary_Less');
