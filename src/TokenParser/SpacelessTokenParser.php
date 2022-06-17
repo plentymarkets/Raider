@@ -50,4 +50,4 @@ class SpacelessTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\SpacelessTokenParser', 'Raider_TokenParser_Spaceless');
+class_alias('Raider\TokenParser\SpacelessTokenParser', 'Twig_TokenParser_Spaceless');

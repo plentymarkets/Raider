@@ -69,4 +69,4 @@ class WithNode extends Node
     }
 }
 
-class_alias('Raider\Node\WithNode', 'Raider_Node_With');
+class_alias('Raider\Node\WithNode', 'Twig_Node_With');

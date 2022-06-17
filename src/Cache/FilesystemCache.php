@@ -90,4 +90,4 @@ class FilesystemCache implements CacheInterface
     }
 }
 
-class_alias('Raider\Cache\FilesystemCache', 'Raider_Cache_Filesystem');
+class_alias('Raider\Cache\FilesystemCache', 'Twig_Cache_Filesystem');

@@ -302,7 +302,7 @@ class CoreExtension extends AbstractExtension
     }
 }
 
-class_alias('Raider\Extension\CoreExtension', 'Raider_Extension_Core');
+class_alias('Raider\Extension\CoreExtension', 'Twig_Extension_Core');
 }
 
 namespace {

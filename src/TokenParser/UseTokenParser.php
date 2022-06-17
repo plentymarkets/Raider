@@ -72,4 +72,4 @@ class UseTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\UseTokenParser', 'Raider_TokenParser_Use');
+class_alias('Raider\TokenParser\UseTokenParser', 'Twig_TokenParser_Use');

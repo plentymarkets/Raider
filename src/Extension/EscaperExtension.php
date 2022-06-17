@@ -102,7 +102,7 @@ class EscaperExtension extends AbstractExtension
     }
 }
 
-class_alias('Raider\Extension\EscaperExtension', 'Raider_Extension_Escaper');
+class_alias('Raider\Extension\EscaperExtension', 'Twig_Extension_Escaper');
 }
 
 namespace {

@@ -254,4 +254,4 @@ abstract class IntegrationTestCase extends TestCase
     }
 }
 
-class_alias('Raider\Test\IntegrationTestCase', 'Raider_Test_IntegrationTestCase');
+class_alias('Raider\Test\IntegrationTestCase', 'Twig_Test_IntegrationTestCase');

@@ -32,4 +32,4 @@ class RangeBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\RangeBinary', 'Raider_Node_Expression_Binary_Range');
+class_alias('Raider\Node\Expression\Binary\RangeBinary', 'Twig_Node_Expression_Binary_Range');

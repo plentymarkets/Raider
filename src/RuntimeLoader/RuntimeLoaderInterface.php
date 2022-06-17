@@ -28,4 +28,4 @@ interface RuntimeLoaderInterface
     public function load($class);
 }
 
-class_alias('Raider\RuntimeLoader\RuntimeLoaderInterface', 'Raider_RuntimeLoaderInterface');
+class_alias('Raider\RuntimeLoader\RuntimeLoaderInterface', 'Twig_RuntimeLoaderInterface');

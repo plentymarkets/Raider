@@ -164,7 +164,7 @@ class EscaperNodeVisitor extends AbstractNodeVisitor
         return $filter;
     }
 
-    protected function isSafeFor($type, \Raider_NodeInterface $expression, $env)
+    protected function isSafeFor($type, \Twig_NodeInterface $expression, $env)
     {
         $safe = $this->safeAnalysis->getSafe($expression);
 
@@ -191,7 +191,7 @@ class EscaperNodeVisitor extends AbstractNodeVisitor
         return $this->defaultStrategy ? $this->defaultStrategy : false;
     }
 
-    protected function getEscaperFilter($type, \Raider_NodeInterface $node)
+    protected function getEscaperFilter($type, \Twig_NodeInterface $node)
     {
         $line = $node->getTemplateLine();
         $name = new ConstantExpression('escape', $line);
@@ -206,4 +206,4 @@ class EscaperNodeVisitor extends AbstractNodeVisitor
     }
 }
 
-class_alias('Raider\NodeVisitor\EscaperNodeVisitor', 'Raider_NodeVisitor_Escaper');
+class_alias('Raider\NodeVisitor\EscaperNodeVisitor', 'Twig_NodeVisitor_Escaper');

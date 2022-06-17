@@ -27,4 +27,4 @@ class ConstantExpression extends AbstractExpression
     }
 }
 
-class_alias('Raider\Node\Expression\ConstantExpression', 'Raider_Node_Expression_Constant');
+class_alias('Raider\Node\Expression\ConstantExpression', 'Twig_Node_Expression_Constant');

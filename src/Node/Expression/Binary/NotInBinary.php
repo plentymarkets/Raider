@@ -32,4 +32,4 @@ class NotInBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\NotInBinary', 'Raider_Node_Expression_Binary_NotIn');
+class_alias('Raider\Node\Expression\Binary\NotInBinary', 'Twig_Node_Expression_Binary_NotIn');

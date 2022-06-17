@@ -30,7 +30,7 @@ class StringLoaderExtension extends AbstractExtension
     }
 }
 
-class_alias('Raider\Extension\StringLoaderExtension', 'Raider_Extension_StringLoader');
+class_alias('Raider\Extension\StringLoaderExtension', 'Twig_Extension_StringLoader');
 }
 
 namespace {

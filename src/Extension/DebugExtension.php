@@ -40,7 +40,7 @@ class DebugExtension extends AbstractExtension
     }
 }
 
-class_alias('Raider\Extension\DebugExtension', 'Raider_Extension_Debug');
+class_alias('Raider\Extension\DebugExtension', 'Twig_Extension_Debug');
 }
 
 namespace {

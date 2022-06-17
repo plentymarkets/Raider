@@ -76,4 +76,4 @@ abstract class NodeTestCase extends TestCase
     }
 }
 
-class_alias('Raider\Test\NodeTestCase', 'Raider_Test_NodeTestCase');
+class_alias('Raider\Test\NodeTestCase', 'Twig_Test_NodeTestCase');

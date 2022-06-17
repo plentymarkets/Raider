@@ -320,4 +320,4 @@ class FilesystemLoader implements LoaderInterface, ExistsLoaderInterface, Source
     }
 }
 
-class_alias('Raider\Loader\FilesystemLoader', 'Raider_Loader_Filesystem');
+class_alias('Raider\Loader\FilesystemLoader', 'Twig_Loader_Filesystem');

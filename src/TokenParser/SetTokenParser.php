@@ -71,4 +71,4 @@ class SetTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\SetTokenParser', 'Raider_TokenParser_Set');
+class_alias('Raider\TokenParser\SetTokenParser', 'Twig_TokenParser_Set');

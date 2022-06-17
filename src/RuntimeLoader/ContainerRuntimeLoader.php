@@ -38,4 +38,4 @@ class ContainerRuntimeLoader implements RuntimeLoaderInterface
     }
 }
 
-class_alias('Raider\RuntimeLoader\ContainerRuntimeLoader', 'Raider_ContainerRuntimeLoader');
+class_alias('Raider\RuntimeLoader\ContainerRuntimeLoader', 'Twig_ContainerRuntimeLoader');

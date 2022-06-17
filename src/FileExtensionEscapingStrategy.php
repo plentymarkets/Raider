@@ -59,4 +59,4 @@ class FileExtensionEscapingStrategy
     }
 }
 
-class_alias('Raider\FileExtensionEscapingStrategy', 'Raider_FileExtensionEscapingStrategy');
+class_alias('Raider\FileExtensionEscapingStrategy', 'Twig_FileExtensionEscapingStrategy');

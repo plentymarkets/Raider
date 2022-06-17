@@ -122,7 +122,7 @@ class TwigFilter
     }
 }
 
-class_alias('Raider\TwigFilter', 'Raider_SimpleFilter');
+class_alias('Raider\TwigFilter', 'Twig_SimpleFilter');
 
 // Ensure that the aliased name is loaded to keep BC for classes implementing the typehint with the old aliased name.
 class_exists('Raider\Node\Node');

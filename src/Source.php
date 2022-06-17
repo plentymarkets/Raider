@@ -52,4 +52,4 @@ class Source
     }
 }
 
-class_alias('Raider\Source', 'Raider_Source');
+class_alias('Raider\Source', 'Twig_Source');

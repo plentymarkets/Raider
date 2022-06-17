@@ -37,4 +37,4 @@ class DoNode extends Node
     }
 }
 
-class_alias('Raider\Node\DoNode', 'Raider_Node_Do');
+class_alias('Raider\Node\DoNode', 'Twig_Node_Do');

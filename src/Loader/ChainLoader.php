@@ -161,4 +161,4 @@ class ChainLoader implements LoaderInterface, ExistsLoaderInterface, SourceConte
     }
 }
 
-class_alias('Raider\Loader\ChainLoader', 'Raider_Loader_Chain');
+class_alias('Raider\Loader\ChainLoader', 'Twig_Loader_Chain');

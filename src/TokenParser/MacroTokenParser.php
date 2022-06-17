@@ -65,4 +65,4 @@ class MacroTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\MacroTokenParser', 'Raider_TokenParser_Macro');
+class_alias('Raider\TokenParser\MacroTokenParser', 'Twig_TokenParser_Macro');

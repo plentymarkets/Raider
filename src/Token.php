@@ -165,7 +165,7 @@ class Token
                 throw new \LogicException(sprintf('Token of type "%s" does not exist.', $type));
         }
 
-        return $short ? $name : 'Raider\Token::'.$name;
+        return $short ? $name : 'Twig\Token::'.$name;
     }
 
     /**
@@ -212,4 +212,4 @@ class Token
     }
 }
 
-class_alias('Raider\Token', 'Raider_Token');
+class_alias('Raider\Token', 'Twig_Token');

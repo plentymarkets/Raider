@@ -94,7 +94,7 @@ class OptimizerTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function checkForConfiguration(\Raider_NodeInterface $node = null, $target, $withLoop)
+    public function checkForConfiguration(\Twig_NodeInterface $node = null, $target, $withLoop)
     {
         if (null === $node) {
             return;

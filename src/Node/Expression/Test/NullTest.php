@@ -33,4 +33,4 @@ class NullTest extends TestExpression
     }
 }
 
-class_alias('Raider\Node\Expression\Test\NullTest', 'Raider_Node_Expression_Test_Null');
+class_alias('Raider\Node\Expression\Test\NullTest', 'Twig_Node_Expression_Test_Null');

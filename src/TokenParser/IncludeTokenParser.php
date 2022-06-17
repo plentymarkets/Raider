@@ -65,4 +65,4 @@ class IncludeTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\IncludeTokenParser', 'Raider_TokenParser_Include');
+class_alias('Raider\TokenParser\IncludeTokenParser', 'Twig_TokenParser_Include');

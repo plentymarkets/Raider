@@ -49,4 +49,4 @@ class EmbedNode extends IncludeNode
     }
 }
 
-class_alias('Raider\Node\EmbedNode', 'Raider_Node_Embed');
+class_alias('Raider\Node\EmbedNode', 'Twig_Node_Embed');

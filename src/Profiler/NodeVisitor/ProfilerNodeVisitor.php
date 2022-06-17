@@ -77,4 +77,4 @@ class ProfilerNodeVisitor extends AbstractNodeVisitor
     }
 }
 
-class_alias('Raider\Profiler\NodeVisitor\ProfilerNodeVisitor', 'Raider_Profiler_NodeVisitor_Profiler');
+class_alias('Raider\Profiler\NodeVisitor\ProfilerNodeVisitor', 'Twig_Profiler_NodeVisitor_Profiler');

@@ -22,4 +22,4 @@ class AndBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\AndBinary', 'Raider_Node_Expression_Binary_And');
+class_alias('Raider\Node\Expression\Binary\AndBinary', 'Twig_Node_Expression_Binary_And');

@@ -77,4 +77,4 @@ class BlockTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\BlockTokenParser', 'Raider_TokenParser_Block');
+class_alias('Raider\TokenParser\BlockTokenParser', 'Twig_TokenParser_Block');

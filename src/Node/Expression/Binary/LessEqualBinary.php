@@ -21,4 +21,4 @@ class LessEqualBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\LessEqualBinary', 'Raider_Node_Expression_Binary_LessEqual');
+class_alias('Raider\Node\Expression\Binary\LessEqualBinary', 'Twig_Node_Expression_Binary_LessEqual');

@@ -32,7 +32,7 @@ class EnterProfileNode extends Node
             ->write(sprintf('$%s = $this->env->getExtension(', $this->getAttribute('var_name')))
             ->repr($this->getAttribute('extension_name'))
             ->raw(");\n")
-            ->write(sprintf('$%s->enter($%s = new \Raider\Profiler\Profile($this->getTemplateName(), ', $this->getAttribute('var_name'), $this->getAttribute('var_name').'_prof'))
+            ->write(sprintf('$%s->enter($%s = new \Twig\Profiler\Profile($this->getTemplateName(), ', $this->getAttribute('var_name'), $this->getAttribute('var_name').'_prof'))
             ->repr($this->getAttribute('type'))
             ->raw(', ')
             ->repr($this->getAttribute('name'))
@@ -41,4 +41,4 @@ class EnterProfileNode extends Node
     }
 }
 
-class_alias('Raider\Profiler\Node\EnterProfileNode', 'Raider_Profiler_Node_EnterProfile');
+class_alias('Raider\Profiler\Node\EnterProfileNode', 'Twig_Profiler_Node_EnterProfile');

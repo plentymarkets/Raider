@@ -26,7 +26,7 @@ use Raider\Compiler;
  */
 class AutoEscapeNode extends Node
 {
-    public function __construct($value, \Raider_NodeInterface $body, $lineno, $tag = 'autoescape')
+    public function __construct($value, \Twig_NodeInterface $body, $lineno, $tag = 'autoescape')
     {
         parent::__construct(['body' => $body], ['value' => $value], $lineno, $tag);
     }
@@ -37,4 +37,4 @@ class AutoEscapeNode extends Node
     }
 }
 
-class_alias('Raider\Node\AutoEscapeNode', 'Raider_Node_AutoEscape');
+class_alias('Raider\Node\AutoEscapeNode', 'Twig_Node_AutoEscape');

@@ -22,4 +22,4 @@ class ConcatBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\ConcatBinary', 'Raider_Node_Expression_Binary_Concat');
+class_alias('Raider\Node\Expression\Binary\ConcatBinary', 'Twig_Node_Expression_Binary_Concat');

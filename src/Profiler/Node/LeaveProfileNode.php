@@ -35,4 +35,4 @@ class LeaveProfileNode extends Node
     }
 }
 
-class_alias('Raider\Profiler\Node\LeaveProfileNode', 'Raider_Profiler_Node_LeaveProfile');
+class_alias('Raider\Profiler\Node\LeaveProfileNode', 'Twig_Profiler_Node_LeaveProfile');

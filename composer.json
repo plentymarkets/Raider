@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-0" : {
-            "Raider_" : "lib/"
+            "Twig_" : "lib/"
         },
         "psr-4" : {
             "Raider\\" : "src/"

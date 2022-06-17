@@ -1,0 +1,11 @@
+<?php
+
+use Raider\Node\DoNode;
+
+class_exists('Twig\Node\DoNode');
+
+if (\false) {
+    class Twig_Node_Do extends DoNode
+    {
+    }
+}

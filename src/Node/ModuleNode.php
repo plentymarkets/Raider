@@ -28,10 +28,10 @@ use Raider\Source;
  */
 class ModuleNode extends Node
 {
-    public function __construct(\Raider_NodeInterface $body, ?AbstractExpression $parent, \Raider_NodeInterface $blocks, \Raider_NodeInterface $macros, \Raider_NodeInterface $traits, $embeddedTemplates, $name, $source = '')
+    public function __construct(\Twig_NodeInterface $body, ?AbstractExpression $parent, \Twig_NodeInterface $blocks, \Twig_NodeInterface $macros, \Twig_NodeInterface $traits, $embeddedTemplates, $name, $source = '')
     {
         if (!$name instanceof Source) {
-            @trigger_error(sprintf('Passing a string as the $name argument of %s() is deprecated since version 1.27. Pass a \Raider\Source instance instead.', __METHOD__), \E_USER_DEPRECATED);
+            @trigger_error(sprintf('Passing a string as the $name argument of %s() is deprecated since version 1.27. Pass a \Twig\Source instance instead.', __METHOD__), \E_USER_DEPRECATED);
             $source = new Source($source, $name);
         } else {
             $source = $name;
@@ -489,4 +489,4 @@ class ModuleNode extends Node
     }
 }
 
-class_alias('Raider\Node\ModuleNode', 'Raider_Node_Module');
+class_alias('Raider\Node\ModuleNode', 'Twig_Node_Module');

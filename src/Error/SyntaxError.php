@@ -54,4 +54,4 @@ class SyntaxError extends Error
     }
 }
 
-class_alias('Raider\Error\SyntaxError', 'Raider_Error_Syntax');
+class_alias('Raider\Error\SyntaxError', 'Twig_Error_Syntax');

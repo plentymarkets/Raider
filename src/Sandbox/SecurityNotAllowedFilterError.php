@@ -32,4 +32,4 @@ class SecurityNotAllowedFilterError extends SecurityError
     }
 }
 
-class_alias('Raider\Sandbox\SecurityNotAllowedFilterError', 'Raider_Sandbox_SecurityNotAllowedFilterError');
+class_alias('Raider\Sandbox\SecurityNotAllowedFilterError', 'Twig_Sandbox_SecurityNotAllowedFilterError');

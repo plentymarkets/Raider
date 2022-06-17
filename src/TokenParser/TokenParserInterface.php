@@ -30,7 +30,7 @@ interface TokenParserInterface
     /**
      * Parses a token and returns a node.
      *
-     * @return \Raider_NodeInterface
+     * @return \Twig_NodeInterface
      *
      * @throws SyntaxError
      */
@@ -44,8 +44,8 @@ interface TokenParserInterface
     public function getTag();
 }
 
-class_alias('Raider\TokenParser\TokenParserInterface', 'Raider_TokenParserInterface');
+class_alias('Raider\TokenParser\TokenParserInterface', 'Twig_TokenParserInterface');
 
 // Ensure that the aliased name is loaded to keep BC for classes implementing the typehint with the old aliased name.
-class_exists('Raider\Token');
-class_exists('Raider\Parser');
+class_exists('Twig\Token');
+class_exists('Twig\Parser');

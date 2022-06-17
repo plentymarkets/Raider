@@ -42,4 +42,4 @@ class ImportTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\ImportTokenParser', 'Raider_TokenParser_Import');
+class_alias('Raider\TokenParser\ImportTokenParser', 'Twig_TokenParser_Import');

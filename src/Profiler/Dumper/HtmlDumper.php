@@ -48,4 +48,4 @@ class HtmlDumper extends BaseDumper
     }
 }
 
-class_alias('Raider\Profiler\Dumper\HtmlDumper', 'Raider_Profiler_Dumper_Html');
+class_alias('Raider\Profiler\Dumper\HtmlDumper', 'Twig_Profiler_Dumper_Html');

@@ -30,4 +30,4 @@ class TempNameExpression extends AbstractExpression
     }
 }
 
-class_alias('Raider\Node\Expression\TempNameExpression', 'Raider_Node_Expression_TempName');
+class_alias('Raider\Node\Expression\TempNameExpression', 'Twig_Node_Expression_TempName');

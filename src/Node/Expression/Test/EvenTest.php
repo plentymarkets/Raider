@@ -34,4 +34,4 @@ class EvenTest extends TestExpression
     }
 }
 
-class_alias('Raider\Node\Expression\Test\EvenTest', 'Raider_Node_Expression_Test_Even');
+class_alias('Raider\Node\Expression\Test\EvenTest', 'Twig_Node_Expression_Test_Even');

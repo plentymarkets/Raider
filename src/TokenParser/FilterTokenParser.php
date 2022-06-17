@@ -56,4 +56,4 @@ class FilterTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\FilterTokenParser', 'Raider_TokenParser_Filter');
+class_alias('Raider\TokenParser\FilterTokenParser', 'Twig_TokenParser_Filter');

@@ -50,4 +50,4 @@ class ProfilerExtension extends AbstractExtension
     }
 }
 
-class_alias('Raider\Extension\ProfilerExtension', 'Raider_Extension_Profiler');
+class_alias('Raider\Extension\ProfilerExtension', 'Twig_Extension_Profiler');

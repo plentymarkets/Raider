@@ -30,7 +30,7 @@ interface ExtensionInterface
      *
      * This is where you can load some file that contains filter functions for instance.
      *
-     * @deprecated since 1.23 (to be removed in 2.0), implement \Raider_Extension_InitRuntimeInterface instead
+     * @deprecated since 1.23 (to be removed in 2.0), implement \Twig_Extension_InitRuntimeInterface instead
      */
     public function initRuntime(Environment $environment);
 
@@ -81,7 +81,7 @@ interface ExtensionInterface
      *
      * @return array An array of global variables
      *
-     * @deprecated since 1.23 (to be removed in 2.0), implement \Raider_Extension_GlobalsInterface instead
+     * @deprecated since 1.23 (to be removed in 2.0), implement \Twig_Extension_GlobalsInterface instead
      */
     public function getGlobals();
 
@@ -95,7 +95,7 @@ interface ExtensionInterface
     public function getName();
 }
 
-class_alias('Raider\Extension\ExtensionInterface', 'Raider_ExtensionInterface');
+class_alias('Raider\Extension\ExtensionInterface', 'Twig_ExtensionInterface');
 
 // Ensure that the aliased name is loaded to keep BC for classes implementing the typehint with the old aliased name.
-class_exists('Raider\Environment');
+class_exists('Twig\Environment');

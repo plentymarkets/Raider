@@ -48,4 +48,4 @@ class ConstantTest extends TestExpression
     }
 }
 
-class_alias('Raider\Node\Expression\Test\ConstantTest', 'Raider_Node_Expression_Test_Constant');
+class_alias('Raider\Node\Expression\Test\ConstantTest', 'Twig_Node_Expression_Test_Constant');

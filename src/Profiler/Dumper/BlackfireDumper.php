@@ -73,4 +73,4 @@ EOF;
     }
 }
 
-class_alias('Raider\Profiler\Dumper\BlackfireDumper', 'Raider_Profiler_Dumper_Blackfire');
+class_alias('Raider\Profiler\Dumper\BlackfireDumper', 'Twig_Profiler_Dumper_Blackfire');

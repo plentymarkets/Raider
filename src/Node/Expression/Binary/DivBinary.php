@@ -22,4 +22,4 @@ class DivBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\DivBinary', 'Raider_Node_Expression_Binary_Div');
+class_alias('Raider\Node\Expression\Binary\DivBinary', 'Twig_Node_Expression_Binary_Div');

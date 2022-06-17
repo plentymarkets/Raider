@@ -34,4 +34,4 @@ class EndsWithBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\EndsWithBinary', 'Raider_Node_Expression_Binary_EndsWith');
+class_alias('Raider\Node\Expression\Binary\EndsWithBinary', 'Twig_Node_Expression_Binary_EndsWith');

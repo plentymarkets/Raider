@@ -71,4 +71,4 @@ class EmbedTokenParser extends IncludeTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\EmbedTokenParser', 'Raider_TokenParser_Embed');
+class_alias('Raider\TokenParser\EmbedTokenParser', 'Twig_TokenParser_Embed');

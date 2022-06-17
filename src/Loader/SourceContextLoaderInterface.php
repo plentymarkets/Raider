@@ -35,4 +35,4 @@ interface SourceContextLoaderInterface
     public function getSourceContext($name);
 }
 
-class_alias('Raider\Loader\SourceContextLoaderInterface', 'Raider_SourceContextLoaderInterface');
+class_alias('Raider\Loader\SourceContextLoaderInterface', 'Twig_SourceContextLoaderInterface');

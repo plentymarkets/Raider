@@ -185,4 +185,4 @@ class Profile implements \IteratorAggregate, \Serializable
     }
 }
 
-class_alias('Raider\Profiler\Profile', 'Raider_Profiler_Profile');
+class_alias('Raider\Profiler\Profile', 'Twig_Profiler_Profile');

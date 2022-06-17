@@ -39,4 +39,4 @@ class SecurityNotAllowedPropertyError extends SecurityError
     }
 }
 
-class_alias('Raider\Sandbox\SecurityNotAllowedPropertyError', 'Raider_Sandbox_SecurityNotAllowedPropertyError');
+class_alias('Raider\Sandbox\SecurityNotAllowedPropertyError', 'Twig_Sandbox_SecurityNotAllowedPropertyError');

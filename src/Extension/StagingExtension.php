@@ -17,7 +17,7 @@ use Raider\TokenParser\TokenParserInterface;
 /**
  * Internal class.
  *
- * This class is used by \Raider\Environment as a staging area and must not be used directly.
+ * This class is used by \Twig\Environment as a staging area and must not be used directly.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *
@@ -114,4 +114,4 @@ class StagingExtension extends AbstractExtension
     }
 }
 
-class_alias('Raider\Extension\StagingExtension', 'Raider_Extension_Staging');
+class_alias('Raider\Extension\StagingExtension', 'Twig_Extension_Staging');

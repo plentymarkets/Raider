@@ -20,7 +20,7 @@ use Raider\Node\Node;
 
 class NullCoalesceExpression extends ConditionalExpression
 {
-    public function __construct(\Raider_NodeInterface $left, \Raider_NodeInterface $right, $lineno)
+    public function __construct(\Twig_NodeInterface $left, \Twig_NodeInterface $right, $lineno)
     {
         $test = new DefinedTest(clone $left, 'defined', new Node(), $left->getTemplateLine());
         // for "block()", we don't need the null test as the return value is always a string
@@ -59,4 +59,4 @@ class NullCoalesceExpression extends ConditionalExpression
     }
 }
 
-class_alias('Raider\Node\Expression\NullCoalesceExpression', 'Raider_Node_Expression_NullCoalesce');
+class_alias('Raider\Node\Expression\NullCoalesceExpression', 'Twig_Node_Expression_NullCoalesce');

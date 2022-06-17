@@ -36,4 +36,4 @@ class OptimizerExtension extends AbstractExtension
     }
 }
 
-class_alias('Raider\Extension\OptimizerExtension', 'Raider_Extension_Optimizer');
+class_alias('Raider\Extension\OptimizerExtension', 'Twig_Extension_Optimizer');

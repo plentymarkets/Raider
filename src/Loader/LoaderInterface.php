@@ -58,4 +58,4 @@ interface LoaderInterface
     public function isFresh($name, $time);
 }
 
-class_alias('Raider\Loader\LoaderInterface', 'Raider_LoaderInterface');
+class_alias('Raider\Loader\LoaderInterface', 'Twig_LoaderInterface');

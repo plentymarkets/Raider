@@ -52,4 +52,4 @@ class DeprecatedNode extends Node
     }
 }
 
-class_alias('Raider\Node\DeprecatedNode', 'Raider_Node_Deprecated');
+class_alias('Raider\Node\DeprecatedNode', 'Twig_Node_Deprecated');

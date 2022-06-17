@@ -43,7 +43,7 @@ class LegacyTwigTestExtension extends AbstractExtension
     public function getTests()
     {
         return [
-            'multi word' => new \Raider_Test_Method($this, 'is_multi_word'),
+            'multi word' => new \Twig_Test_Method($this, 'is_multi_word'),
         ];
     }
 

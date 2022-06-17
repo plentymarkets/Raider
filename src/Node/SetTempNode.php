@@ -41,4 +41,4 @@ class SetTempNode extends Node
     }
 }
 
-class_alias('Raider\Node\SetTempNode', 'Raider_Node_SetTemp');
+class_alias('Raider\Node\SetTempNode', 'Twig_Node_SetTemp');

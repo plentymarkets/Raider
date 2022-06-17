@@ -88,7 +88,7 @@ class SecurityPolicy implements SecurityPolicyInterface
 
     public function checkMethodAllowed($obj, $method)
     {
-        if ($obj instanceof \Raider_TemplateInterface || $obj instanceof Markup) {
+        if ($obj instanceof \Twig_TemplateInterface || $obj instanceof Markup) {
             return;
         }
 
@@ -126,4 +126,4 @@ class SecurityPolicy implements SecurityPolicyInterface
     }
 }
 
-class_alias('Raider\Sandbox\SecurityPolicy', 'Raider_Sandbox_SecurityPolicy');
+class_alias('Raider\Sandbox\SecurityPolicy', 'Twig_Sandbox_SecurityPolicy');

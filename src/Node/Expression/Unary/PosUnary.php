@@ -22,4 +22,4 @@ class PosUnary extends AbstractUnary
     }
 }
 
-class_alias('Raider\Node\Expression\Unary\PosUnary', 'Raider_Node_Expression_Unary_Pos');
+class_alias('Raider\Node\Expression\Unary\PosUnary', 'Twig_Node_Expression_Unary_Pos');

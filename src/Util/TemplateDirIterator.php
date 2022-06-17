@@ -27,4 +27,4 @@ class TemplateDirIterator extends \IteratorIterator
     }
 }
 
-class_alias('Raider\Util\TemplateDirIterator', 'Raider_Util_TemplateDirIterator');
+class_alias('Raider\Util\TemplateDirIterator', 'Twig_Util_TemplateDirIterator');

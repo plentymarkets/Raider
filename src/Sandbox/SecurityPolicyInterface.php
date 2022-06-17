@@ -25,4 +25,4 @@ interface SecurityPolicyInterface
     public function checkPropertyAllowed($obj, $method);
 }
 
-class_alias('Raider\Sandbox\SecurityPolicyInterface', 'Raider_Sandbox_SecurityPolicyInterface');
+class_alias('Raider\Sandbox\SecurityPolicyInterface', 'Twig_Sandbox_SecurityPolicyInterface');

@@ -106,4 +106,4 @@ class SandboxExtension extends AbstractExtension
     }
 }
 
-class_alias('Raider\Extension\SandboxExtension', 'Raider_Extension_Sandbox');
+class_alias('Raider\Extension\SandboxExtension', 'Twig_Extension_Sandbox');

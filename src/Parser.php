@@ -32,7 +32,7 @@ use Raider\TokenParser\TokenParserInterface;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-class Parser implements \Raider_ParserInterface
+class Parser implements \Twig_ParserInterface
 {
     protected $stack = [];
     protected $stream;
@@ -398,7 +398,7 @@ class Parser implements \Raider_ParserInterface
         return $this->stream->getCurrent();
     }
 
-    protected function filterBodyNodes(\Raider_NodeInterface $node)
+    protected function filterBodyNodes(\Twig_NodeInterface $node)
     {
         // check that the body does not contain non-empty output nodes
         if (
@@ -436,4 +436,4 @@ class Parser implements \Raider_ParserInterface
     }
 }
 
-class_alias('Raider\Parser', 'Raider_Parser');
+class_alias('Raider\Parser', 'Twig_Parser');

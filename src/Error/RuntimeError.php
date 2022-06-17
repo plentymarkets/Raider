@@ -21,4 +21,4 @@ class RuntimeError extends Error
 {
 }
 
-class_alias('Raider\Error\RuntimeError', 'Raider_Error_Runtime');
+class_alias('Raider\Error\RuntimeError', 'Twig_Error_Runtime');

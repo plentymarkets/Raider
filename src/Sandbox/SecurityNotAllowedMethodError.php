@@ -39,4 +39,4 @@ class SecurityNotAllowedMethodError extends SecurityError
     }
 }
 
-class_alias('Raider\Sandbox\SecurityNotAllowedMethodError', 'Raider_Sandbox_SecurityNotAllowedMethodError');
+class_alias('Raider\Sandbox\SecurityNotAllowedMethodError', 'Twig_Sandbox_SecurityNotAllowedMethodError');

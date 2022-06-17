@@ -20,4 +20,4 @@ class BodyNode extends Node
 {
 }
 
-class_alias('Raider\Node\BodyNode', 'Raider_Node_Body');
+class_alias('Raider\Node\BodyNode', 'Twig_Node_Body');

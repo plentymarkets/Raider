@@ -38,4 +38,4 @@ class PrintNode extends Node implements NodeOutputInterface
     }
 }
 
-class_alias('Raider\Node\PrintNode', 'Raider_Node_Print');
+class_alias('Raider\Node\PrintNode', 'Twig_Node_Print');

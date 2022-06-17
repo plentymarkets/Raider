@@ -36,4 +36,4 @@ class FlushTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\FlushTokenParser', 'Raider_TokenParser_Flush');
+class_alias('Raider\TokenParser\FlushTokenParser', 'Twig_TokenParser_Flush');

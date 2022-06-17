@@ -99,4 +99,4 @@ class ArrayLoader implements LoaderInterface, ExistsLoaderInterface, SourceConte
     }
 }
 
-class_alias('Raider\Loader\ArrayLoader', 'Raider_Loader_Array');
+class_alias('Raider\Loader\ArrayLoader', 'Twig_Loader_Array');

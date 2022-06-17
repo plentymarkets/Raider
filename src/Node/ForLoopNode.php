@@ -53,4 +53,4 @@ class ForLoopNode extends Node
     }
 }
 
-class_alias('Raider\Node\ForLoopNode', 'Raider_Node_ForLoop');
+class_alias('Raider\Node\ForLoopNode', 'Twig_Node_ForLoop');

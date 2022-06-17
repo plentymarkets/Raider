@@ -90,4 +90,4 @@ class TwigTest
     }
 }
 
-class_alias('Raider\TwigTest', 'Raider_SimpleTest');
+class_alias('Raider\TwigTest', 'Twig_SimpleTest');

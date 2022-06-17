@@ -312,4 +312,4 @@ abstract class CallExpression extends AbstractExpression
     }
 }
 
-class_alias('Raider\Node\Expression\CallExpression', 'Raider_Node_Expression_Call');
+class_alias('Raider\Node\Expression\CallExpression', 'Twig_Node_Expression_Call');

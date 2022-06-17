@@ -20,4 +20,4 @@ interface NodeOutputInterface
 {
 }
 
-class_alias('Raider\Node\NodeOutputInterface', 'Raider_NodeOutputInterface');
+class_alias('Raider\Node\NodeOutputInterface', 'Twig_NodeOutputInterface');

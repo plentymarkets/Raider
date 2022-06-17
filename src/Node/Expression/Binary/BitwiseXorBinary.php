@@ -22,4 +22,4 @@ class BitwiseXorBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\BitwiseXorBinary', 'Raider_Node_Expression_Binary_BitwiseXor');
+class_alias('Raider\Node\Expression\Binary\BitwiseXorBinary', 'Twig_Node_Expression_Binary_BitwiseXor');

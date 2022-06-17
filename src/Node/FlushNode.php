@@ -34,4 +34,4 @@ class FlushNode extends Node
     }
 }
 
-class_alias('Raider\Node\FlushNode', 'Raider_Node_Flush');
+class_alias('Raider\Node\FlushNode', 'Twig_Node_Flush');

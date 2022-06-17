@@ -35,4 +35,4 @@ class BlockReferenceNode extends Node implements NodeOutputInterface
     }
 }
 
-class_alias('Raider\Node\BlockReferenceNode', 'Raider_Node_BlockReference');
+class_alias('Raider\Node\BlockReferenceNode', 'Twig_Node_BlockReference');

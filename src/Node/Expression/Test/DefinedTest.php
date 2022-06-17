@@ -33,7 +33,7 @@ use Raider\Node\Expression\TestExpression;
  */
 class DefinedTest extends TestExpression
 {
-    public function __construct(\Raider_NodeInterface $node, $name, ?\Raider_NodeInterface $arguments, $lineno)
+    public function __construct(\Twig_NodeInterface $node, $name, ?\Twig_NodeInterface $arguments, $lineno)
     {
         if ($node instanceof NameExpression) {
             $node->setAttribute('is_defined_test', true);
@@ -68,4 +68,4 @@ class DefinedTest extends TestExpression
     }
 }
 
-class_alias('Raider\Node\Expression\Test\DefinedTest', 'Raider_Node_Expression_Test_Defined');
+class_alias('Raider\Node\Expression\Test\DefinedTest', 'Twig_Node_Expression_Test_Defined');

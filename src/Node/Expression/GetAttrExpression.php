@@ -77,4 +77,4 @@ class GetAttrExpression extends AbstractExpression
     }
 }
 
-class_alias('Raider\Node\Expression\GetAttrExpression', 'Raider_Node_Expression_GetAttr');
+class_alias('Raider\Node\Expression\GetAttrExpression', 'Twig_Node_Expression_GetAttr');

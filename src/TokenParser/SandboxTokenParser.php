@@ -64,4 +64,4 @@ class SandboxTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\SandboxTokenParser', 'Raider_TokenParser_Sandbox');
+class_alias('Raider\TokenParser\SandboxTokenParser', 'Twig_TokenParser_Sandbox');

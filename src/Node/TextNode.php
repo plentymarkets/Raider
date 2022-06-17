@@ -37,4 +37,4 @@ class TextNode extends Node implements NodeOutputInterface
     }
 }
 
-class_alias('Raider\Node\TextNode', 'Raider_Node_Text');
+class_alias('Raider\Node\TextNode', 'Twig_Node_Text');

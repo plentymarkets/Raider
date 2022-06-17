@@ -39,4 +39,4 @@ class NullCache implements CacheInterface
     }
 }
 
-class_alias('Raider\Cache\NullCache', 'Raider_Cache_Null');
+class_alias('Raider\Cache\NullCache', 'Twig_Cache_Null');

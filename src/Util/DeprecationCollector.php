@@ -89,4 +89,4 @@ class DeprecationCollector
     }
 }
 
-class_alias('Raider\Util\DeprecationCollector', 'Raider_Util_DeprecationCollector');
+class_alias('Raider\Util\DeprecationCollector', 'Twig_Util_DeprecationCollector');

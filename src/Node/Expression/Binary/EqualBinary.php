@@ -21,4 +21,4 @@ class EqualBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\EqualBinary', 'Raider_Node_Expression_Binary_Equal');
+class_alias('Raider\Node\Expression\Binary\EqualBinary', 'Twig_Node_Expression_Binary_Equal');

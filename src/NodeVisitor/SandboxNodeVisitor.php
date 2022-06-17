@@ -136,4 +136,4 @@ class SandboxNodeVisitor extends AbstractNodeVisitor
     }
 }
 
-class_alias('Raider\NodeVisitor\SandboxNodeVisitor', 'Raider_NodeVisitor_Sandbox');
+class_alias('Raider\NodeVisitor\SandboxNodeVisitor', 'Twig_NodeVisitor_Sandbox');

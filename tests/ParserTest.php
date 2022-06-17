@@ -187,7 +187,7 @@ class TestParser extends Parser
 {
     public $stream;
 
-    public function filterBodyNodes(\Raider_NodeInterface $node)
+    public function filterBodyNodes(\Twig_NodeInterface $node)
     {
         return parent::filterBodyNodes($node);
     }

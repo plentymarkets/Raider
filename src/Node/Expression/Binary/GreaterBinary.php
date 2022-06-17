@@ -21,4 +21,4 @@ class GreaterBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\GreaterBinary', 'Raider_Node_Expression_Binary_Greater');
+class_alias('Raider\Node\Expression\Binary\GreaterBinary', 'Twig_Node_Expression_Binary_Greater');

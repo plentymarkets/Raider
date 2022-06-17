@@ -38,7 +38,7 @@ class TokenStream
     {
         if (!$name instanceof Source) {
             if (null !== $name || null !== $source) {
-                @trigger_error(sprintf('Passing a string as the $name argument of %s() is deprecated since version 1.27. Pass a \Raider\Source instance instead.', __METHOD__), \E_USER_DEPRECATED);
+                @trigger_error(sprintf('Passing a string as the $name argument of %s() is deprecated since version 1.27. Pass a \Twig\Source instance instead.', __METHOD__), \E_USER_DEPRECATED);
             }
             $this->source = new Source($source, $name);
         } else {
@@ -198,4 +198,4 @@ class TokenStream
     }
 }
 
-class_alias('Raider\TokenStream', 'Raider_TokenStream');
+class_alias('Raider\TokenStream', 'Twig_TokenStream');

@@ -41,4 +41,4 @@ class Markup implements \Countable
     }
 }
 
-class_alias('Raider\Markup', 'Raider_Markup');
+class_alias('Raider\Markup', 'Twig_Markup');

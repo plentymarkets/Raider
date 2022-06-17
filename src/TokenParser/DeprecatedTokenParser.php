@@ -41,4 +41,4 @@ class DeprecatedTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\DeprecatedTokenParser', 'Raider_TokenParser_Deprecated');
+class_alias('Raider\TokenParser\DeprecatedTokenParser', 'Twig_TokenParser_Deprecated');

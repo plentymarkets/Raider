@@ -88,4 +88,4 @@ class IfTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\IfTokenParser', 'Raider_TokenParser_If');
+class_alias('Raider\TokenParser\IfTokenParser', 'Twig_TokenParser_If');

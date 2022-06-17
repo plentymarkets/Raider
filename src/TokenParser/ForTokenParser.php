@@ -87,7 +87,7 @@ class ForTokenParser extends AbstractTokenParser
     }
 
     // the loop variable cannot be used in the condition
-    protected function checkLoopUsageCondition(TokenStream $stream, \Raider_NodeInterface $node)
+    protected function checkLoopUsageCondition(TokenStream $stream, \Twig_NodeInterface $node)
     {
         if ($node instanceof GetAttrExpression && $node->getNode('node') instanceof NameExpression && 'loop' == $node->getNode('node')->getAttribute('name')) {
             throw new SyntaxError('The "loop" variable cannot be used in a looping condition.', $node->getTemplateLine(), $stream->getSourceContext());
@@ -104,7 +104,7 @@ class ForTokenParser extends AbstractTokenParser
 
     // check usage of non-defined loop-items
     // it does not catch all problems (for instance when a for is included into another or when the variable is used in an include)
-    protected function checkLoopUsageBody(TokenStream $stream, \Raider_NodeInterface $node)
+    protected function checkLoopUsageBody(TokenStream $stream, \Twig_NodeInterface $node)
     {
         if ($node instanceof GetAttrExpression && $node->getNode('node') instanceof NameExpression && 'loop' == $node->getNode('node')->getAttribute('name')) {
             $attribute = $node->getNode('attribute');
@@ -133,4 +133,4 @@ class ForTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\ForTokenParser', 'Raider_TokenParser_For');
+class_alias('Raider\TokenParser\ForTokenParser', 'Twig_TokenParser_For');

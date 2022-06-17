@@ -29,7 +29,7 @@ use Raider\Node\Node;
  */
 class DefaultFilter extends FilterExpression
 {
-    public function __construct(\Raider_NodeInterface $node, ConstantExpression $filterName, \Raider_NodeInterface $arguments, $lineno, $tag = null)
+    public function __construct(\Twig_NodeInterface $node, ConstantExpression $filterName, \Twig_NodeInterface $arguments, $lineno, $tag = null)
     {
         $default = new FilterExpression($node, new ConstantExpression('default', $node->getTemplateLine()), $arguments, $node->getTemplateLine());
 
@@ -51,4 +51,4 @@ class DefaultFilter extends FilterExpression
     }
 }
 
-class_alias('Raider\Node\Expression\Filter\DefaultFilter', 'Raider_Node_Expression_Filter_Default');
+class_alias('Raider\Node\Expression\Filter\DefaultFilter', 'Twig_Node_Expression_Filter_Default');

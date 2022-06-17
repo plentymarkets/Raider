@@ -16,7 +16,7 @@ use Raider\TwigFunction;
 
 class FunctionExpression extends CallExpression
 {
-    public function __construct($name, \Raider_NodeInterface $arguments, $lineno)
+    public function __construct($name, \Twig_NodeInterface $arguments, $lineno)
     {
         parent::__construct(['arguments' => $arguments], ['name' => $name, 'is_defined_test' => false], $lineno);
     }
@@ -32,7 +32,7 @@ class FunctionExpression extends CallExpression
         $this->setAttribute('needs_environment', $function->needsEnvironment());
         $this->setAttribute('needs_context', $function->needsContext());
         $this->setAttribute('arguments', $function->getArguments());
-        if ($function instanceof \Raider_FunctionCallableInterface || $function instanceof TwigFunction) {
+        if ($function instanceof \Twig_FunctionCallableInterface || $function instanceof TwigFunction) {
             $callable = $function->getCallable();
             if ('constant' === $name && $this->getAttribute('is_defined_test')) {
                 $callable = 'twig_constant_is_defined';
@@ -48,4 +48,4 @@ class FunctionExpression extends CallExpression
     }
 }
 
-class_alias('Raider\Node\Expression\FunctionExpression', 'Raider_Node_Expression_Function');
+class_alias('Raider\Node\Expression\FunctionExpression', 'Twig_Node_Expression_Function');

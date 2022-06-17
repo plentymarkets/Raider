@@ -30,4 +30,4 @@ interface ExistsLoaderInterface
     public function exists($name);
 }
 
-class_alias('Raider\Loader\ExistsLoaderInterface', 'Raider_ExistsLoaderInterface');
+class_alias('Raider\Loader\ExistsLoaderInterface', 'Twig_ExistsLoaderInterface');

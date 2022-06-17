@@ -158,4 +158,4 @@ final class TemplateWrapper
     }
 }
 
-class_alias('Raider\TemplateWrapper', 'Raider_TemplateWrapper');
+class_alias('Raider\TemplateWrapper', 'Twig_TemplateWrapper');

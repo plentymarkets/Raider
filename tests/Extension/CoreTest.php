@@ -20,7 +20,7 @@ class CoreTest extends \PHPUnit\Framework\TestCase
      */
     public function testRandomFunction(array $expectedInArray, $value1, $value2 = null)
     {
-        $env = new Environment($this->createMock('Raider_LoaderInterface'));
+        $env = new Environment($this->createMock('Twig_LoaderInterface'));
         for ($i = 0; $i < 100; ++$i) {
             $this->assertTrue(\in_array(twig_random($env, $value1, $value2), $expectedInArray, true)); // assertContains() would not consider the type
         }

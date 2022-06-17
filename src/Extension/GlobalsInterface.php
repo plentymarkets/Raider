@@ -12,7 +12,7 @@
 namespace Raider\Extension;
 
 /**
- * Enables usage of the deprecated Twig\Extension\AbstractExtension::getGlobals() method.
+ * Enables usage of the deprecated Raider\Extension\AbstractExtension::getGlobals() method.
  *
  * Explicitly implement this interface if you really need to implement the
  * deprecated getGlobals() method in your extensions.
@@ -23,4 +23,4 @@ interface GlobalsInterface
 {
 }
 
-class_alias('Raider\Extension\GlobalsInterface', 'Raider_Extension_GlobalsInterface');
+class_alias('Raider\Extension\GlobalsInterface', 'Twig_Extension_GlobalsInterface');

@@ -22,4 +22,4 @@ class SubBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\SubBinary', 'Raider_Node_Expression_Binary_Sub');
+class_alias('Raider\Node\Expression\Binary\SubBinary', 'Twig_Node_Expression_Binary_Sub');

@@ -36,4 +36,4 @@ class PowerBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\PowerBinary', 'Raider_Node_Expression_Binary_Power');
+class_alias('Raider\Node\Expression\Binary\PowerBinary', 'Twig_Node_Expression_Binary_Power');

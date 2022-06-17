@@ -32,12 +32,12 @@ class NodeTraverserTest extends \PHPUnit\Framework\TestCase
 
 class IdentityVisitor implements NodeVisitorInterface
 {
-    public function enterNode(\Raider_NodeInterface $node, Environment $env)
+    public function enterNode(\Twig_NodeInterface $node, Environment $env)
     {
         return $node;
     }
 
-    public function leaveNode(\Raider_NodeInterface $node, Environment $env)
+    public function leaveNode(\Twig_NodeInterface $node, Environment $env)
     {
         return $node;
     }

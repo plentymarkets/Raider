@@ -34,4 +34,4 @@ class OddTest extends TestExpression
     }
 }
 
-class_alias('Raider\Node\Expression\Test\OddTest', 'Raider_Node_Expression_Test_Odd');
+class_alias('Raider\Node\Expression\Test\OddTest', 'Twig_Node_Expression_Test_Odd');

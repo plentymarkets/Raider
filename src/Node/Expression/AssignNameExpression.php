@@ -26,4 +26,4 @@ class AssignNameExpression extends NameExpression
     }
 }
 
-class_alias('Raider\Node\Expression\AssignNameExpression', 'Raider_Node_Expression_AssignName');
+class_alias('Raider\Node\Expression\AssignNameExpression', 'Twig_Node_Expression_AssignName');

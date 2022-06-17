@@ -22,4 +22,4 @@ class MulBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\MulBinary', 'Raider_Node_Expression_Binary_Mul');
+class_alias('Raider\Node\Expression\Binary\MulBinary', 'Twig_Node_Expression_Binary_Mul');

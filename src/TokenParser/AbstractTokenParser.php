@@ -31,4 +31,4 @@ abstract class AbstractTokenParser implements TokenParserInterface
     }
 }
 
-class_alias('Raider\TokenParser\AbstractTokenParser', 'Raider_TokenParser');
+class_alias('Raider\TokenParser\AbstractTokenParser', 'Twig_TokenParser');

@@ -85,4 +85,4 @@ class AutoEscapeTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\AutoEscapeTokenParser', 'Raider_TokenParser_AutoEscape');
+class_alias('Raider\TokenParser\AutoEscapeTokenParser', 'Twig_TokenParser_AutoEscape');

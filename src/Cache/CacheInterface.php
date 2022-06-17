@@ -57,4 +57,4 @@ interface CacheInterface
     public function getTimestamp($key);
 }
 
-class_alias('Raider\Cache\CacheInterface', 'Raider_CacheInterface');
+class_alias('Raider\Cache\CacheInterface', 'Twig_CacheInterface');

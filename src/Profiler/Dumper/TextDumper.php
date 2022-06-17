@@ -36,4 +36,4 @@ class TextDumper extends BaseDumper
     }
 }
 
-class_alias('Raider\Profiler\Dumper\TextDumper', 'Raider_Profiler_Dumper_Text');
+class_alias('Raider\Profiler\Dumper\TextDumper', 'Twig_Profiler_Dumper_Text');

@@ -17,7 +17,7 @@ use Raider\Node\Expression\AbstractExpression;
 
 abstract class AbstractBinary extends AbstractExpression
 {
-    public function __construct(\Raider_NodeInterface $left, \Raider_NodeInterface $right, $lineno)
+    public function __construct(\Twig_NodeInterface $left, \Twig_NodeInterface $right, $lineno)
     {
         parent::__construct(['left' => $left, 'right' => $right], [], $lineno);
     }
@@ -40,4 +40,4 @@ abstract class AbstractBinary extends AbstractExpression
     abstract public function operator(Compiler $compiler);
 }
 
-class_alias('Raider\Node\Expression\Binary\AbstractBinary', 'Raider_Node_Expression_Binary');
+class_alias('Raider\Node\Expression\Binary\AbstractBinary', 'Twig_Node_Expression_Binary');

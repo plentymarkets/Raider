@@ -22,4 +22,4 @@ class NotUnary extends AbstractUnary
     }
 }
 
-class_alias('Raider\Node\Expression\Unary\NotUnary', 'Raider_Node_Expression_Unary_Not');
+class_alias('Raider\Node\Expression\Unary\NotUnary', 'Twig_Node_Expression_Unary_Not');

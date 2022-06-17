@@ -20,4 +20,4 @@ interface NodeCaptureInterface
 {
 }
 
-class_alias('Raider\Node\NodeCaptureInterface', 'Raider_NodeCaptureInterface');
+class_alias('Raider\Node\NodeCaptureInterface', 'Twig_NodeCaptureInterface');

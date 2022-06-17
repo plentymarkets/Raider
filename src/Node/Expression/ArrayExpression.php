@@ -85,4 +85,4 @@ class ArrayExpression extends AbstractExpression
     }
 }
 
-class_alias('Raider\Node\Expression\ArrayExpression', 'Raider_Node_Expression_Array');
+class_alias('Raider\Node\Expression\ArrayExpression', 'Twig_Node_Expression_Array');

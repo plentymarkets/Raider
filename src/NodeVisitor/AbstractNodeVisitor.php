@@ -23,7 +23,7 @@ use Raider\Node\Node;
  */
 abstract class AbstractNodeVisitor implements NodeVisitorInterface
 {
-    final public function enterNode(\Raider_NodeInterface $node, Environment $env)
+    final public function enterNode(\Twig_NodeInterface $node, Environment $env)
     {
         if (!$node instanceof Node) {
             throw new \LogicException(sprintf('%s only supports \Raider\Node\Node instances.', __CLASS__));
@@ -32,7 +32,7 @@ abstract class AbstractNodeVisitor implements NodeVisitorInterface
         return $this->doEnterNode($node, $env);
     }
 
-    final public function leaveNode(\Raider_NodeInterface $node, Environment $env)
+    final public function leaveNode(\Twig_NodeInterface $node, Environment $env)
     {
         if (!$node instanceof Node) {
             throw new \LogicException(sprintf('%s only supports \Raider\Node\Node instances.', __CLASS__));
@@ -56,4 +56,4 @@ abstract class AbstractNodeVisitor implements NodeVisitorInterface
     abstract protected function doLeaveNode(Node $node, Environment $env);
 }
 
-class_alias('Raider\NodeVisitor\AbstractNodeVisitor', 'Raider_BaseNodeVisitor');
+class_alias('Raider\NodeVisitor\AbstractNodeVisitor', 'Twig_BaseNodeVisitor');

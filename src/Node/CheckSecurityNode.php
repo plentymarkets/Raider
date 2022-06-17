@@ -87,4 +87,4 @@ class CheckSecurityNode extends Node
     }
 }
 
-class_alias('Raider\Node\CheckSecurityNode', 'Raider_Node_CheckSecurity');
+class_alias('Raider\Node\CheckSecurityNode', 'Twig_Node_CheckSecurity');

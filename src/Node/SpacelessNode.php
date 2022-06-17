@@ -22,7 +22,7 @@ use Raider\Compiler;
  */
 class SpacelessNode extends Node
 {
-    public function __construct(\Raider_NodeInterface $body, $lineno, $tag = 'spaceless')
+    public function __construct(\Twig_NodeInterface $body, $lineno, $tag = 'spaceless')
     {
         parent::__construct(['body' => $body], [], $lineno, $tag);
     }
@@ -44,4 +44,4 @@ class SpacelessNode extends Node
     }
 }
 
-class_alias('Raider\Node\SpacelessNode', 'Raider_Node_Spaceless');
+class_alias('Raider\Node\SpacelessNode', 'Twig_Node_Spaceless');

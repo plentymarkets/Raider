@@ -36,4 +36,4 @@ class DoTokenParser extends AbstractTokenParser
     }
 }
 
-class_alias('Raider\TokenParser\DoTokenParser', 'Raider_TokenParser_Do');
+class_alias('Raider\TokenParser\DoTokenParser', 'Twig_TokenParser_Do');

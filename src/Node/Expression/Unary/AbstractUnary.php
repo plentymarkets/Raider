@@ -17,7 +17,7 @@ use Raider\Node\Expression\AbstractExpression;
 
 abstract class AbstractUnary extends AbstractExpression
 {
-    public function __construct(\Raider_NodeInterface $node, $lineno)
+    public function __construct(\Twig_NodeInterface $node, $lineno)
     {
         parent::__construct(['node' => $node], [], $lineno);
     }
@@ -32,4 +32,4 @@ abstract class AbstractUnary extends AbstractExpression
     abstract public function operator(Compiler $compiler);
 }
 
-class_alias('Raider\Node\Expression\Unary\AbstractUnary', 'Raider_Node_Expression_Unary');
+class_alias('Raider\Node\Expression\Unary\AbstractUnary', 'Twig_Node_Expression_Unary');

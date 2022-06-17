@@ -109,7 +109,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
 
     public function testTemplateReference()
     {
-        $name = new Raider_Test_Loader_TemplateReference('foo');
+        $name = new Twig_Test_Loader_TemplateReference('foo');
         $loader = new ArrayLoader(['foo' => 'bar']);
 
         $loader->getCacheKey($name);
@@ -123,7 +123,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
     }
 }
 
-class Raider_Test_Loader_TemplateReference
+class Twig_Test_Loader_TemplateReference
 {
     private $name;
 

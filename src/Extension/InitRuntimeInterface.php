@@ -12,7 +12,7 @@
 namespace Raider\Extension;
 
 /**
- * Enables usage of the deprecated Twig\Extension\AbstractExtension::initRuntime() method.
+ * Enables usage of the deprecated Raider\Extension\AbstractExtension::initRuntime() method.
  *
  * Explicitly implement this interface if you really need to implement the
  * deprecated initRuntime() method in your extensions.
@@ -23,4 +23,4 @@ interface InitRuntimeInterface
 {
 }
 
-class_alias('Raider\Extension\InitRuntimeInterface', 'Raider_Extension_InitRuntimeInterface');
+class_alias('Raider\Extension\InitRuntimeInterface', 'Twig_Extension_InitRuntimeInterface');

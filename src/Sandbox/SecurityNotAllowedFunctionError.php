@@ -32,4 +32,4 @@ class SecurityNotAllowedFunctionError extends SecurityError
     }
 }
 
-class_alias('Raider\Sandbox\SecurityNotAllowedFunctionError', 'Raider_Sandbox_SecurityNotAllowedFunctionError');
+class_alias('Raider\Sandbox\SecurityNotAllowedFunctionError', 'Twig_Sandbox_SecurityNotAllowedFunctionError');

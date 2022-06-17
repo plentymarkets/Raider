@@ -19,7 +19,7 @@ use Raider\Node\ModuleNode;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-class Compiler implements \Raider_CompilerInterface
+class Compiler implements \Twig_CompilerInterface
 {
     protected $lastLine;
     protected $source;
@@ -73,7 +73,7 @@ class Compiler implements \Raider_CompilerInterface
      *
      * @return $this
      */
-    public function compile(\Raider_NodeInterface $node, $indentation = 0)
+    public function compile(\Twig_NodeInterface $node, $indentation = 0)
     {
         $this->lastLine = null;
         $this->source = '';
@@ -94,7 +94,7 @@ class Compiler implements \Raider_CompilerInterface
         return $this;
     }
 
-    public function subcompile(\Raider_NodeInterface $node, $raw = true)
+    public function subcompile(\Twig_NodeInterface $node, $raw = true)
     {
         if (false === $raw) {
             $this->source .= str_repeat(' ', $this->indentation * 4);
@@ -212,7 +212,7 @@ class Compiler implements \Raider_CompilerInterface
      *
      * @return $this
      */
-    public function addDebugInfo(\Raider_NodeInterface $node)
+    public function addDebugInfo(\Twig_NodeInterface $node)
     {
         if ($node->getTemplateLine() != $this->lastLine) {
             $this->write(sprintf("// line %d\n", $node->getTemplateLine()));
@@ -285,4 +285,4 @@ class Compiler implements \Raider_CompilerInterface
     }
 }
 
-class_alias('Raider\Compiler', 'Raider_Compiler');
+class_alias('Raider\Compiler', 'Twig_Compiler');

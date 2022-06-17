@@ -54,4 +54,4 @@ class ImportNode extends Node
     }
 }
 
-class_alias('Raider\Node\ImportNode', 'Raider_Node_Import');
+class_alias('Raider\Node\ImportNode', 'Twig_Node_Import');

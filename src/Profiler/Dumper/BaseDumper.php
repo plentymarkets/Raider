@@ -62,4 +62,4 @@ abstract class BaseDumper
     }
 }
 
-class_alias('Raider\Profiler\Dumper\BaseDumper', 'Raider_Profiler_Dumper_Base');
+class_alias('Raider\Profiler\Dumper\BaseDumper', 'Twig_Profiler_Dumper_Base');

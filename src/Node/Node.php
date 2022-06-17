@@ -20,7 +20,7 @@ use Raider\Source;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-class Node implements \Raider_NodeInterface
+class Node implements \Twig_NodeInterface
 {
     protected $nodes;
     protected $attributes;
@@ -39,7 +39,7 @@ class Node implements \Raider_NodeInterface
     public function __construct(array $nodes = [], array $attributes = [], $lineno = 0, $tag = null)
     {
         foreach ($nodes as $name => $node) {
-            if (!$node instanceof \Raider_NodeInterface) {
+            if (!$node instanceof \Twig_NodeInterface) {
                 @trigger_error(sprintf('Using "%s" for the value of node "%s" of "%s" is deprecated since version 1.25 and will be removed in 2.0.', \is_object($node) ? \get_class($node) : (null === $node ? 'null' : \gettype($node)), $name, static::class), \E_USER_DEPRECATED);
             }
         }
@@ -195,7 +195,7 @@ class Node implements \Raider_NodeInterface
 
     public function setNode($name, $node = null)
     {
-        if (!$node instanceof \Raider_NodeInterface) {
+        if (!$node instanceof \Twig_NodeInterface) {
             @trigger_error(sprintf('Using "%s" for the value of node "%s" of "%s" is deprecated since version 1.25 and will be removed in 2.0.', \is_object($node) ? \get_class($node) : (null === $node ? 'null' : \gettype($node)), $name, static::class), \E_USER_DEPRECATED);
         }
 
@@ -274,7 +274,7 @@ class Node implements \Raider_NodeInterface
     }
 }
 
-class_alias('Raider\Node\Node', 'Raider_Node');
+class_alias('Raider\Node\Node', 'Twig_Node');
 
 // Ensure that the aliased name is loaded to keep BC for classes implementing the typehint with the old aliased name.
 class_exists('Raider\Compiler');

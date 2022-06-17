@@ -28,4 +28,4 @@ class FloorDivBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\FloorDivBinary', 'Raider_Node_Expression_Binary_FloorDiv');
+class_alias('Raider\Node\Expression\Binary\FloorDivBinary', 'Twig_Node_Expression_Binary_FloorDiv');

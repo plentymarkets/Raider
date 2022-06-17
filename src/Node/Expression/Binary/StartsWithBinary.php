@@ -34,4 +34,4 @@ class StartsWithBinary extends AbstractBinary
     }
 }
 
-class_alias('Raider\Node\Expression\Binary\StartsWithBinary', 'Raider_Node_Expression_Binary_StartsWith');
+class_alias('Raider\Node\Expression\Binary\StartsWithBinary', 'Twig_Node_Expression_Binary_StartsWith');

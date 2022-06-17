@@ -618,12 +618,12 @@ class EnvironmentTest_TokenParser extends AbstractTokenParser
 
 class EnvironmentTest_NodeVisitor implements NodeVisitorInterface
 {
-    public function enterNode(\Raider_NodeInterface $node, Environment $env)
+    public function enterNode(\Twig_NodeInterface $node, Environment $env)
     {
         return $node;
     }
 
-    public function leaveNode(\Raider_NodeInterface $node, Environment $env)
+    public function leaveNode(\Twig_NodeInterface $node, Environment $env)
     {
         return $node;
     }

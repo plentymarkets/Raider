@@ -33,4 +33,4 @@ class SameasTest extends TestExpression
     }
 }
 
-class_alias('Raider\Node\Expression\Test\SameasTest', 'Raider_Node_Expression_Test_Sameas');
+class_alias('Raider\Node\Expression\Test\SameasTest', 'Twig_Node_Expression_Test_Sameas');
