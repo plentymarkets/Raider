@@ -2,7 +2,7 @@
 
 use Raider\TwigFunction;
 
-class_exists('Twig\TwigFunction');
+class_exists('Raider\TwigFunction');
 
 if (\false) {
     class Twig_SimpleFunction extends TwigFunction

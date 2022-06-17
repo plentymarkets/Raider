@@ -2,7 +2,7 @@
 
 use Raider\Node\NodeCaptureInterface;
 
-class_exists('Twig\Node\NodeCaptureInterface');
+class_exists('Raider\Node\NodeCaptureInterface');
 
 if (\false) {
     class Twig_NodeCaptureInterface extends NodeCaptureInterface

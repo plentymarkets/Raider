@@ -2,7 +2,7 @@
 
 use Raider\TokenParser\ExtendsTokenParser;
 
-class_exists('Twig\TokenParser\ExtendsTokenParser');
+class_exists('Raider\TokenParser\ExtendsTokenParser');
 
 if (\false) {
     class Twig_TokenParser_Extends extends ExtendsTokenParser

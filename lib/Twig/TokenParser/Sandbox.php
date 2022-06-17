@@ -2,7 +2,7 @@
 
 use Raider\TokenParser\SandboxTokenParser;
 
-class_exists('Twig\TokenParser\SandboxTokenParser');
+class_exists('Raider\TokenParser\SandboxTokenParser');
 
 if (\false) {
     class Twig_TokenParser_Sandbox extends SandboxTokenParser

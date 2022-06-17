@@ -2,7 +2,7 @@
 
 use Raider\Extension\CoreExtension;
 
-class_exists('Twig\Extension\CoreExtension');
+class_exists('Raider\Extension\CoreExtension');
 
 if (\false) {
     class Twig_Extension_Core extends CoreExtension
